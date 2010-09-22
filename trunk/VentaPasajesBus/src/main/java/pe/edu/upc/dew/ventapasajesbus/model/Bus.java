@@ -1,14 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package pe.edu.upc.dew.ventapasajesbus.model;
 
-/**
- *
- * @author Juan
- */
+import java.util.HashMap;
+
 public class Bus {
+    private Integer idBus;
+    private HashMap<Integer,String> asientos;
 
 }
