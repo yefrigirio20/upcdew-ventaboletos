@@ -1,14 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package pe.edu.upc.dew.ventapasajesbus.model;
 
-/**
- *
- * @author Juan
- */
-public class Reserva {
+import java.util.Date;
 
+public class Reserva {
+    private Integer idReserva;
+    private Cliente cliente;
+    private Ruta ruta;
+    private Date fechaInicio;
+    private Date fechaFin;
 }

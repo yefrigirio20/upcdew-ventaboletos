@@ -1,14 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package pe.edu.upc.dew.ventapasajesbus.model;
 
-/**
- *
- * @author Juan
- */
 public class Cliente {
+    private String idCliente;
+    private String dirección;
+    private String telefono;
+    private String email;
 
 }
