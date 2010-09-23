@@ -1,9 +1,9 @@
 package pe.edu.upc.dew.ventapasajesbus.model;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Bus {
     private Integer idBus;
-    private HashMap<Integer,String> asientos;
-
+    private Integer capacidad;
+    private ArrayList<Asiento> asientos;
 }

@@ -1,10 +1,10 @@
 package pe.edu.upc.dew.ventapasajesbus.model;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class EmpresaTransporte {
-    private Integer idEmpresa;
+    private Integer idEmpresaTransporte;
     private String Nombre;
-    private HashMap<Integer,Bus> buses;
+    private ArrayList<Bus> buses;
 
 }

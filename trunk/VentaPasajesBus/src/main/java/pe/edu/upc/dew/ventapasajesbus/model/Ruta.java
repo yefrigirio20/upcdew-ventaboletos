@@ -5,12 +5,13 @@ import java.util.HashMap;
 
 public class Ruta {
     private Integer idRuta;
+    private EmpresaTransporte empresaTransporte;
     private String nombre;
-    private HashMap<Integer,Bus> buses;
-    private String origen;
-    private String destino;
-    private Date fechaInicio;
-    private Date fechaFin;
+    private Bus bus;
+    private Ciudad ciudadOrigen;
+    private Ciudad ciudadDestino;
+    private Date fechaHoraSalida;
+    private Date fechaHoraLlegada;
     private Double tarifa;
 
 }
