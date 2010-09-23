@@ -6,6 +6,4 @@ public class Reserva {
     private Integer idReserva;
     private Cliente cliente;
     private Ruta ruta;
-    private Date fechaInicio;
-    private Date fechaFin;
 }
