@@ -1,7 +1,6 @@
 package pe.edu.upc.dew.ventapasajesbus.model;
 
 import java.util.Date;
-import java.util.HashMap;
 
 public class Ruta {
     private Integer idRuta;
@@ -13,5 +12,4 @@ public class Ruta {
     private Date fechaHoraSalida;
     private Date fechaHoraLlegada;
     private Double tarifa;
-
 }

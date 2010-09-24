@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class EmpresaTransporte {
     private Integer idEmpresaTransporte;
-    private String Nombre;
+    private String nombre;
     private ArrayList<Bus> buses;
-
 }
