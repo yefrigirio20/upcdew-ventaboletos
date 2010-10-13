@@ -41,11 +41,11 @@
   <div id="topnav">
     <ul>
       <li class="active"><a href="index.jsp">INICIO</a><span>página principal</span></li>
-      <li><a href="style-demo.html">RUTAS</a><span>Ingreso rutas</span></li>
-      <li><a href="full-width.html">RESERVAS</a><span>Reservas en línea</span></li>
-      <li><a href="modreserva.html">MODIFICAR RESERVA</a><span>Modificar reservas</span></li>
-      <li><a href="conventa.html">CONSULTA VENTAS</a><span>Consultar ventas</span></li>
-      <li><a href="conreserva.html">CONSULTA RERSERVAS</a><span>consultar reservas</span></li>
+      <li><a href="ruta.jsp">RUTAS</a><span>Ingreso rutas</span></li>
+      <li><a href="reserva.jsp">RESERVAS</a><span>Reservas en línea</span></li>
+      <li><a href="modreserva.jsp">MODIFICAR RESERVA</a><span>Modificar reservas</span></li>
+      <li><a href="conventa.jsp">CONSULTA VENTAS</a><span>Consultar ventas</span></li>
+      <li><a href="conreserva.jsp">CONSULTA RERSERVAS</a><span>consultar reservas</span></li>
 
     </ul>
     <br class="clear" />
