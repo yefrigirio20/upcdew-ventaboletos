@@ -1,5 +1,6 @@
 package pe.edu.upc.dew.ventapasajesbus.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Ruta {
@@ -7,6 +8,7 @@ public class Ruta {
     private EmpresaTransporte empresaTransporte;
     private String nombre;
     private Bus bus;
+    private ArrayList<Asiento> asientos;
     private Ciudad ciudadOrigen;
     private Ciudad ciudadDestino;
     private Date fechaHoraSalida;
