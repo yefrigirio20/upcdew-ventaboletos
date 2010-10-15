@@ -5,9 +5,17 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>pe.edu.upc.dew.ventapasajesbus.controller.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletController</servlet-name>
+        <servlet-class>pe.edu.upc.dew.ventapasajesbus.controller.ServletController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletController</servlet-name>
+        <url-pattern>/controlador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
