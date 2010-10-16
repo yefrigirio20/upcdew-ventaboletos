@@ -31,13 +31,13 @@ public class BuscarReserva extends HttpServlet {
         String datos[]= {"12345","Empresa1","Lima","Chiclayo","50.00","29 Octubre","30 Octubre","44","23"};
         session.setAttribute("datos", datos);
         String accion = request.getParameter("modificar");
-       /*
-        if(accion.equals("Modificar")){
+        
+        /*if(accion.equals("Modificar")){
             request.getRequestDispatcher("eliminareserva.jsp").forward(request, response);
         }*/
 
-            request.getRequestDispatcher("eliminareserva.jsp").forward(request, response);
-       
+            request.getRequestDispatcher("modreserva.jsp").forward(request, response);
+        
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
