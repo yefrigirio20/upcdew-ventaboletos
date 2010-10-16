@@ -17,7 +17,7 @@
 
         <h2>MODIFICACION RESERVA</h2>
       <div id="respond">
-        <form action="modreserva" method="post">
+        <form action="buscarreserva" method="post">
           <p>
 	    <label for="name"><small>Ticket</small></label>
             <input type="text" name="name" id="name" value="" size="22" />
@@ -51,6 +51,8 @@
           <input type="submit" value="Buscar" name="buscar" />
           <input type="submit" value="Limpiar Campos" name="limpiar" />
             </p><br></br>
+        </form>
+          <form action="modreserva" method="post">
 
 <table border="1" style="width: 100%">
   	<caption></caption>
@@ -99,8 +101,7 @@
   </tbody>
 </table>
 
-        </form>
-    <form action="modreserva" method="post">
+        
 
           <input type="submit" value="Modificar" name="modificar" />
           <input type="submit" value="Borrar Reserva" name="borrar" />
