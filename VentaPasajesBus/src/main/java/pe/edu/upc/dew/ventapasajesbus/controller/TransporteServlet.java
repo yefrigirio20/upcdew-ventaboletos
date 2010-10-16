@@ -23,7 +23,8 @@ import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
  * @author u814354
  */
 public class TransporteServlet extends HttpServlet {
-List<Ruta> rutas = new ArrayList<Ruta>();
+    List<Ruta> rutas;
+    String mensaje;
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
@@ -151,10 +152,16 @@ List<Ruta> rutas = new ArrayList<Ruta>();
             }
         }
         HttpSession session = request.getSession();
-        // Asigna tarifa a la ruta
-        rutas=(List<Ruta>) request.getSession().getAttribute("rutas");
-        ruta.setTarifa(Double.parseDouble(tarifa));
-        //ruta.setTarifa(20.0);
+        if(request.getSession().getAttribute("rutas") == null){
+            rutas = new ArrayList<Ruta>();
+            mensaje = "nulo";
+        } else{
+            rutas=(List<Ruta>) session.getAttribute("rutas");
+            mensaje = "con datos "+rutas.size();
+        }
+        
+        //ruta.setTarifa(Double.parseDouble(tarifa));
+        ruta.setTarifa(20.0);
 
 
         // Agregamos a la lista de usuarios cada usuario creado
@@ -164,7 +171,8 @@ List<Ruta> rutas = new ArrayList<Ruta>();
        //Pintando la grilla
      
        session.setAttribute("rutas", rutas);
-       session.setAttribute("ruta", ruta);
+       session.setAttribute("mensaje", mensaje);
+       
        
 
 request.getRequestDispatcher("ruta.jsp").forward(request, response);
