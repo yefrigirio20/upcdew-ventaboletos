@@ -19,7 +19,13 @@ public class UsuarioSeviceImpl implements UsuarioService{
         Usuario usuario = new Usuario();
         usuario.setUsername(username);
         usuario.setPassword(password);
-       /* usuario.setRol(password)
+        if(username.equals("transportista")){
+            usuario.setRol("T");
+        }else if(username.equals("ejecutiva")){
+            usuario.setRol("E");
+        }
+
+       /*
         usuario.getRoles().add(new Rol("admin","Rol administrador"));
         usuario.getRoles().add(new Rol("operador","Rol operador"));
         usuario.getRoles().add(new Rol("supervisor", "Rol supervisor")); */
