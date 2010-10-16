@@ -17,7 +17,7 @@
 
         <h2>MODIFICACION RESERVA</h2>
       <div id="respond">
-        <form action="#" method="post">
+        <form action="modreserva" method="post">
           <p>
 	    <label for="name"><small>Ticket</small></label>
             <input type="text" name="name" id="name" value="" size="22" />
@@ -47,6 +47,10 @@
 	    <label for="name"><small>Llegada</small></label>
             <input type="text" name="name" id="name" value="" size="22" />
           </p>
+            <p>
+          <input type="submit" value="Buscar" name="buscar" />
+          <input type="submit" value="Borrar Datos" name="borrar" />
+            </p><br></br>
 
 <table border="1" style="width: 100%">
   	<caption></caption>
@@ -57,24 +61,30 @@
   	<col />
   	<tbody>
     	<tr>
-      	<td><strong>Empresa de Transporte</strong></td>
+      	<td><strong>Numero de Ticket</strong></td>
+      	<td><strong>Nombre de Empresa</strong></td>
       	<td><strong>Origen</strong></td>
       	<td><strong>Destino</strong></td>
+        <td><strong>Tarifa S/.</strong></td>
       	<td><strong>Salida</strong></td>
       	<td><strong>Llegada</strong></td>
-        <td><strong>Disponibilidad</strong></td>
-      	<td><strong>Tarifa</strong></td>
+      	<td><strong>Capacidad</strong></td>
+      	<td><strong>Numero de Asiento</strong></td>
+    </tr>
+    <tr>
+      <td>${datos[0]}</td>
+      <td>${datos[1]}</td>
+      <td>${datos[2]}</td>
+      <td>${datos[3]}</td>
+      <td>${datos[4]}</td>
+      <td>${datos[5]}</td>
+      <td>${datos[6]}</td>
+      <td>${datos[7]}</td>
+      <td>${datos[8]}</td>
     </tr>
     <tr>
       <td></td>
       <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
       <td></td>
       <td></td>
       <td></td>
