@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author jdamian
  */
-public class ModificarReserva extends HttpServlet {
+public class BuscarReserva extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -36,7 +36,7 @@ public class ModificarReserva extends HttpServlet {
             request.getRequestDispatcher("eliminareserva.jsp").forward(request, response);
         }*/
 
-        request.getRequestDispatcher("eliminareserva.jsp").forward(request, response);
+        request.getRequestDispatcher("modreserva.jsp").forward(request, response);
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
