@@ -1,4 +1,4 @@
-<%@page %> contentType="text/html" pageEncoding="windows-1252"%>
+<%@page  contentType="text/html" pageEncoding="windows-1252"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
@@ -151,9 +151,9 @@
       <td>
      <c:forEach var="ruta" items="${rutas}">
         <tr>
-            <td>${ruta.ciudadOrigen.nombre} </td>
-            <td>${ruta.ciudadDestino.nombre}</td>
-            <td>${ruta.tarifa} </td>
+            <td>${ruta.ciudadOrigen.nombre} ${mensaje} </td>
+            <td>${ruta.ciudadDestino.nombre} a</td>
+            <td>${ruta.tarifa} 5</td>
             <td>${ruta.bus.placa}</td>
         </tr>
     </c:forEach>
