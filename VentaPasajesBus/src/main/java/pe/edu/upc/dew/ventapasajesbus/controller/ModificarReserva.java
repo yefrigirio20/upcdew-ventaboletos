@@ -30,6 +30,12 @@ public class ModificarReserva extends HttpServlet {
         HttpSession session = request.getSession();
         String datos[]= {"12345","Empresa1","Lima","Chiclayo","50.00","29 Octubre","30 Octubre","44","23"};
         session.setAttribute("datos", datos);
+        String accion = request.getParameter("borrar");
+        
+        if(accion.equals("Borrar Reservas")){
+            request.getRequestDispatcher("eliminareserva.jsp").forward(request, response);
+        }
+
         request.getRequestDispatcher("modreserva.jsp").forward(request, response);
     } 
 
