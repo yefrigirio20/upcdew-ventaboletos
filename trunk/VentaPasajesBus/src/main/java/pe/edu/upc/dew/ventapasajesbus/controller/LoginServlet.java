@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import pe.edu.upc.dew.ventapasajesbus.model.Usuario;
 
 
@@ -43,6 +44,9 @@ public class LoginServlet extends HttpServlet{
 
         for (int i=0; i<usuarios.size(); i++) {
             if (usuarios.get(i).getUsername().equals(username)) {
+                 // Setear el model en el sesion
+                HttpSession session = req.getSession();
+                session.setAttribute("usuario", usuarios.get(i));
                 if (usuarios.get(i).getRol().equals("E")) {
                     req.getRequestDispatcher("reserva.jsp").forward(req, resp);
                 } else {

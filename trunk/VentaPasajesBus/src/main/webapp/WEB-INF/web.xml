@@ -9,6 +9,10 @@
         <servlet-name>ServletController</servlet-name>
         <servlet-class>pe.edu.upc.dew.ventapasajesbus.controller.ServletController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TransporteServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.ventapasajesbus.controller.TransporteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -16,6 +20,10 @@
     <servlet-mapping>
         <servlet-name>ServletController</servlet-name>
         <url-pattern>/controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TransporteServlet</servlet-name>
+        <url-pattern>/TransporteServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
