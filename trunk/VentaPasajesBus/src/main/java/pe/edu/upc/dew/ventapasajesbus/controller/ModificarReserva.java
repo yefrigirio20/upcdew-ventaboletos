@@ -32,9 +32,9 @@ public class ModificarReserva extends HttpServlet {
         session.setAttribute("datos", datos);
         String accion = request.getParameter("borrar");
         
-        if(accion.equals("Borrar Reservas")){
+        /*if(accion.equals("Borrar Reservas")){
             request.getRequestDispatcher("eliminareserva.jsp").forward(request, response);
-        }
+        }*/
 
         request.getRequestDispatcher("modreserva.jsp").forward(request, response);
     } 
