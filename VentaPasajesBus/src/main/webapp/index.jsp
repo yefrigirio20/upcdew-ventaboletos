@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
@@ -95,6 +96,16 @@
             <p><strong>Indonectetus facilis leo nibh.</strong></p>
             <p>Nullamlacus dui ipsum cons eque loborttis non euis que morbi penas dapibulum orna.</p>
             <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+            <p>
+                <table border="1">
+            <c:forEach var="rol" items="${usuarios}">
+                <tr>
+                    <td>${rol.username} ${test}</td>
+                    <td>${rol.rol}</td>
+                </tr>
+            </c:forEach>
+        </table>
+            </p>
           </li>
         </ul>
       </div>
