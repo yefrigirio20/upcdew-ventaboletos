@@ -49,7 +49,7 @@
           </p>
             <p>
           <input type="submit" value="Buscar" name="buscar" />
-          <input type="submit" value="Borrar Datos" name="borrar" />
+          <input type="submit" value="Limpiar Campos" name="limpiar" />
             </p><br></br>
 
 <table border="1" style="width: 100%">
@@ -61,7 +61,8 @@
   	<col />
   	<tbody>
     	<tr>
-      	<td><strong>Numero de Ticket</strong></td>
+      	<td><strong>Seleccionar</strong></td>
+        <td><strong>Numero de Ticket</strong></td>
       	<td><strong>Nombre de Empresa</strong></td>
       	<td><strong>Origen</strong></td>
       	<td><strong>Destino</strong></td>
@@ -72,6 +73,7 @@
       	<td><strong>Numero de Asiento</strong></td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="select" value="ON" /></td>
       <td>${datos[0]}</td>
       <td>${datos[1]}</td>
       <td>${datos[2]}</td>
@@ -83,6 +85,7 @@
       <td>${datos[8]}</td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="select" value="ON" /></td>
       <td></td>
       <td></td>
       <td></td>
@@ -97,6 +100,12 @@
 </table>
 
         </form>
+    <form action="modreserva" method="post">
+
+          <input type="submit" value="Modificar" name="modificar" />
+          <input type="submit" value="Borrar Reserva" name="borrar" />
+            <br></br>
+            </form>
       </div>
     </div>
 
