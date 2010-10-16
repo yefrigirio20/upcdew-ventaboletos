@@ -26,7 +26,7 @@
     </servlet>
     <servlet>
         <servlet-name>BuscarReserva</servlet-name>
-        <servlet-class>pe.edu.upc.dew.ventapasajesbus.controller.ModificarReserva</servlet-class>
+        <servlet-class>pe.edu.upc.dew.ventapasajesbus.controller.BuscarReserva</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
