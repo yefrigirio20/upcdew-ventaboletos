@@ -28,11 +28,11 @@
   <div id="topnav">
     <ul>
       <li class="active"><a href="index.jsp">INICIO</a><span>página principal</span></li>
-      <li><a href="ruta.jsp">RUTAS</a><span>Ingreso rutas</span></li>
-      <li><a href="reserva.jsp">RESERVAS</a><span>Reservas en línea</span></li>
-      <li><a href="modreserva.jsp">MODIFICAR RESERVA</a><span>Modificar reservas</span></li>
-      <li><a href="conventa.jsp">CONSULTA VENTAS</a><span>Consultar ventas</span></li>
-      <li><a href="conreserva.jsp">CONSULTA RERSERVAS</a><span>consultar reservas</span></li>
+      <li><c:if test="${usuario != null}"><a href="ruta.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>RUTAS</a><span>Ingreso rutas </span></li>
+      <li><c:if test="${usuario != null}"><a href="reserva.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>RESERVAS</a><span>Reservas en línea</span></li>
+      <li><c:if test="${usuario != null}"><a href="modreserva.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>MODIFICAR RESERVA</a><span>Modificar reservas</span></li>
+      <li><c:if test="${usuario != null}"><a href="conventa.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>CONSULTA VENTAS</a><span>Consultar ventas</span></li>
+      <li><c:if test="${usuario != null}"><a href="conreserva.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>CONSULTA RERSERVAS</a><span>consultar reservas</span></li>
 
     </ul>
     <br class="clear" />

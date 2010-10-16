@@ -14,7 +14,6 @@
 <body id="top">
 <%@include file="header.jsp" %>
 
-</div>
 <!-- ####################################################################################################### -->
 <div class="wrapper col4">
   <div id="featured_slide">
@@ -38,7 +37,7 @@
 <div class="wrapper col5">
   <div id="container">
     <div id="content">
-      <h2>About This Free CSS Template</h2>
+        <h2>About This Free CSS Template</h2><c:if test="${usuario != null}">usuario logeado</c:if>
       <img class="imgl" src="images/demo/ima0011.jpg" alt="" width="125" height="125" />
       <p><strong>Indonectetus facilis leo nibh</strong></p>
       <p>This is a W3C standards compliant Open Source free CSS template from <a href="http://www.os-templates.com/">OS Templates</a>.</p>

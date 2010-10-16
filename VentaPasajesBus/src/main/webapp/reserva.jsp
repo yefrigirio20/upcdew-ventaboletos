@@ -16,19 +16,39 @@
 
 <h2>RESERVAS</h2>
       <div id="respond">
-        <form action="#" method="post">
-          <p>
+        <form action="reserva" method="post">
+          <!-- <p>
 	    <label for="name"><small>Empresa de Transporte</small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
-          </p>
-
-          <p>
+            <select name="empresa">
+                <option>Empresa1</option>
+                <option>Empresa2</option>
+                <option>Empresa3</option>
+                <option>Empresa4</option>
+            </select>
+          </p> -->
+            <p>
 	    <label for="name"><small>Origen</small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+             <select name="origen">
+                <option>Lima</option>
+                <option>Cuzco</option>
+                <option>Arequipa</option>
+                <option>Trujillo</option>
+            </select>
+
           </p>
           <p>
 	    <label for="name"><small>Destino</small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+            <select name="destino">
+                <option>Trujillo</option>
+                <option>Cuzco</option>
+                <option>Arequipa</option>
+                <option>Lima</option>
+            </select>
+          </p>
+          
+            <p>
+	    <label for="name"><small>Fecha</small></label>
+            <input type="text" name="fecha" id="name" value="" size="22" />
           </p>
 
 <table border="1" style="width: 100%">
@@ -40,24 +60,63 @@
   	<col />
   	<tbody>
     	<tr>
+            <td><strong>Seleccionar</strong></td>
       	<td><strong>Empresa de Transporte</strong></td>
       	<td><strong>Origen</strong></td>
       	<td><strong>Destino</strong></td>
+        <td><strong>Tarifa S/.</strong></td>
       	<td><strong>Salida</strong></td>
       	<td><strong>Llegada</strong></td>
       	<td><strong>Capacidad</strong></td>
       	<td><strong>Disponibles</strong></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+        <td><input type="checkbox" name="select" value="ON" /></td>
+      <td>Empresa1</td>
+      <td>Lima</td>
+      <td>Trujillo</td>
+      <td>50</td>
+      <td>Lunes 29</td>
+      <td>Martes 30</td>
+      <td>44 pasajeros</td>
+      <td>10</td>
     </tr>
     <tr>
+        <td><input type="checkbox" name="select" value="ON" /></td>
+      <td>Empresa2</td>
+      <td>Lima</td>
+      <td>Trujillo</td>
+      <td>50</td>
+      <td>Lunes 29</td>
+      <td>Martes 30</td>
+      <td>44 pasajeros</td>
+      <td>10</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="select" value="ON" /></td>
+      <td>Empresa2</td>
+      <td>Lima</td>
+      <td>Trujillo</td>
+      <td>50</td>
+      <td>Lunes 29</td>
+      <td>Martes 30</td>
+      <td>44 pasajeros</td>
+      <td>10</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="select" value="ON" /></td>
+      <td>Empresa2</td>
+      <td>Lima</td>
+      <td>Trujillo</td>
+      <td>50</td>
+      <td>Lunes 29</td>
+      <td>Martes 30</td>
+      <td>44 pasajeros</td>
+      <td>10</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="select" value="ON" /></td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
@@ -69,28 +128,32 @@
   </tbody>
 </table>
 	  <p>
-	    <label for="name"><small>Nombre Pasajero</small></label>
+	    <label for="name"><small>Nombre Pasajero: </small></label>
             <input type="text" name="name" id="name" value="" size="22" />
           </p>
           <p>
-	    <label for="name"><small>Tarifa</small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+	    <label for="name"><small>DNI: </small></label>
+            <input type="text" name="dni" id="name" value="" size="22" />
           </p>
           <p>
-	    <label for="name"><small>Origen</small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+	    <label for="name"><small>Telefono: </small></label>
+            <input type="text" name="telefono" id="name" value="" size="22" />
           </p>
           <p>
-	    <label for="name"><small>Destino</small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+	    <label for="name"><small>Direccion</small></label>
+            <input type="text" name="direccion" id="name" value="" size="22" />
           </p>
-          <p>
+          <!-- <p>
 	    <label for="name"><small>Salida</small></label>
             <input type="text" name="name" id="name" value="" size="22" />
           </p>
           <p>
 	    <label for="name"><small>Llegada</small></label>
             <input type="text" name="name" id="name" value="" size="22" />
+          </p>-->
+            <p>
+          <input type="submit" value="reservar" name="Reservar" />
+          <input type="submit" value="borrar" name="Borrar Datos" />
           </p>
 
 
