@@ -94,12 +94,12 @@
       <td>
      <c:forEach var="ruta" items="${rutas}">
         <tr>
-            <td></td>
+            <td>${ruta.empresaTransporte.nombre}</td>
             <td>${ruta.ciudadOrigen.nombre}</td>
             <td>${ruta.ciudadDestino.nombre}</td>
+            <td>${ruta.fechaHoraSalida}</td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td>${ruta.fechaHoraLlegada}</td>
             <td></td>
             <td>${ruta.tarifa}</td>
             <td>${ruta.bus.placa}</td>

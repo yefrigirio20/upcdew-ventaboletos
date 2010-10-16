@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import pe.edu.upc.dew.ventapasajesbus.model.Bus;
 import pe.edu.upc.dew.ventapasajesbus.model.Ciudad;
+import pe.edu.upc.dew.ventapasajesbus.model.EmpresaTransporte;
 import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
 
 /**
@@ -91,17 +92,40 @@ public class TransporteServlet extends HttpServlet {
         String tarifa = request.getParameter("tarifa");
         String bus = request.getParameter("bus");
 
-         // Añadimos buses nuevos
-        Bus bus4= new Bus();
-        bus4.setPlaca("KXT-1254");
+        // Añadimos empresas de transporte
+        EmpresaTransporte empresaTransporte1 = new EmpresaTransporte();
+        empresaTransporte1.setNombre("Buses Unidos");
+
+        EmpresaTransporte empresaTransporte2 = new EmpresaTransporte();
+        empresaTransporte2.setNombre("Mi Bus");
+
+        EmpresaTransporte empresaTransporte3 = new EmpresaTransporte();
+        empresaTransporte3.setNombre("Transporte Veloz");
+
+        // Añadimos a la lista de Empresas de transporte cada empresa de transporte
+        ArrayList<EmpresaTransporte> empresasTransporte = new ArrayList<EmpresaTransporte>();
+        empresasTransporte.add(empresaTransporte1);
+        empresasTransporte.add(empresaTransporte2);
+        empresasTransporte.add(empresaTransporte3);
+
+        // Añadimos buses nuevos
         Bus bus1= new Bus();
         bus1.setPlaca("AAA-9898");
         Bus bus2= new Bus();
         bus2.setPlaca("BBB-6565");
         Bus bus3= new Bus();
         bus3.setPlaca("CCC-3232");
+        Bus bus4= new Bus();
+        bus4.setPlaca("KXT-1254");
 
-         // Añadimos ciudades nuevas
+        // Agregamos a la lista de buses cada bus creado
+        ArrayList<Bus> buses = new ArrayList<Bus>();
+        buses.add(bus1);
+        buses.add(bus2);
+        buses.add(bus3);
+        buses.add(bus4);
+
+        // Añadimos ciudades nuevas
         Ciudad ciudad = new Ciudad();
         ciudad.setNombre("Lima");
 
@@ -121,20 +145,16 @@ public class TransporteServlet extends HttpServlet {
         ciudades.add(ciudad2);
         ciudades.add(ciudad3);
 
-        // Agregamos a la lista de buses cada bus creado
-        ArrayList<Bus> buses = new ArrayList<Bus>();
-        buses.add(bus4);
-        buses.add(bus1);
-        buses.add(bus2);
-        buses.add(bus3);
-
         // Añadimos una nueva ruta
         Ruta ruta = new Ruta();
+
+        /* Asociamos la empresa de transporte. Por el momento es la primera
+           hasta tener más usuarios */
+        ruta.setEmpresaTransporte(empresaTransporte1);
 
         // Buscamos la ciudad origen
         for (int i=0; i<ciudades.size(); i++) {
             if (ciudades.get(i).getNombre().equals(origen)) {
-                 // Setear el model en el sesion
                 ruta.setCiudadOrigen(ciudades.get(i));
                 
             }
@@ -143,7 +163,6 @@ public class TransporteServlet extends HttpServlet {
         // Buscamos la ciudad destino
         for (int i=0; i<ciudades.size(); i++) {
             if (ciudades.get(i).getNombre().equals(destino)) {
-                 // Setear el model en el sesion
                 ruta.setCiudadDestino(ciudades.get(i));
 
             }
@@ -152,7 +171,6 @@ public class TransporteServlet extends HttpServlet {
         // Buscamos el bus elegido
         for (int i=0; i<buses.size(); i++) {
             if (buses.get(i).getPlaca().equals(bus)) {
-                 // Setear el model en el sesion
                 ruta.setBus(buses.get(i));
 
             }
@@ -163,7 +181,7 @@ public class TransporteServlet extends HttpServlet {
         Date fecha1;
         try {
             fecha1 = df.parse(fechasalida);
-            ruta.setFechaHoraLlegada(fecha1);
+            ruta.setFechaHoraSalida(fecha1);
         } catch (ParseException ex) {
             Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -171,13 +189,14 @@ public class TransporteServlet extends HttpServlet {
         // Grabamos la fecha y hora destino
         Date fecha2;
         try {
-            fecha2 = df.parse(fechasalida);
+            fecha2 = df.parse(fechallegada);
             ruta.setFechaHoraLlegada(fecha2);
         } catch (ParseException ex) {
             Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        
+
+
 
         // Grabamos la tarifa
         ruta.setTarifa(Double.parseDouble(tarifa));
