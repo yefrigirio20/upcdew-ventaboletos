@@ -47,12 +47,12 @@
           <p>
 	    <label for="name"><small>Fecha y Hora de Salida</small></label>
             <input type="text" name="fechasalida" id="name" value="" size="22" />
-            <input type="text" name="horasalida" id="name" value="" size="5" />
+            
           </p>
           <p>
 	    <label for="name"><small>Fecha y Hora de Llegada</small></label>
             <input type="text" name="fechallegada" id="name" value="" size="22" />
-            <input type="text" name="horallegada" id="name" value="" size="5" />
+            
           </p>
           <p>
 	    <label for="name"><small>Buses Asignados</small></label>
