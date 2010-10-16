@@ -85,6 +85,7 @@ public class TransporteServlet extends HttpServlet {
         String horallegada = request.getParameter("horallegada");
         String tarifa = request.getParameter("tarifa");
         String bus = request.getParameter("bus");
+
          // Añadimos buses nuevos
         Bus bus4= new Bus();
         bus4.setPlaca("KXT-1254");
@@ -95,9 +96,7 @@ public class TransporteServlet extends HttpServlet {
         Bus bus3= new Bus();
         bus3.setPlaca("CCC-3232");
 
-
-
-         // Añadimos usuarios nuevos
+         // Añadimos ciudades nuevas
         Ciudad ciudad = new Ciudad();
         ciudad.setNombre("Lima");
 
@@ -110,25 +109,25 @@ public class TransporteServlet extends HttpServlet {
         Ciudad ciudad3 = new Ciudad();
         ciudad3.setNombre("Trujillo");
 
-        // Agregamos a la lista de usuarios cada usuario creado
+        // Agregamos a la lista de ciudades cada ciudad creada
         ArrayList<Ciudad> ciudades = new ArrayList<Ciudad>();
         ciudades.add(ciudad);
         ciudades.add(ciudad1);
         ciudades.add(ciudad2);
         ciudades.add(ciudad3);
 
-          // Agregamos a la lista de buses
+        // Agregamos a la lista de buses cada bus creado
         ArrayList<Bus> buses = new ArrayList<Bus>();
         buses.add(bus4);
         buses.add(bus1);
         buses.add(bus2);
         buses.add(bus3);
 
-
-         // Añadimos usuarios nuevos
+        // Añadimos una nueva ruta
         Ruta ruta = new Ruta();
 
-         for (int i=0; i<ciudades.size(); i++) {
+        // Buscamos la ciudad origen
+        for (int i=0; i<ciudades.size(); i++) {
             if (ciudades.get(i).getNombre().equals(origen)) {
                  // Setear el model en el sesion
                 ruta.setCiudadOrigen(ciudades.get(i));
@@ -136,7 +135,8 @@ public class TransporteServlet extends HttpServlet {
             }
         }
 
-         for (int i=0; i<ciudades.size(); i++) {
+        // Buscamos la ciudad destino
+        for (int i=0; i<ciudades.size(); i++) {
             if (ciudades.get(i).getNombre().equals(destino)) {
                  // Setear el model en el sesion
                 ruta.setCiudadDestino(ciudades.get(i));
@@ -144,13 +144,19 @@ public class TransporteServlet extends HttpServlet {
             }
         }
 
-         for (int i=0; i<buses.size(); i++) {
+        // Buscamos el bus elegido
+        for (int i=0; i<buses.size(); i++) {
             if (buses.get(i).getPlaca().equals(bus)) {
                  // Setear el model en el sesion
                 ruta.setBus(buses.get(i));
 
             }
         }
+
+        // Grabamos la tarifa
+        ruta.setTarifa(Double.parseDouble(tarifa));
+
+
         HttpSession session = request.getSession();
         if(request.getSession().getAttribute("rutas") == null){
             rutas = new ArrayList<Ruta>();
@@ -160,7 +166,6 @@ public class TransporteServlet extends HttpServlet {
             mensaje = "con datos "+rutas.size();
         }
         
-        ruta.setTarifa(Double.parseDouble(tarifa));
         
 
 
