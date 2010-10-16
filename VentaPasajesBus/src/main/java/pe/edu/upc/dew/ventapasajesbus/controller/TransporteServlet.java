@@ -160,8 +160,8 @@ public class TransporteServlet extends HttpServlet {
             mensaje = "con datos "+rutas.size();
         }
         
-        //ruta.setTarifa(Double.parseDouble(tarifa));
-        ruta.setTarifa(20.0);
+        ruta.setTarifa(Double.parseDouble(tarifa));
+        
 
 
         // Agregamos a la lista de usuarios cada usuario creado
