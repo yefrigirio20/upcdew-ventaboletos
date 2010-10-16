@@ -6,6 +6,7 @@
 package pe.edu.upc.dew.ventapasajesbus.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author jdamian
  */
-public class ReservaServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -27,14 +28,10 @@ public class ReservaServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        String cliente[] = {request.getParameter("nombre"),
-                            request.getParameter("dni"),
-                            request.getParameter("telefono"),
-                            request.getParameter("direccion")};
-        session.setAttribute("cliente", cliente);
 
-        request.getRequestDispatcher("confirmareserva.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        session.invalidate();
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
