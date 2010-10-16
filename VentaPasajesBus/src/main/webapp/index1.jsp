@@ -24,7 +24,7 @@
 <div class="wrapper col5">
   <div id="container">
     <div id="content">
-      <h2>About This Free CSS Template</h2>
+      <h2>About This Free CSS Template test</h2>
       <img class="imgl" src="images/demo/ima0011.jpg" alt="" width="125" height="125" />
       <p><strong>Indonectetus facilis leo nibh</strong></p>
       <p>This is a W3C standards compliant Open Source free CSS template from <a href="http://www.os-templates.com/">OS Templates</a>.</p>
