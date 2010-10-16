@@ -20,20 +20,19 @@
         <form action="conreserva" method="post">
           <p>
 	    <label for="name"><small>Empresa de Transporte</small></label>
-            <select name="buses">
-                <option>Empresa1</option>
-                <option>Empresa2</option>
-                <option>Empresa3</option>
-                <option>Empresa4</option>
+            <select name="empresaTransporte">
+                <option>Buses Unidos</option>
+                <option>Mi Bus</option>
+                <option>Transporte Veloz</option>
             </select>
           </p>
 
           <p>
 	    <label for="name"><small>Rango de Fechas</small></label>
             <label for="name"><small>Del</small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+            <input type="text" name="desde" id="name" value="" size="22" />
             <label for="name"><small>Al</small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+            <input type="text" name="hasta" id="name" value="" size="22" />
           </p>
             <p>
           <input type="submit" value="Consultar" name="consultar" />
@@ -59,16 +58,19 @@
       	<td><strong>Disponibilidad</strong></td>
     </tr>
     <tr>
-        <td>1</td>
-      <td>${datos[0]}</td>
-      <td>${datos[1]}</td>
-      <td>${datos[2]}</td>
-      <td>${datos[3]}</td>
-      <td>${datos[4]}</td>
-      <td>${datos[5]}</td>
-      <td>${datos[6]}</td>
-      <td>${datos[7]}</td>
-      
+     <c:forEach var="ruta" items="${rutasFiltro}">
+        <tr>
+            <td></td>
+            <td>${ruta.empresaTransporte.nombre}</td>
+            <td>${ruta.ciudadOrigen.nombre}</td>
+            <td>${ruta.ciudadDestino.nombre}</td>
+            <td>${ruta.tarifa}</td>
+            <td>${ruta.fechaHoraSalida}</td>
+            <td>${ruta.fechaHoraLlegada}</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </c:forEach>
     </tr>
     <tr>
       <td></td>
