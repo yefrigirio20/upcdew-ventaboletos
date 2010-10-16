@@ -7,8 +7,13 @@ package pe.edu.upc.dew.ventapasajesbus.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -152,6 +157,27 @@ public class TransporteServlet extends HttpServlet {
 
             }
         }
+
+        // Grabamos la fecha y hora origen
+        SimpleDateFormat df = new SimpleDateFormat ("dd/mm/yyyy hh:mm");
+        Date fecha1;
+        try {
+            fecha1 = df.parse(fechasalida);
+            ruta.setFechaHoraLlegada(fecha1);
+        } catch (ParseException ex) {
+            Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        // Grabamos la fecha y hora destino
+        Date fecha2;
+        try {
+            fecha2 = df.parse(fechasalida);
+            ruta.setFechaHoraLlegada(fecha2);
+        } catch (ParseException ex) {
+            Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        
 
         // Grabamos la tarifa
         ruta.setTarifa(Double.parseDouble(tarifa));
