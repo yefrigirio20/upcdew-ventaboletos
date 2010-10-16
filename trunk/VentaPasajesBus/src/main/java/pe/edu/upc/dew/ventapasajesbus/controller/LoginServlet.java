@@ -21,6 +21,6 @@ public class LoginServlet extends HttpServlet{
     protected void  doPost(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
        //Llamar el model
        //Recuperar parametros
-       req.getRequestDispatcher("modreserva.html").forward(req, resp);
+       req.getRequestDispatcher("modreserva.jsp").forward(req, resp);
     }
 }
