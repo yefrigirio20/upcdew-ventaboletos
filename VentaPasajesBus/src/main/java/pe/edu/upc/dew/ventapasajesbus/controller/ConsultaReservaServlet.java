@@ -148,7 +148,7 @@ public class ConsultaReservaServlet extends HttpServlet {
         Date fecha2;
         try {
             fecha2 = df.parse("16/10/2010 05:00");
-            ruta1.setFechaHoraSalida(fecha2);
+            ruta1.setFechaHoraLlegada(fecha2);
         } catch (ParseException ex) {
             Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -165,15 +165,15 @@ public class ConsultaReservaServlet extends HttpServlet {
         ruta2.setTarifa(61.00);
 
         try {
-            fecha1 = df.parse("16/10/2010 10:00");
+            fecha1 = df.parse("18/10/2010 10:00");
             ruta2.setFechaHoraSalida(fecha1);
         } catch (ParseException ex) {
             Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         try {
-            fecha2 = df.parse("16/10/2010 12:00");
-            ruta2.setFechaHoraSalida(fecha2);
+            fecha2 = df.parse("18/10/2010 12:00");
+            ruta2.setFechaHoraLlegada(fecha2);
         } catch (ParseException ex) {
             Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -190,15 +190,15 @@ public class ConsultaReservaServlet extends HttpServlet {
         ruta3.setTarifa(25.00);
 
         try {
-            fecha1 = df.parse("16/10/2010 16:00");
+            fecha1 = df.parse("20/10/2010 16:00");
             ruta3.setFechaHoraSalida(fecha1);
         } catch (ParseException ex) {
             Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         try {
-            fecha2 = df.parse("16/10/2010 18:00");
-            ruta3.setFechaHoraSalida(fecha2);
+            fecha2 = df.parse("20/10/2010 18:00");
+            ruta3.setFechaHoraLlegada(fecha2);
         } catch (ParseException ex) {
             Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -233,21 +233,23 @@ public class ConsultaReservaServlet extends HttpServlet {
         }
 
         // Buscamos las rutas coincidentes según la fecha desde y hasta consultadas
-/*        for (int i=0; i<rutasExistentes.size(); i++) {
-            if ((rutasExistentes.get(i).getFechaHoraSalida().after(fecha1)) && (rutasExistentes.get(i).getFechaHoraSalida().before(fecha2))) {
+        for (int i=0; i<rutasExistentes.size(); i++) {
+            if ((rutasExistentes.get(i).getFechaHoraSalida().after(fecha1)) && (rutasExistentes.get(i).getFechaHoraLlegada().before(fecha2))) {
                 // Agregamos la ruta si coincide en las fechas desde y hasta
                 rutasFiltro.add(rutasExistentes.get(i));
             }
         }
-*/
-        for (int i=0; i<rutasExistentes.size(); i++) {
-                rutasFiltro.add(rutasExistentes.get(i));
-        }
 
+/*        for (int i=0; i<rutasExistentes.size(); i++) {
+            if (fecha1.before(fecha2)) {
+                rutasFiltro.add(rutasExistentes.get(i));
+            }
+        } */
 
        // Enviamos el atributo a la sesión
        HttpSession session = request.getSession();
        session.setAttribute("rutasFiltro", rutasFiltro);
+       session.setAttribute("desde_", desde);
 
        // request.getRequestDispatcher("ruta.jsp").forward(request, response);
        request.getRequestDispatcher("conreserva.jsp").forward(request, response);

@@ -19,7 +19,7 @@
       <div id="respond">
         <form action="conreserva" method="post">
           <p>
-	    <label for="name"><small>Empresa de Transporte</small></label>
+	    <label for="name"><small>Empresa de Transporte "${desde_}" </small></label>
             <select name="empresaTransporte">
                 <option>Buses Unidos</option>
                 <option>Mi Bus</option>
@@ -67,7 +67,7 @@
             <td>${ruta.tarifa}</td>
             <td>${ruta.fechaHoraSalida}</td>
             <td>${ruta.fechaHoraLlegada}</td>
-            <td></td>
+            <td>40</td>
             <td></td>
         </tr>
     </c:forEach>
