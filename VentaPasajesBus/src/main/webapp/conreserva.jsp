@@ -17,10 +17,15 @@
 
         <h2>CONSULTA DE RESERVAS POR EMPRESA DE TRANSPORTE</h2>
       <div id="respond">
-        <form action="#" method="post">
+        <form action="conreserva" method="post">
           <p>
 	    <label for="name"><small>Empresa de Transporte</small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+            <select name="buses">
+                <option>Empresa1</option>
+                <option>Empresa2</option>
+                <option>Empresa3</option>
+                <option>Empresa4</option>
+            </select>
           </p>
 
           <p>
@@ -29,6 +34,9 @@
             <input type="text" name="name" id="name" value="" size="22" />
             <label for="name"><small>Al</small></label>
             <input type="text" name="name" id="name" value="" size="22" />
+          </p>
+            <p>
+          <input type="submit" value="Consultar" name="consultar" />
           </p>
 
 	<table border="1" style="width: 100%">
@@ -40,22 +48,27 @@
   	<col />
   	<tbody>
     	<tr>
-      	<td><strong>Empresa de Transporte</strong></td>
+      	<td><strong>Item</strong></td>
+        <td><strong>Empresa de Transporte</strong></td>
       	<td><strong>Origen</strong></td>
       	<td><strong>Destino</strong></td>
+        <td><strong>Tarifa</strong></td>
       	<td><strong>Salida</strong></td>
       	<td><strong>Llegada</strong></td>
         <td><strong>Capacidad</strong></td>
       	<td><strong>Disponibilidad</strong></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+        <td>1</td>
+      <td>${datos[0]}</td>
+      <td>${datos[1]}</td>
+      <td>${datos[2]}</td>
+      <td>${datos[3]}</td>
+      <td>${datos[4]}</td>
+      <td>${datos[5]}</td>
+      <td>${datos[6]}</td>
+      <td>${datos[7]}</td>
+      
     </tr>
     <tr>
       <td></td>

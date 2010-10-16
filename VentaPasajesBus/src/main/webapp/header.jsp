@@ -31,7 +31,7 @@
       <li><c:if test="${usuario != null}"><a href="ruta.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>RUTAS</a><span>Ingreso rutas </span></li>
       <li><c:if test="${usuario != null}"><a href="reserva.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>RESERVAS</a><span>Reservas en línea</span></li>
       <li><c:if test="${usuario != null}"><a href="modreserva.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>MODIFICAR RESERVA</a><span>Modificar reservas</span></li>
-      <li><c:if test="${usuario != null}"><a href="conventa.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>CONSULTA VENTAS</a><span>Consultar ventas</span></li>
+      <!-- <li>CONSULTA VENTAS</a><span>Consultar ventas</span></li> -->
       <li><c:if test="${usuario != null}"><a href="conreserva.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>CONSULTA RERSERVAS</a><span>consultar reservas</span></li>
 
     </ul>
