@@ -7,18 +7,16 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import pe.edu.upc.dew.ventapasajesbus.model.Usuario;
 
-
 public final class CargarDatos implements ServletContextListener {
+
     ServletContext contexto;
     List<Usuario> usuarios;
-
 
     public void contextInitialized(ServletContextEvent sce) {
         contexto = sce.getServletContext();
 
         // Lista de usuarios
         usuarios = new ArrayList<Usuario>();
-
 
         // Añadimos usuarios nuevos
         Usuario user1 = new Usuario();
@@ -35,13 +33,11 @@ public final class CargarDatos implements ServletContextListener {
         usuarios.add(user1);
         usuarios.add(user2);
 
-        contexto.setAttribute("test", "mensaje de prueba"+usuarios.size());
+        contexto.setAttribute("test", "mensaje de prueba" + usuarios.size());
         contexto.setAttribute("usuarios", usuarios);
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
         contexto = sce.getServletContext();
     }
-
-
 }

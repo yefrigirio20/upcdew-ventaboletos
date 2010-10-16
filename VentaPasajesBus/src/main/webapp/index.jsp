@@ -95,17 +95,7 @@
           <li class="last"><img class="imgl" src="images/demo/ima0013.jpg" alt="" />
             <p><strong>Indonectetus facilis leo nibh.</strong></p>
             <p>Nullamlacus dui ipsum cons eque loborttis non euis que morbi penas dapibulum orna.</p>
-            <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
-            <p>
-                <table border="1">
-            <c:forEach var="rol" items="${usuarios}">
-                <tr>
-                    <td>${rol.username} ${test}</td>
-                    <td>${rol.rol}</td>
-                </tr>
-            </c:forEach>
-        </table>
-            </p>
+            <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>            
           </li>
         </ul>
       </div>
