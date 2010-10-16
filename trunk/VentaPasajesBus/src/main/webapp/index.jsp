@@ -37,7 +37,7 @@
 <div class="wrapper col5">
   <div id="container">
     <div id="content">
-        <h2>AFILIATE A LA RED DE BUSES A NIVEL NACIONAL</h2><c:if test="${usuario != null}">usuario logeado</c:if>
+        <h2>AFILIA TU EMPRESA A LA RED DE BUSES A NIVEL NACIONAL</h2><c:if test="${usuario != null}">usuario logeado</c:if>
       <img class="imgl" src="images/demo/ima0011.jpg" alt="" width="125" height="125" />
       <p><strong>Indonectetus facilis leo nibh</strong></p>
       <p>This is a W3C standards compliant Open Source free CSS template from <a href="http://www.os-templates.com/">OS Templates</a>.</p>
