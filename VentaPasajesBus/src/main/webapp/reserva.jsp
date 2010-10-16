@@ -129,7 +129,7 @@
 </table>
 	  <p>
 	    <label for="name"><small>Nombre Pasajero: </small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+            <input type="text" name="nombre" id="name" value="" size="22" />
           </p>
           <p>
 	    <label for="name"><small>DNI: </small></label>

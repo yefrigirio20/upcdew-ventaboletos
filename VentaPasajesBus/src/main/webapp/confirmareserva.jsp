@@ -16,7 +16,7 @@
 
 <h2>CONFIRMACION DE LAS RESERVAS DE PASAJES</h2>
       <div id="respond">
-        <form action="reserva" method="post">
+        <form action="reserva.jsp" method="post">
           <!-- <p>
 	    <label for="name"><small>Empresa de Transporte</small></label>
             <select name="empresa">
@@ -28,19 +28,19 @@
           </p> -->
             <p>
 	    <label for="name"><small>Nombre Pasajero: </small></label>
-            <input type="text" name="name" id="name" value="" size="22" />
+            ${cliente[0]}
           </p>
           <p>
 	    <label for="name"><small>DNI: </small></label>
-            <input type="text" name="dni" id="name" value="" size="22" />
+            ${cliente[1]}
           </p>
           <p>
 	    <label for="name"><small>Telefono: </small></label>
-            <input type="text" name="telefono" id="name" value="" size="22" />
+            ${cliente[2]}
           </p>
           <p>
 	    <label for="name"><small>Direccion</small></label>
-            <input type="text" name="direccion" id="name" value="" size="22" />
+            ${cliente[3]}
           </p>
             
             
