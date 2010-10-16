@@ -19,7 +19,7 @@
       <div id="respond">
         <form action="conreserva" method="post">
           <p>
-	    <label for="name"><small>Empresa de Transporte "${desde_}" </small></label>
+	    <label for="name"><small>Empresa de Transporte </small></label>
             <select name="empresaTransporte">
                 <option>Buses Unidos</option>
                 <option>Mi Bus</option>
