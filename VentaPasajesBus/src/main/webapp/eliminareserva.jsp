@@ -16,7 +16,7 @@
 
 <h2>CONFIRMACION DE ELIMINACION DE LAS RESERVAS DE PASAJES</h2>
       <div id="respond">
-        <form action="modreserva" method="post">
+        <form action="modreserva.jsp" method="post">
           <!-- <p>
 	    <label for="name"><small>Empresa de Transporte</small></label>
             <select name="empresa">
