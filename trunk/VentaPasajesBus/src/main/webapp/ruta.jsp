@@ -56,7 +56,7 @@
           </p>
           <p>
 	    <label for="name"><small>Buses Asignados</small></label>
-            <select name="buses">
+            <select name="bus">
                 <option>KXT-1254</option>
                 <option>AAA-9898</option>
                 <option>BBB-6565</option>

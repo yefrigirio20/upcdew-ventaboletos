@@ -195,9 +195,6 @@ public class TransporteServlet extends HttpServlet {
             Logger.getLogger(TransporteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-
-
-
         // Grabamos la tarifa
         ruta.setTarifa(Double.parseDouble(tarifa));
 
@@ -210,8 +207,6 @@ public class TransporteServlet extends HttpServlet {
             rutas=(List<Ruta>) session.getAttribute("rutas");
             mensaje = "con datos "+rutas.size();
         }
-        
-        
 
 
         // Agregamos a la lista de usuarios cada usuario creado
@@ -225,7 +220,7 @@ public class TransporteServlet extends HttpServlet {
        
        
 
-request.getRequestDispatcher("ruta.jsp").forward(request, response);
+       request.getRequestDispatcher("ruta.jsp").forward(request, response);
 
    //     processRequest(request, response);
     }
