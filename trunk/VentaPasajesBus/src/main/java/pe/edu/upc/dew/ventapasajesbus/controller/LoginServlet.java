@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import pe.edu.upc.dew.ventapasajesbus.model.Usuario;
 import pe.edu.upc.dew.ventapasajesbus.service.UsuarioService;
 import pe.edu.upc.dew.ventapasajesbus.service.UsuarioServiceImpl;
@@ -47,6 +48,9 @@ public class LoginServlet extends HttpServlet{
         if(usuario == null){
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
+
+        HttpSession session = req.getSession();
+        session.setAttribute("usuario", usuario);
 
         if(usuario.getRol().equals("E")){
             req.getRequestDispatcher("reserva.jsp").forward(req, resp);
