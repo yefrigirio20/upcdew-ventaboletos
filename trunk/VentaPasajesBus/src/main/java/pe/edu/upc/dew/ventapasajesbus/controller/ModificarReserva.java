@@ -30,10 +30,7 @@ public class ModificarReserva extends HttpServlet {
         HttpSession session = request.getSession();
         String datos[]= {"12345","Empresa1","Lima","Chiclayo","50.00","29 Octubre","30 Octubre","44","23"};
         session.setAttribute("datos", datos);
-        String cliente[] = {request.getParameter("nombre"),
-                            request.getParameter("dni"),
-                            request.getParameter("telefono"),
-                            request.getParameter("direccion")};
+        String cliente[] = {"cliente","40765301","1221321","lima"};
         session.setAttribute("cliente", cliente);
         String accion = request.getParameter("buscar");
         
