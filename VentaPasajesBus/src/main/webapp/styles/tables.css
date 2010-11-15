@@ -46,3 +46,9 @@ table tbody tr.dark{
 	color:#666666;
 	background-color:#E8E8E8;
 	}
+
+.tlogin {
+	border:0px solid #CCCCCC;
+        border-left:0px solid #CCCCCC;
+	border-right:0px solid #CCCCCC;
+	}
