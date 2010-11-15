@@ -51,6 +51,8 @@
             <input type="text" name="fecha" id="name" value="" size="22" />
           </p>
 
+          <input type="submit" value="Consultar" name="Consultar" />
+
 <table border="1" style="width: 100%">
   	<caption></caption>
   	<col />
@@ -69,6 +71,21 @@
       	<td><strong>Llegada</strong></td>
       	<td><strong>Capacidad</strong></td>
       	<td><strong>Disponibles</strong></td>
+    </tr>
+    <tr>
+     <c:forEach var="ruta" items="${rutasFiltro}">
+        <tr>
+            <td></td>
+            <td>${ruta.empresaTransporte.nombre}</td>
+            <td>${ruta.ciudadOrigen.nombre}</td>
+            <td>${ruta.ciudadDestino.nombre}</td>
+            <td>${ruta.tarifa}</td>
+            <td>${ruta.fechaHoraSalida}</td>
+            <td>${ruta.fechaHoraLlegada}</td>
+            <td>40</td>
+            <td>10</td>
+        </tr>
+    </c:forEach>
     </tr>
     <tr>
         <td><input type="checkbox" name="select" value="ON" /></td>
