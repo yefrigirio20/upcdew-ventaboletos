@@ -27,7 +27,8 @@ public class UsuarioServiceImpl implements UsuarioService{
         }else if(username.equals("transporte")){
             usuario.setRol("T");
         }
-        
+
+
         /*
         for(Usuario user: usuarios){
             if(user.getUsername().equals(username) && user.getPassword().equals(password)){

@@ -22,7 +22,7 @@
         <form action="TransporteServlet" method="post">
           <p>
 	    <label for="name"><small>Empresa de Transporte </small></label>
-            <input type="text" name="name" id="name" value="${usuario.username}" size="22" />
+            <input type="text" name="empresa" id="name" value="${usuario.empresaTransporte.nombre}" size="22" />
           </p>
 
           <p>

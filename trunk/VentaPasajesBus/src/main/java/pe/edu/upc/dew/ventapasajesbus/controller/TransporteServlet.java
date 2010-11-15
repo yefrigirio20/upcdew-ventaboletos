@@ -83,6 +83,7 @@ public class TransporteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         // Obtenemos los parámetros enviados en la pantalla de ruta
+        String empresa = request.getParameter("empresa");
         String origen = request.getParameter("origen");
         String destino = request.getParameter("destino");
         String fechasalida = request.getParameter("fechasalida");
@@ -148,9 +149,12 @@ public class TransporteServlet extends HttpServlet {
         // Añadimos una nueva ruta
         Ruta ruta = new Ruta();
 
-        /* Asociamos la empresa de transporte. Por el momento es la primera
-           hasta tener más usuarios */
-        ruta.setEmpresaTransporte(empresaTransporte1);
+        // Buscamos la empresa de transporte
+        for (int i=0; i<empresasTransporte.size(); i++) {
+            if (empresasTransporte.get(i).getNombre().equals(empresa)) {
+                ruta.setEmpresaTransporte(empresasTransporte.get(i));
+            }
+        }
 
         // Buscamos la ciudad origen
         for (int i=0; i<ciudades.size(); i++) {
@@ -198,7 +202,6 @@ public class TransporteServlet extends HttpServlet {
         // Grabamos la tarifa
         ruta.setTarifa(Double.parseDouble(tarifa));
 
-
         HttpSession session = request.getSession();
         if(request.getSession().getAttribute("rutas") == null){
             rutas = new ArrayList<Ruta>();
@@ -207,7 +210,6 @@ public class TransporteServlet extends HttpServlet {
             rutas=(List<Ruta>) session.getAttribute("rutas");
             mensaje = "con datos "+rutas.size();
         }
-
 
         // Agregamos a la lista de usuarios cada usuario creado
 

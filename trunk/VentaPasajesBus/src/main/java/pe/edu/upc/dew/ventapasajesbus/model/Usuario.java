@@ -13,6 +13,15 @@ public class Usuario {
     private String username;
     private String password;
     private String rol;
+    private EmpresaTransporte empresaTransporte;
+
+    public EmpresaTransporte getEmpresaTransporte() {
+        return empresaTransporte;
+    }
+
+    public void setEmpresaTransporte(EmpresaTransporte empresaTransporte) {
+        this.empresaTransporte = empresaTransporte;
+    }
 
     public String getRol() {
         return rol;
