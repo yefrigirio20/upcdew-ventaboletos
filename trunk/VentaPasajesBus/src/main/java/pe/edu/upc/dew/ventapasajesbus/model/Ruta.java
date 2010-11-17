@@ -1,6 +1,5 @@
 package pe.edu.upc.dew.ventapasajesbus.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Ruta {
@@ -12,6 +11,24 @@ public class Ruta {
     private Date fechaHoraSalida;
     private Date fechaHoraLlegada;
     private Double tarifa;
+    private Integer capacidadTotal;
+    private Integer capacidadDisp;
+
+    public Integer getCapacidadDisp() {
+        return capacidadDisp;
+    }
+
+    public void setCapacidadDisp(Integer capacidadDisp) {
+        this.capacidadDisp = capacidadDisp;
+    }
+
+    public Integer getCapacidadTotal() {
+        return capacidadTotal;
+    }
+
+    public void setCapacidadTotal(Integer capacidadTotal) {
+        this.capacidadTotal = capacidadTotal;
+    }
 
     public Bus getBus() {
         return bus;

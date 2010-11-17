@@ -202,6 +202,10 @@ public class TransporteServlet extends HttpServlet {
         // Grabamos la tarifa
         ruta.setTarifa(Double.parseDouble(tarifa));
 
+        // Agregamos la capacidad
+        ruta.setCapacidadTotal(40);
+        ruta.setCapacidadDisp(40);
+
         HttpSession session = request.getSession();
         if(request.getSession().getAttribute("rutas") == null){
             rutas = new ArrayList<Ruta>();
