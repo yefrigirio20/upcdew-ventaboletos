@@ -6,6 +6,7 @@
 package pe.edu.upc.dew.ventapasajesbus.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,8 +30,8 @@ import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
  * @author jdamian
  */
 public class ReservaServlet extends HttpServlet {
-   
-    /** 
+
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
      * @param response servlet response
@@ -59,7 +61,7 @@ public class ReservaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+
     } 
 
     /** 
@@ -235,10 +237,10 @@ public class ReservaServlet extends HttpServlet {
 
        // Enviamos el atributo a la sesión
        HttpSession session = request.getSession();
-       session.setAttribute("rutasFiltro", rutasFiltro);
+       session.setAttribute("rutas", rutasExistentes);
 
        // request.getRequestDispatcher("ruta.jsp").forward(request, response);
-       request.getRequestDispatcher("conreserva.jsp").forward(request, response);
+       request.getRequestDispatcher("reserva.jsp").forward(request, response);
 
        // processRequest(request, response);
     }

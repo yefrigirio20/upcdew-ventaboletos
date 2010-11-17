@@ -73,7 +73,7 @@
       	<td><strong>Disponibles</strong></td>
     </tr>
     <tr>
-     <c:forEach var="ruta" items="${rutasFiltro}">
+     <c:forEach var="ruta" items="${rutas}">
         <tr>
             <td></td>
             <td>${ruta.empresaTransporte.nombre}</td>
@@ -82,8 +82,8 @@
             <td>${ruta.tarifa}</td>
             <td>${ruta.fechaHoraSalida}</td>
             <td>${ruta.fechaHoraLlegada}</td>
-            <td>40</td>
-            <td>10</td>
+            <td>${ruta.capacidadTotal}</td>
+            <td>${ruta.capacidadDisp}</td>
         </tr>
     </c:forEach>
     </tr>
