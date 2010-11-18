@@ -15,25 +15,55 @@
                 <option>Empresa4</option>
             </select>
           </p> -->
-            <p>
-	    <label for="name"><small>Nombre Pasajero: </small></label>
-            ${cliente[0]}
+          <p>
+	    <label for="name"><small>Nro. de Ticket:</small></label>
+            ${reserva.ticket}
           </p>
           <p>
-	    <label for="name"><small>DNI: </small></label>
-            ${cliente[1]}
+	    <label for="name"><small>Ciudad origen:</small></label>
+            ${reserva.ruta.ciudadOrigen.nombre}
           </p>
           <p>
-	    <label for="name"><small>Telefono: </small></label>
-            ${cliente[2]}
+	    <label for="name"><small>Ciudad destino:</small></label>
+            ${reserva.ruta.ciudadDestino.nombre}
           </p>
           <p>
-	    <label for="name"><small>Direccion</small></label>
-            ${cliente[3]}
+	    <label for="name"><small>Empresa de Transporte:</small></label>
+            ${reserva.empresaTransporte.nombre}
           </p>
-            
-            
-            <br></br>
+          <p>
+	    <label for="name"><small>Asiento:</small></label>
+            ${reserva.asiento}
+          </p>
+          <p>
+	    <label for="name"><small>Tarifa a pagar:</small></label>
+            ${reserva.ruta.tarifa}
+          </p>
+          <br>
+          <p> </p>
+          <p>
+	    <label for="name"><small>Nombre del pasajero:</small></label>
+            ${reserva.cliente.nombre}
+          </p>
+          <p>
+	    <label for="name"><small>DNI:</small></label>
+            ${reserva.cliente.idCliente}
+          </p>
+          <p>
+	    <label for="name"><small>Teléfono:</small></label>
+            ${reserva.cliente.telefono}
+          </p>
+          <p>
+	    <label for="name"><small>Dirección:</small></label>
+            ${reserva.cliente.direccion}
+          </p>
+          <p> </p>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Imprimir Ticket" name="Imprimir" /></td>
+          </tr>
+          
+            <br>
             <p>
 	    Reservas realizadas:
           </p>

@@ -32,7 +32,7 @@ import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
  *
  * @author jdamian
  */
-public class ReservaServlet extends HttpServlet {
+public class ConfirmaReservaServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
