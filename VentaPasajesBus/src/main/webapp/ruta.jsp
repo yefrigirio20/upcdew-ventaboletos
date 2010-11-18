@@ -2,10 +2,6 @@
 <script type="text/javascript" language="javascript">
 
     $(document).ready(function(){
-        
-        $('#trutas').dataTable();
-
-
         $("#frmrutas").validate({
             rules: {
                 fechasalida: {
@@ -16,9 +12,9 @@
                 },
                 tarifa: {
                     required: true,
-                    minlength: 2
+                    minlength: 2,
+                    number: true
                 }
-
             },
             messages: {
                 fechasalida: {
@@ -28,8 +24,8 @@
                     required: "* Ingrese la fecha y hora de llegada"
                 },
                 tarifa: {
-                    required: "* Ingrese la tarifa correcta"
-            
+                    required: "* Ingrese la tarifa correcta",
+                    number: "Ingrese un número válido"
                 }
             }
         });
