@@ -49,7 +49,7 @@
                     <li class="active"><a href="index.jsp">INICIO</a><span>página principal</span></li>
                     <li><c:if test="${usuario != null}"><a href="ruta.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>RUTAS</a><span>Ingreso rutas </span></li>
                     <li><c:if test="${usuario != null}"><a href="reservar.reserva"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>RESERVAS</a><span>Reservas en línea</span></li>
-                    <li><c:if test="${usuario != null}"><a href="modreserva.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>MODIFICAR RESERVA</a><span>Modificar reservas</span></li>
+                    <li><c:if test="${usuario != null}"><a href="modificar.reserva"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>MODIFICAR RESERVA</a><span>Modificar reservas</span></li>
                     <!-- <li>CONSULTA VENTAS</a><span>Consultar ventas</span></li> -->
                     <li><c:if test="${usuario != null}"><a href="conreserva.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>CONSULTAR RESERVAS</a><span>consultar reservas</span></li>
 
