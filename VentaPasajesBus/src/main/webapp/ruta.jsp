@@ -1,4 +1,37 @@
 <%@include file="header.jsp" %>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function(){
+        $("#frmrutas").validate({
+            rules: {
+                fechasalida: {
+                    required: true
+                },
+                fechallegada: {
+                    required: true
+                },
+                tarifa: {
+                    required: true,
+                    minlength: 2
+                }
+
+            },
+            messages: {
+                fechasalida: {
+                    required: "* Ingrese la fecha y hora de salida"
+                },
+                fechallegada: {
+                    required: "* Ingrese la fecha y hora de llegada"
+                },
+                tarifa: {
+                    required: "* Ingrese la tarifa correcta"
+            
+                }
+            }
+        });
+    });
+
+</script>
+
 <!-- ####################################################################################################### -->
 <div class="wrapper col5">
     <div id="container">
@@ -6,11 +39,11 @@
 
             <h2>INGRESO DE RUTAS</h2>
             <div id="respond">
-                <form action="TransporteServlet" method="post">
+                <form id="frmrutas" action="TransporteServlet" method="post">
                     <table>
                         <tr>
                             <td><label for="name"><small>Empresa de Transporte:</small></label></td>
-                            <td><input type="text" name="empresa" id="name" value="${usuario.empresaTransporte.nombre}" size="22" /></td>
+                            <td><input type="text" name="empresa" id="name" value="${usuario.empresaTransporte.nombre}" size="22" disabled/></td>
                         </tr>
 
                         <tr>
@@ -34,12 +67,12 @@
                         </tr>
                         <tr>
                             <td><label for="name"><small>Fecha y Hora de Salida:</small></label></td>
-                            <td><input type="text" name="fechasalida" id="name" value="" size="22" /></td>
+                            <td><input type="text" name="fechasalida" id="fechasalida" value="" size="22" /></td>
 
                         </tr>
                         <tr>
                             <td><label for="name"><small>Fecha y Hora de Llegada:</small></label></td>
-                            <td><input type="text" name="fechallegada" id="name" value="" size="22" /></td>
+                            <td><input type="text" name="fechallegada" id="fechallegada" value="" size="22" /></td>
 
                         </tr>
                         <tr>
@@ -53,7 +86,7 @@
                         </tr>
                         <tr>
                             <td><label for="name"><small>Tarifa:</small></label></td>
-                            <td><input type="text" name="tarifa" id="name" value="" size="22" /></td>
+                            <td><input type="text" name="tarifa" id="tarifa" value="" size="22" /></td>
                         </tr>
                         <tr>
                             <td></td><td><input type="submit" value="Nuevo" name="Nuevo" />
