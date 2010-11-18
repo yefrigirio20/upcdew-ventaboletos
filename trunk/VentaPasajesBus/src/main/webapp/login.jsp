@@ -1,25 +1,25 @@
 <%@include file="header.jsp" %>
 <script type="text/javascript" language="javascript">
-$(document).ready(function(){
-   $("#frmlogin").validate({
-      rules: {
-         username: {
-            required: true
-         },
-         password: {
-            required: true
-         }
-      },
-      messages: {
-         username: {
-            required: "* Ingrese su nombre de usuario"
-         },
-         password: {
-            required: "* Ingrese su contraseña"
-         }
-      }
-   });
-});
+    $(document).ready(function(){
+        $("#frmlogin").validate({
+            rules: {
+                username: {
+                    required: true
+                },
+                password: {
+                    required: true
+                }
+            },
+            messages: {
+                username: {
+                    required: "* Ingrese su nombre de usuario"
+                },
+                password: {
+                    required: "* Ingrese su contraseña"
+                }
+            }
+        });
+    });
 </script>
 <!-- ####################################################################################################### -->
 <div class="wrapper col5">
@@ -34,7 +34,7 @@ $(document).ready(function(){
                             <td class="tlogin"></td>
                             <td class="tlogin"></td>
                             <td class="tlogin"></td>
-                            <td class="tlogin">Usuario:</td>
+                            <td class="tlogin">Usuario: </td>
                             <td class="tlogin"><input type="text" name="username" id="username" /><br/></td>
 
                         </tr>
@@ -54,11 +54,6 @@ $(document).ready(function(){
                             <td class="tlogin"><input type="submit" name="login" value="Ingresar" /><br/></td>
 
                         </tr>
-
-
-
-
-
                     </table>
                 </form>
             </div>
