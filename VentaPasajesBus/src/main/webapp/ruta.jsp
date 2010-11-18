@@ -107,7 +107,7 @@
                                 <th><strong>HoraLlegada</strong></th>
                                 <th><strong>Tarifa</strong></th>
                                 <th><strong>Bus Placa</strong></th>
-                                <th><strong></strong></th>
+                                <!-- <th><strong></strong></th> -->
                             </tr>
                     </thead>
                         <tbody>
@@ -123,7 +123,7 @@
                                 <td></td>
                                 <td>${ruta.tarifa}</td>
                                 <td>${ruta.bus.placa}</td>
-                                <td><input type="button" value="Quitar" /></td>
+                                <!-- <td><input type="button" value="Quitar" /></td> -->
                             </tr>
                             </tbody>
                         </c:forEach>

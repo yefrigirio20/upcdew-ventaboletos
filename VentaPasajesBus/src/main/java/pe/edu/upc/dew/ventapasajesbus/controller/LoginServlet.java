@@ -54,27 +54,8 @@ public class LoginServlet extends HttpServlet{
         HttpSession session = req.getSession();
         session.setAttribute("usuario", usuario);
 
-        // Añadimos empresas de transporte
-        EmpresaTransporte empresaTransporte1 = new EmpresaTransporte();
-        empresaTransporte1.setNombre("Buses Unidos");
-
-        EmpresaTransporte empresaTransporte2 = new EmpresaTransporte();
-        empresaTransporte2.setNombre("Mi Bus");
-
-        EmpresaTransporte empresaTransporte3 = new EmpresaTransporte();
-        empresaTransporte3.setNombre("Transporte Veloz");
-
-        // Añadimos a la lista de Empresas de transporte cada empresa de transporte
-        ArrayList<EmpresaTransporte> empresasTransporte = new ArrayList<EmpresaTransporte>();
-        empresasTransporte.add(empresaTransporte1);
-        empresasTransporte.add(empresaTransporte2);
-        empresasTransporte.add(empresaTransporte3);
-
-        // Asocia una empresa de transporte al usuario
-        usuario.setEmpresaTransporte(empresaTransporte1);
-
         if(usuario.getRol().equals("E")){
-            req.getRequestDispatcher("reserva.jsp").forward(req, resp);
+            req.getRequestDispatcher("reservar.reserva").forward(req, resp);
         }else if(usuario.getRol().equals("T")){
             req.getRequestDispatcher("ruta.jsp").forward(req, resp);
         }else{
