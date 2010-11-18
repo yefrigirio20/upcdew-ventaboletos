@@ -5,7 +5,7 @@
 
 <h2>CONFIRMACION DE LAS RESERVAS DE PASAJES</h2>
       <div id="respond">
-        <form action="reserva.jsp" method="post">
+        <form action="confirmareserva" method="post">
           <!-- <p>
 	    <label for="name"><small>Empresa de Transporte</small></label>
             <select name="empresa">
@@ -60,91 +60,13 @@
           <p> </p>
           <tr>
             <td></td>
-            <td><input type="submit" value="Imprimir Ticket" name="Imprimir" /></td>
+            <td><input type="submit" value="Cancelar e Imprimir Ticket" name="Imprimir" /></td>
           </tr>
           
             <br>
             <p>
 	    Reservas realizadas:
           </p>
-
-<table border="1" style="width: 100%">
-  	<caption></caption>
-  	<col />
-  	<col />
-  	<col />
-  	<col />
-  	<col />
-  	<tbody>
-    	<tr>
-            <td><strong>Numero de Ticket</strong></td>
-      	<td><strong>Nombre de Empresa</strong></td>
-      	<td><strong>Origen</strong></td>
-      	<td><strong>Destino</strong></td>
-        <td><strong>Tarifa S/.</strong></td>
-      	<td><strong>Salida</strong></td>
-      	<td><strong>Llegada</strong></td>
-      	<td><strong>Capacidad</strong></td>
-      	<td><strong>Numero de Asiento</strong></td>
-    </tr>
-    <tr>
-        
-      <td>12345</td>
-      <td>Empresa1</td>
-      <td>Lima</td>
-      <td>Trujillo</td>
-      <td>50</td>
-      <td>Lunes 29</td>
-      <td>Martes 30</td>
-      <td>44 pasajeros</td>
-      <td>10</td>
-    </tr>
-    <tr>
-        <td>12345</td>
-      <td>Empresa2</td>
-      <td>Lima</td>
-      <td>Trujillo</td>
-      <td>50</td>
-      <td>Lunes 29</td>
-      <td>Martes 30</td>
-      <td>44 pasajeros</td>
-      <td>10</td>
-    </tr>
-    <tr>
-        <td>12345</td>
-      <td>Empresa2</td>
-      <td>Lima</td>
-      <td>Trujillo</td>
-      <td>50</td>
-      <td>Lunes 29</td>
-      <td>Martes 30</td>
-      <td>44 pasajeros</td>
-      <td>10</td>
-    </tr>
-    <tr>
-        <td>12345</td>
-      <td>Empresa2</td>
-      <td>Lima</td>
-      <td>Trujillo</td>
-      <td>50</td>
-      <td>Lunes 29</td>
-      <td>Martes 30</td>
-      <td>44 pasajeros</td>
-      <td>10</td>
-    </tr>
-    <tr>
-        
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
 	  
           <!-- <p>
 	    <label for="name"><small>Salida</small></label>
