@@ -1,11 +1,53 @@
 <%@include file="header.jsp" %>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function(){
+        $("#frmconfirmareserva").validate({
+            rules: {
+                asiento: {
+                    required: true
+                },
+                nombre: {
+                    required: true
+                },
+                dni: {
+                    required: true
+                },
+                telefono: {
+                    required: true
+                },
+                direccion: {
+                    required: true
+                }
+
+            },
+            messages: {
+                asiento: {
+                    required: "* Ingrese el número de asiento"
+                },
+                nombre: {
+                    required: "* Ingrese el nombre del cliente"
+                },
+                dni: {
+                    required: "* Ingrese el DNI del cliente"
+                },
+                telefono: {
+                    required: "* Ingrese el telefono del cliente"
+                },
+                direccion: {
+                    required: "* Ingrese la direccion del cliente"
+                }
+            }
+        });
+    });
+
+</script>
 <!-- ####################################################################################################### -->
 <div class="wrapper col5">
     <div id="container">
 
         <h2>RESERVAS</h2>
         <div id="respond">
-            <form action="confirmar.reserva" method="post">
+            <form id="frmconfirmareserva" action="confirmar.reserva" method="post">
                 <table border="0" style="width: 100%">
                     <caption></caption>
                     <col />
@@ -45,23 +87,23 @@
                 <table>
                     <tr>
                         <td><label for="name"><small>Asiento:</small></label></td>
-                        <td><input type="text" name="asiento" id="name" value="" size="10" /></td>
+                        <td><input type="text" name="asiento" id="asiento" value="" size="10" /></td>
                     </tr>
                     <tr>
                         <td><label for="name"><small>Nombre Pasajero:</small></label></td>
-                        <td><input type="text" name="nombre" id="name" value="" size="22" /></td>
+                        <td><input type="text" name="nombre" id="nombre" value="" size="22" /></td>
                     </tr>
                     <tr>
                         <td><label for="name"><small>DNI:</small></label></td>
-                        <td><input type="text" name="dni" id="name" value="" size="22" /></td>
+                        <td><input type="text" name="dni" id="dni" value="" size="22" /></td>
                     </tr>
                     <tr>
                         <td><label for="name"><small>Teléfono:</small></label></td>
-                        <td><input type="text" name="telefono" id="name" value="" size="22" /></td>
+                        <td><input type="text" name="telefono" id="telefono" value="" size="22" /></td>
                     </tr>
                     <tr>
                         <td><label for="name"><small>Dirección:</small></label></td>
-                        <td><input type="text" name="direccion" id="name" value="" size="22" /></td>
+                        <td><input type="text" name="direccion" id="direccion" value="" size="22" /></td>
                     </tr>
                     <tr>
                         <td></td>
