@@ -5,14 +5,14 @@ public class Reserva {
     private EmpresaTransporte empresaTransporte;
     private Cliente cliente;
     private Ruta ruta;
-    private Asiento asiento;
+    private Integer asiento;
     private Boolean pagado;
 
-    public Asiento getAsiento() {
+    public Integer getAsiento() {
         return asiento;
     }
 
-    public void setAsiento(Asiento asiento) {
+    public void setAsiento(Integer asiento) {
         this.asiento = asiento;
     }
 

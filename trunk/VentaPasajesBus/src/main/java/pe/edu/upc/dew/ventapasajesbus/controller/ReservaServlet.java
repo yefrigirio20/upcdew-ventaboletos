@@ -22,7 +22,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import pe.edu.upc.dew.ventapasajesbus.model.Bus;
 import pe.edu.upc.dew.ventapasajesbus.model.Ciudad;
+import pe.edu.upc.dew.ventapasajesbus.model.Cliente;
 import pe.edu.upc.dew.ventapasajesbus.model.EmpresaTransporte;
+import pe.edu.upc.dew.ventapasajesbus.model.Reserva;
 import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
 
 /**
@@ -74,6 +76,31 @@ public class ReservaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        //ArrayList<Ruta> rutas = (ArrayList<Ruta>) session.getAttribute("rutas");
+
+        Cliente cliente = new Cliente();
+        cliente.setNombre(request.getParameter("nombre"));
+        cliente.setIdCliente(request.getParameter("dni"));
+        cliente.setTelefono(request.getParameter("telefono"));
+        cliente.setDireccion(request.getParameter("direccion"));
+
+        Reserva reserva = new Reserva();
+        reserva.setCliente(cliente);
+        //reserva.setEmpresaTransporte(rutas.get(0).getEmpresaTransporte());
+        //reserva.setRuta(rutas.get(0));
+        reserva.setPagado(false);
+        reserva.setTicket(1);
+        reserva.setAsiento(Integer.parseInt(request.getParameter("asiento")));
+
+        session.setAttribute("reserva", reserva);
+        request.getRequestDispatcher("confirmareserva.jsp").forward(request, response);
+
+
+/*
+
+
 
         // Añadimos empresas de transporte
         EmpresaTransporte empresaTransporte1 = new EmpresaTransporte();
@@ -236,13 +263,13 @@ public class ReservaServlet extends HttpServlet {
         }
 
        // Enviamos el atributo a la sesión
-       HttpSession session = request.getSession();
+       session = request.getSession();
        session.setAttribute("rutas", rutasExistentes);
 
        // request.getRequestDispatcher("ruta.jsp").forward(request, response);
-       request.getRequestDispatcher("reserva.jsp").forward(request, response);
+       request.getRequestDispatcher("confirmareserva.jsp").forward(request, response);
 
-       // processRequest(request, response);
+       // processRequest(request, response); */
     }
 
     /** 

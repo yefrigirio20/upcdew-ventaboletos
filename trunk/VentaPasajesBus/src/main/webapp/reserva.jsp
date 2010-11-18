@@ -75,7 +75,7 @@
     <tr>
      <c:forEach var="ruta" items="${rutas}">
         <tr>
-            <td></td>
+            <td><input type="checkbox" name="select" value="ON" /></td>
             <td>${ruta.empresaTransporte.nombre}</td>
             <td>${ruta.ciudadOrigen.nombre}</td>
             <td>${ruta.ciudadDestino.nombre}</td>
@@ -144,6 +144,10 @@
     </tr>
   </tbody>
 </table>
+	  <p>
+	    <label for="name"><small>Asiento: </small></label>
+            <input type="text" name="asiento" id="name" value="" size="10" />
+          </p>
 	  <p>
 	    <label for="name"><small>Nombre Pasajero: </small></label>
             <input type="text" name="nombre" id="name" value="" size="22" />
