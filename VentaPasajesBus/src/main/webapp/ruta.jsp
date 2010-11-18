@@ -1,6 +1,11 @@
 <%@include file="header.jsp" %>
 <script type="text/javascript" language="javascript">
+
     $(document).ready(function(){
+        
+        $('#trutas').dataTable();
+
+
         $("#frmrutas").validate({
             rules: {
                 fechasalida: {
@@ -93,43 +98,41 @@
                                 <input type="submit" value="Grabar" name="Grabar" /></td>
                         </tr>
                     </table>
-                    <table border="1" style="width: 100%">
-                        <caption></caption>
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
+                    <table id="trutas" class="ligth"  cellspacing=1 >
+
+                        <thead>
+                            <tr>
+                                <th><strong>Empresa de Transporte</strong></th>
+                                <th><strong>Origen</strong></th>
+                                <th><strong>Destino</strong></th>
+                                <th><strong>Salida</strong></th>
+                                <th><strong>HoraSalida</strong></th>
+                                <th><strong>Llegada</strong></th>
+                                <th><strong>HoraLlegada</strong></th>
+                                <th><strong>Tarifa</strong></th>
+                                <th><strong>Bus Placa</strong></th>
+                                <th><strong></strong></th>
+                            </tr>
+                    </thead>
                         <tbody>
+
+                                <c:forEach var="ruta" items="${rutas}">
                             <tr>
-                                <td><strong>Empresa de Transporte</strong></td>
-                                <td><strong>Origen</strong></td>
-                                <td><strong>Destino</strong></td>
-                                <td><strong>Salida</strong></td>
-                                <td><strong>HoraSalida</strong></td>
-                                <td><strong>Llegada</strong></td>
-                                <td><strong>HoraLlegada</strong></td>
-                                <td><strong>Tarifa</strong></td>
-                                <td><strong>Bus Placa</strong></td>
+                                <td>${ruta.empresaTransporte.nombre}</td>
+                                <td>${ruta.ciudadOrigen.nombre}</td>
+                                <td>${ruta.ciudadDestino.nombre}</td>
+                                <td>${ruta.fechaHoraSalida}</td>
+                                <td></td>
+                                <td>${ruta.fechaHoraLlegada}</td>
+                                <td></td>
+                                <td>${ruta.tarifa}</td>
+                                <td>${ruta.bus.placa}</td>
+                                <td><input type="button" value="Quitar" /></td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <c:forEach var="ruta" items="${rutas}">
-                                <tr>
-                                    <td>${ruta.empresaTransporte.nombre}</td>
-                                    <td>${ruta.ciudadOrigen.nombre}</td>
-                                    <td>${ruta.ciudadDestino.nombre}</td>
-                                    <td>${ruta.fechaHoraSalida}</td>
-                                    <td></td>
-                                    <td>${ruta.fechaHoraLlegada}</td>
-                                    <td></td>
-                                    <td>${ruta.tarifa}</td>
-                                    <td>${ruta.bus.placa}</td>
-                                </tr>
-                            </c:forEach>
-                            </td>
-                            </tr>
-                        </tbody>
+                            </tbody>
+                        </c:forEach>
+                        
+
                     </table>
 
                 </form>
