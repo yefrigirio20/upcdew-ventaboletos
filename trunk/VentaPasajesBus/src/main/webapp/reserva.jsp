@@ -5,7 +5,7 @@
 
         <h2>RESERVAS</h2>
         <div id="respond">
-            <form action="reserva" method="post">
+            <form action="confirmar.reserva" method="post">
                 <table border="0" style="width: 100%">
                     <caption></caption>
                     <col />
