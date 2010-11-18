@@ -48,14 +48,8 @@
         <h2>RESERVAS</h2>
         <div id="respond">
             <form id="frmconfirmareserva" action="confirmar.reserva" method="post">
-                <table border="0" style="width: 100%">
-                    <caption></caption>
-                    <col />
-                    <col />
-                    <col />
-                    <col />
-                    <col />
-                    <tbody>
+                <table >
+                    <thead>
                         <tr>
                             <td><strong>Seleccionar</strong></td>
                             <td><strong>Empresa de Transporte</strong></td>
@@ -67,6 +61,8 @@
                             <td><strong>Capacidad</strong></td>
                             <td><strong>Disponibilidad</strong></td>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <c:forEach var="ruta" items="${rutas}">
                             <tr>
@@ -85,6 +81,7 @@
                     </tbody>
                 </table>
                 <table>
+                    <tbody>
                     <tr>
                         <td><label for="name"><small>Asiento:</small></label></td>
                         <td><input type="text" name="asiento" id="asiento" value="" size="10" /></td>
@@ -109,6 +106,7 @@
                         <td></td>
                         <td><input type="submit" value="Crear reserva" name="reservar" /></td>
                     </tr>
+                    </tbody>
                 </table>
                 <!-- <p>
 	    <label for="name"><small>Salida</small></label>

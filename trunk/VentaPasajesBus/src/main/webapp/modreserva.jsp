@@ -41,18 +41,13 @@
                     <p>
                         <input type="submit" value="Buscar" name="buscar" />
                         <input type="submit" value="Limpiar Campos" name="limpiar" />
-                    </p><br></br>
+                    </p><br />
                 </form>
                 <form name="frmmodreserva" action="modreserva" method="post">
 
                     <table border="1" style="width: 100%">
-                        <caption></caption>
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <tbody>
+                        
+                        <thead>
                             <tr>
                                 <td><strong>Seleccionar</strong></td>
                                 <td><strong>Numero de Ticket</strong></td>
@@ -65,6 +60,8 @@
                                 <td><strong>Capacidad</strong></td>
                                 <td><strong>Numero de Asiento</strong></td>
                             </tr>
+                        </thead>
+                    <tbody>
                             <tr>
                                 <td><input type="checkbox" name="select" value="ON" /></td>
                                 <td>${datos[0]}</td>
@@ -90,10 +87,11 @@
                                 <td></td>
                             </tr>
                         </tbody>
+                        
                     </table>
                     <input type="submit" value="Pagar" name="pagar" />
                     <input type="submit" value="Borrar Reserva" name="borrar" />
-                    <br></br>
+                    <br />
                 </form>
             </div>
         </div>
