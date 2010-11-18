@@ -4,16 +4,23 @@
         $("#frmconfirmareserva").validate({
             rules: {
                 asiento: {
-                    required: true
+                    required: true,
+                    number: true,
+                    range: [1,44]
+                    
                 },
                 nombre: {
                     required: true
                 },
                 dni: {
-                    required: true
+                    required: true,
+                    number: true,
+                    minlength: 8,
+                    maxlength: 8
                 },
                 telefono: {
-                    required: true
+                    required: true,
+                    number: true
                 },
                 direccion: {
                     required: true
@@ -22,13 +29,16 @@
             },
             messages: {
                 asiento: {
-                    required: "* Ingrese el número de asiento"
+                    required: "* Ingrese el número de asiento",
+                    minlength: "Ingrese un número de asiente de 1 a 44",
+                    maxlength: "Ingrese un número de asiente de 1 a 44"
                 },
                 nombre: {
                     required: "* Ingrese el nombre del cliente"
                 },
                 dni: {
-                    required: "* Ingrese el DNI del cliente"
+                    required: "* Ingrese el DNI del cliente",
+                    minlength: "Ingrese los 8 digitos de su dni"
                 },
                 telefono: {
                     required: "* Ingrese el telefono del cliente"
@@ -51,15 +61,15 @@
                 <table >
                     <thead>
                         <tr>
-                            <td><strong>Seleccionar</strong></td>
-                            <td><strong>Empresa de Transporte</strong></td>
-                            <td><strong>Origen</strong></td>
-                            <td><strong>Destino</strong></td>
-                            <td><strong>Tarifa (S/.)</strong></td>
-                            <td><strong>Salida</strong></td>
-                            <td><strong>Llegada</strong></td>
-                            <td><strong>Capacidad</strong></td>
-                            <td><strong>Disponibilidad</strong></td>
+                            <th><strong>Seleccionar</strong></th>
+                            <th><strong>Empresa de Transporte</strong></th>
+                            <th><strong>Origen</strong></th>
+                            <th><strong>Destino</strong></th>
+                            <th><strong>Tarifa (S/.)</strong></th>
+                            <th><strong>Salida</strong></th>
+                            <th><strong>Llegada</strong></th>
+                            <th><strong>Capacidad</strong></th>
+                            <th><strong>Disponibilidad</strong></th>
                         </tr>
                     </thead>
                     <tbody>
