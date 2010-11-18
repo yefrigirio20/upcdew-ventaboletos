@@ -2,9 +2,9 @@
 <!-- ####################################################################################################### -->
 <div class="wrapper col5">
   <div id="container">
-<h2>CONFIRMACION DE LAS RESERVAS DE PASAJES</h2>
+<h2>LA RESERVA HA SIDO PAGADA</h2>
       <div id="respond">
-        <form action="cancelar.reserva" method="post">
+        <form action="reservar.reserva" method="post">
             <table>
           <tr>
               <td><label for="name"><small>Nro. de Ticket:</small></label>
@@ -30,7 +30,7 @@
 	    <td><label for="name"><small>Tarifa a pagar:</small></label>
             <td>${reserva.ruta.tarifa}
           </tr>
-          
+
           <tr> </tr>
           <tr>
 	    <td><label for="name"><small>Nombre del pasajero:</small></label>
@@ -51,7 +51,7 @@
           <tr> </tr>
           <tr>
             <td></td>
-            <td><input type="submit" value="Pagar e Imprimir Ticket" name="Imprimir" /><input type="submit" value="Aceptar" name="aceptar" /></td>
+            <td><input type="submit" value="Aceptar" name="aceptar" /></td>
           </tr>
             </table>
             <!--<br>
@@ -67,7 +67,7 @@
             <input type="text" name="name" id="name" value="" size="22" />
           </p>
             <p>
-          <input type="submit" value="Aceptar" name="aceptar" />       
+          <input type="submit" value="Aceptar" name="aceptar" />
           </p>-->
         </form>
       </div>

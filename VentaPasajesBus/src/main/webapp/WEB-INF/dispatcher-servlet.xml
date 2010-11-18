@@ -7,6 +7,8 @@
     <!-- Controller -->
     <bean id="mvcController" class="pe.edu.upc.dew.ventapasajesbus.controller.MVCController" />
     <bean id="reservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.ReservaController" />
+    <bean id="modificaReservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.ModificarReservaController" />
+    <bean id="cancelaReservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.CancelarReservaController" />
     <!-- End Controller -->
 
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
@@ -14,11 +16,11 @@
             <props>
                 <prop key="reservar.reserva">mvcController</prop>
                 <prop key="confirmar.reserva">reservaController</prop>
+                <prop key="modificar.reserva">modificaReservaController</prop>
+                <prop key="cancelar.reserva">cancelaReservaController</prop>
             </props>
         </property>
     </bean>
-
-
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />

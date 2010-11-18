@@ -6,13 +6,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-public class ModificarReservaController extends AbstractController{
+public class CancelarReservaController extends AbstractController{
 
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest req, HttpServletResponse res) throws Exception {
         HttpSession session = req.getSession();
 
-        return new ModelAndView("modreserva");
+        return new ModelAndView("cancelareserva");
     }
 
 }
