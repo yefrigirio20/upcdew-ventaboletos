@@ -18,10 +18,10 @@
             },
             messages: {
                 fechasalida: {
-                    required: "* Ingrese la fecha y hora de salida"
+                    required: "* Ingrese la fecha y hora en formato dd/mm/aaaa hh:mm:ss"
                 },
                 fechallegada: {
-                    required: "* Ingrese la fecha y hora de llegada"
+                    required: "* Ingrese la fecha y hora en formato dd/mm/aaaa hh:mm:ss"
                 },
                 tarifa: {
                     required: "* Ingrese la tarifa correcta",

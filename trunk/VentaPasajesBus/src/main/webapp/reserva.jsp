@@ -30,21 +30,23 @@
             messages: {
                 asiento: {
                     required: "* Ingrese el número de asiento",
-                    minlength: "Ingrese un número de asiente de 1 a 44",
-                    maxlength: "Ingrese un número de asiente de 1 a 44"
+                    minlength: "Ingrese un número de asiento de 1 a 44",
+                    maxlength: "Ingrese un número de asiento de 1 a 44"
                 },
                 nombre: {
                     required: "* Ingrese el nombre del cliente"
                 },
                 dni: {
                     required: "* Ingrese el DNI del cliente",
+                    number: "Ingrese un número válido",
                     minlength: "Ingrese los 8 digitos de su dni"
                 },
                 telefono: {
-                    required: "* Ingrese el telefono del cliente"
+                    required: "* Ingrese el teléfono del cliente",
+                    number: "Ingrese un número válido"
                 },
                 direccion: {
-                    required: "* Ingrese la direccion del cliente"
+                    required: "* Ingrese la dirección del cliente"
                 }
             }
         });
