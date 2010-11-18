@@ -78,7 +78,9 @@ public class ConfirmaReservaServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
 
-        HttpSession session = request.getSession();
+        request.getRequestDispatcher("reserva.jsp").forward(request, response);
+
+/*      HttpSession session = request.getSession();
         if (session.getAttribute("rutas") != null) {
             ArrayList<Ruta> rutas = (ArrayList<Ruta>) session.getAttribute("rutas");
 
@@ -107,7 +109,7 @@ public class ConfirmaReservaServlet extends HttpServlet {
             request.getRequestDispatcher("confirmareserva.jsp").forward(request, response);
 
 
-        }
+        } */
 
 /*
 

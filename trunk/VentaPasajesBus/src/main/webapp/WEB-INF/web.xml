@@ -45,6 +45,10 @@
         <servlet-name>ConsultaReservaServlet</servlet-name>
         <servlet-class>pe.edu.upc.dew.ventapasajesbus.controller.ConsultaReservaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConfirmaReservaServlet</servlet-name>
+        <servlet-class>pe.edu.upc.dew.ventapasajesbus.controller.ConfirmaReservaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -76,6 +80,10 @@
     <servlet-mapping>
         <servlet-name>ConsultaReservaServlet</servlet-name>
         <url-pattern>/conreserva</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmaReservaServlet</servlet-name>
+        <url-pattern>/confirmareserva</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
