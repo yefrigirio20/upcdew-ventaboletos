@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04/12/2010 10:54:13 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pe.edu.upc.dew.ventapasajesbus.dao.Ciudad" table="ciudad" catalog="bus">
+        <id name="coCiudad" type="java.lang.Integer">
+            <column name="Co_Ciudad" />
+            <generator class="identity" />
+        </id>
+        <property name="noCiudad" type="string">
+            <column name="No_Ciudad" length="60" not-null="true" />
+        </property>
+        <set name="rutasForNoCiudadDestino" inverse="true">
+            <key>
+                <column name="No_CiudadDestino" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.upc.dew.ventapasajesbus.dao.Ruta" />
+        </set>
+        <set name="rutasForNoCiudadOrigen" inverse="true">
+            <key>
+                <column name="No_CiudadOrigen" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.upc.dew.ventapasajesbus.dao.Ruta" />
+        </set>
+    </class>
+</hibernate-mapping>
