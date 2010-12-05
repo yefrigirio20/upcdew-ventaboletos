@@ -52,7 +52,7 @@
                     <table>
                         <tr>
                             <td><label for="name"><small>Empresa de Transporte:</small></label></td>
-                            <td><input type="text" name="empresa" id="name" value="${usuario.empresaTransporte.nombre}" size="22" disabled/></td>
+                            <td><input type="text" name="empresa" id="name" value="${usuario.empresaTransporte.nombre}" size="22"/></td>
                         </tr>
 
                         <tr>
@@ -62,16 +62,20 @@
                                     <option>Cuzco</option>
                                     <option>Arequipa</option>
                                     <option>Trujillo</option>
+                                    <option>Ica</option>
+                                    <option>Tumbes</option>
                                 </select></td>
 
                         </tr>
                         <tr>
                             <td><label for="name"><small>Destino:</small></label></td>
                             <td><select name="destino">
-                                    <option>Trujillo</option>
+                                    <option>Lima</option>
                                     <option>Cuzco</option>
                                     <option>Arequipa</option>
-                                    <option>Lima</option>
+                                    <option>Trujillo</option>
+                                    <option>Ica</option>
+                                    <option>Tumbes</option>
                                 </select></td>
                         </tr>
                         <tr>
@@ -87,10 +91,10 @@
                         <tr>
                             <td><label for="name"><small>Bus:</small></label></td>
                             <td><select name="bus">
-                                    <option>KXT-1254</option>
-                                    <option>AAA-9898</option>
-                                    <option>BBB-6565</option>
-                                    <option>CCC-3232</option>
+                                    <option>WMX-0001</option>
+                                    <option>WMX-0002</option>
+                                    <option>WMX-0003</option>
+                                    <option>WMX-0004</option>
                                 </select></td>
                         </tr>
                         <tr>
