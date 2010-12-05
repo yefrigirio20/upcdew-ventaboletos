@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04/12/2010 10:54:13 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pe.edu.upc.dew.ventapasajesbus.dao.Cliente" table="cliente" catalog="bus">
+        <id name="coCliente" type="string">
+            <column name="Co_Cliente" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="empresatransporte" class="pe.edu.upc.dew.ventapasajesbus.dao.Empresatransporte" fetch="select">
+            <column name="Co_EmpresaTransporte" not-null="true" />
+        </many-to-one>
+        <property name="noCliente" type="string">
+            <column name="No_Cliente" length="60" not-null="true" />
+        </property>
+        <property name="noDireccion" type="string">
+            <column name="No_Direccion" length="60" not-null="true" />
+        </property>
+        <property name="nuTelefono" type="string">
+            <column name="Nu_Telefono" length="65535" not-null="true" />
+        </property>
+        <property name="noEmail" type="string">
+            <column name="No_Email" length="65535" not-null="true" />
+        </property>
+        <set name="reservas" inverse="true">
+            <key>
+                <column name="Co_Cliente" length="10" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.upc.dew.ventapasajesbus.dao.Reserva" />
+        </set>
+    </class>
+</hibernate-mapping>

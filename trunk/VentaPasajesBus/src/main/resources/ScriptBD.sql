@@ -32,12 +32,6 @@ CREATE TABLE `bus`.`reserva` (
 )
 ENGINE = InnoDB;
 
-CREATE TABLE `bus`.`asiento` (
-  `Nu_Asiento` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`Nu_Asiento`)
-)
-ENGINE = InnoDB;
-
 CREATE TABLE `bus`.`ciudad` (
   `Co_Ciudad` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   `No_Ciudad` CHAR(60) NOT NULL,
@@ -103,11 +97,6 @@ ALTER TABLE `bus`.`reserva` ADD CONSTRAINT `FK_reserva_3` FOREIGN KEY `FK_reserv
     ON DELETE RESTRICT
     ON UPDATE RESTRICT;
 
-ALTER TABLE `bus`.`reserva` ADD CONSTRAINT `FK_reserva_4` FOREIGN KEY `FK_reserva_4` (`Nu_Asiento`)
-    REFERENCES `asiento` (`Nu_Asiento`)
-    ON DELETE RESTRICT
-    ON UPDATE RESTRICT;
-
 ALTER TABLE `bus`.`ruta` ADD CONSTRAINT `FK_ruta_1` FOREIGN KEY `FK_ruta_1` (`Co_EmpresaTransporte`)
     REFERENCES `empresatransporte` (`Co_EmpresaTransporte`)
     ON DELETE RESTRICT
@@ -161,40 +150,6 @@ INSERT INTO ciudad VALUES ('4','Trujillo');
 INSERT INTO ciudad VALUES ('5','Chiclayo');
 INSERT INTO ciudad VALUES ('6','Arequipa');
 INSERT INTO ciudad VALUES ('7','Tumbes');
-
-INSERT INTO asiento VALUES ('1');
-INSERT INTO asiento VALUES ('2');
-INSERT INTO asiento VALUES ('3');
-INSERT INTO asiento VALUES ('4');
-INSERT INTO asiento VALUES ('5');
-INSERT INTO asiento VALUES ('6');
-INSERT INTO asiento VALUES ('7');
-INSERT INTO asiento VALUES ('8');
-INSERT INTO asiento VALUES ('9');
-INSERT INTO asiento VALUES ('10');
-INSERT INTO asiento VALUES ('11');
-INSERT INTO asiento VALUES ('12');
-INSERT INTO asiento VALUES ('13');
-INSERT INTO asiento VALUES ('14');
-INSERT INTO asiento VALUES ('15');
-INSERT INTO asiento VALUES ('16');
-INSERT INTO asiento VALUES ('17');
-INSERT INTO asiento VALUES ('18');
-INSERT INTO asiento VALUES ('19');
-INSERT INTO asiento VALUES ('20');
-INSERT INTO asiento VALUES ('21');
-INSERT INTO asiento VALUES ('22');
-INSERT INTO asiento VALUES ('23');
-INSERT INTO asiento VALUES ('24');
-INSERT INTO asiento VALUES ('25');
-INSERT INTO asiento VALUES ('26');
-INSERT INTO asiento VALUES ('27');
-INSERT INTO asiento VALUES ('28');
-INSERT INTO asiento VALUES ('29');
-INSERT INTO asiento VALUES ('30');
-INSERT INTO asiento VALUES ('31');
-INSERT INTO asiento VALUES ('32');
-
 
 INSERT INTO usuario VALUES('ybricen','12345','Administrador','1');
 INSERT INTO usuario VALUES('wbustos','12345','Vendedor','1');
