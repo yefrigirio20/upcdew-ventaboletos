@@ -150,6 +150,8 @@ INSERT INTO ciudad VALUES ('4','Trujillo');
 INSERT INTO ciudad VALUES ('5','Chiclayo');
 INSERT INTO ciudad VALUES ('6','Arequipa');
 INSERT INTO ciudad VALUES ('7','Tumbes');
+INSERT INTO ciudad VALUES ('8','Cuzco');
+
 
 INSERT INTO usuario VALUES('ybricen','12345','Administrador','1');
 INSERT INTO usuario VALUES('wbustos','12345','Vendedor','1');

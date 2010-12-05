@@ -71,14 +71,16 @@ public class TransporteImpl implements Transporte{
         SimpleDateFormat df = new SimpleDateFormat ("dd/mm/yyyy hh:mm");
         Date fecha;
         try {
-            fecha = df.parse(fechasalida);
+            //fecha = df.parse(fechasalida);
+            fecha = df.parse("01/12/2010 10:00");
             ruta.setFeHoraSalida(fecha);
         } catch (ParseException ex) {
         }
 
         df = new SimpleDateFormat ("dd/mm/yyyy hh:mm");
         try {
-            fecha = df.parse(fechallegada);
+            fecha = df.parse("01/12/2010 13:00");
+            //fecha = df.parse(fechallegada);
             ruta.setFeHoraLlegada(fecha);
         } catch (ParseException ex) {
         }

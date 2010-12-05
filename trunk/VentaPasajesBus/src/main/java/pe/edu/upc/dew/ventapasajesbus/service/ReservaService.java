@@ -1,7 +1,7 @@
 package pe.edu.upc.dew.ventapasajesbus.service;
 
-import pe.edu.upc.dew.ventapasajesbus.model.Reserva;
-import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
+import pe.edu.upc.dew.ventapasajesbus.dao.Reserva;
+import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
 
 public interface ReservaService {
 
