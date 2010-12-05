@@ -2,6 +2,12 @@
 <script type="text/javascript" language="javascript">
 
     $(document).ready(function(){
+        $( "#datepicker" ).datepicker({
+			showOn: "button",
+			buttonImage: "/images/calendar.gif",
+			buttonImageOnly: true
+		});
+                
         $("#frmrutas").validate({
             rules: {
                 fechasalida: {
@@ -32,15 +38,7 @@
     });
 
 </script>
-<script>
-	$(function() {
-		$( "#fechasalida" ).datepicker({
-			showOn: "button",
-			buttonImage: "images/calendar.gif",
-			buttonImageOnly: true
-		});
-	});
-	</script>
+
 
 
 <!-- ####################################################################################################### -->
@@ -78,7 +76,7 @@
                         </tr>
                         <tr>
                             <td><label for="name"><small>Fecha y Hora de Salida:</small></label></td>
-                            <td><input type="text" name="fechasalida" id="fechasalida" value="" size="22" /></td>
+                            <td><input type="text" name="datepicker" id="datepicker" value="" size="22" /></td>
 
                         </tr>
                         <tr>
