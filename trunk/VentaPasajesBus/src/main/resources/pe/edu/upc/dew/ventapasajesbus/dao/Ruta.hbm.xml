@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04/12/2010 07:30:20 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pe.edu.upc.dew.ventapasajesbus.dao.Ruta" table="ruta" catalog="bus">
+        <id name="coRuta" type="java.lang.Integer">
+            <column name="Co_Ruta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="ciudadByNoCiudadDestino" class="pe.edu.upc.dew.ventapasajesbus.dao.Ciudad" fetch="select">
+            <column name="No_CiudadDestino" not-null="true" />
+        </many-to-one>
+        <many-to-one name="bus" class="pe.edu.upc.dew.ventapasajesbus.dao.Bus" fetch="select">
+            <column name="Co_Placa" length="10" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ciudadByNoCiudadOrigen" class="pe.edu.upc.dew.ventapasajesbus.dao.Ciudad" fetch="select">
+            <column name="No_CiudadOrigen" not-null="true" />
+        </many-to-one>
+        <many-to-one name="empresatransporte" class="pe.edu.upc.dew.ventapasajesbus.dao.Empresatransporte" fetch="select">
+            <column name="Co_EmpresaTransporte" not-null="true" />
+        </many-to-one>
+        <property name="feHoraSalida" type="timestamp">
+            <column name="Fe_HoraSalida" length="19" not-null="true" />
+        </property>
+        <property name="feHoraLlegada" type="timestamp">
+            <column name="Fe_HoraLlegada" length="19" not-null="true" />
+        </property>
+        <property name="ssTarifa" type="double">
+            <column name="Ss_Tarifa" precision="22" scale="0" not-null="true" />
+        </property>
+        <set name="reservas" inverse="true">
+            <key>
+                <column name="Co_Ruta" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.upc.dew.ventapasajesbus.dao.Reserva" />
+        </set>
+    </class>
+</hibernate-mapping>
