@@ -11,13 +11,13 @@ ENGINE = InnoDB;
 
 
 CREATE TABLE `bus`.`cliente` (
-  `Co_Cliente` CHAR(10) NOT NULL,
+  `Co_DNI` CHAR(8) NOT NULL,
   `No_Cliente` CHAR(60) NOT NULL,
   `No_Direccion` CHAR(60) NOT NULL,
   `Nu_Telefono` TEXT NOT NULL,
   `No_Email` TEXT NOT NULL,
   `Co_EmpresaTransporte` INTEGER UNSIGNED NOT NULL,
-  PRIMARY KEY (`Co_Cliente`)
+  PRIMARY KEY (`Co_DNI`)
 )
 ENGINE = InnoDB;
 
@@ -26,7 +26,7 @@ CREATE TABLE `bus`.`reserva` (
   `Fl_Pagado` BOOLEAN NOT NULL,
   `Nu_Asiento` INTEGER UNSIGNED NOT NULL,
   `Co_EmpresaTransporte` INTEGER UNSIGNED NOT NULL,
-  `Co_Cliente` CHAR(10) NOT NULL,
+  `Co_DNI` CHAR(10) NOT NULL,
   `Co_Ruta` INTEGER UNSIGNED NOT NULL,
   PRIMARY KEY (`Co_Ticket`)
 )
@@ -87,8 +87,8 @@ ALTER TABLE `bus`.`reserva` ADD CONSTRAINT `FK_reserva_1` FOREIGN KEY `FK_reserv
     ON DELETE RESTRICT
     ON UPDATE RESTRICT;
 
-ALTER TABLE `bus`.`reserva` ADD CONSTRAINT `FK_reserva_2` FOREIGN KEY `FK_reserva_2` (`Co_Cliente`)
-    REFERENCES `cliente` (`Co_Cliente`)
+ALTER TABLE `bus`.`reserva` ADD CONSTRAINT `FK_reserva_2` FOREIGN KEY `FK_reserva_2` (`Co_DNI`)
+    REFERENCES `cliente` (`Co_DNI`)
     ON DELETE RESTRICT
     ON UPDATE RESTRICT;
 
@@ -157,13 +157,13 @@ INSERT INTO usuario VALUES('lsabina','12345','Vendedor','2');
 INSERT INTO usuario VALUES('nsanche','12345','Administrador','3');
 INSERT INTO usuario VALUES('drodrig','12345','Vendedor','5');
 
-INSERT INTO cliente VALUES('cl0001','Yessel Briceno','Jr.Aguarico 649','2354186','ybricen.b@gmail.com','1');
-INSERT INTO cliente VALUES('cl0002','Nicolas Sanchez','Av. Ica 578','9865241','utnico@gmail.com','2');
-INSERT INTO cliente VALUES('cl0003','Lesly Briceno','Calle Larco 111','1245253','lbricen.b@gmail.com','3');
-INSERT INTO cliente VALUES('cl0004','Juan Carlos Damian','Jr. Iquitos 235','4425361','jdamian@gmail.com','1');
-INSERT INTO cliente VALUES('cl0005','Jesus Maita','Av. Los portales 754','987456','jmaita@gmail.com','4');
-INSERT INTO cliente VALUES('cl0006','Martin Ramirez','Jr.Aguarico 555','2352143','mramirez@gmail.com','5');
-INSERT INTO cliente VALUES('cl0007','Carlos Morales','Jr.Aguarico 875','2351256','cmorales@gmail.com','4');
+INSERT INTO cliente VALUES('44531258','Yessel Briceno','Jr.Aguarico 649','2354186','ybricen.b@gmail.com','1');
+INSERT INTO cliente VALUES('10858871','Nicolas Sanchez','Av. Ica 578','9865241','utnico@gmail.com','2');
+INSERT INTO cliente VALUES('41522188','Lesly Briceno','Calle Larco 111','1245253','lbricen.b@gmail.com','3');
+INSERT INTO cliente VALUES('42558685','Juan Carlos Damian','Jr. Iquitos 235','4425361','jdamian@gmail.com','1');
+INSERT INTO cliente VALUES('10845812','Jesus Maita','Av. Los portales 754','987456','jmaita@gmail.com','4');
+INSERT INTO cliente VALUES('42539687','Martin Ramirez','Jr.Aguarico 555','2352143','mramirez@gmail.com','5');
+INSERT INTO cliente VALUES('41352696','Carlos Morales','Jr.Aguarico 875','2351256','cmorales@gmail.com','4');
 
 
 INSERT INTO ruta VALUES('1','7','1','2010-05-24 08:00','2010-05-25 15:00','524.23','2','WMX-0005', '40', '40');
@@ -172,11 +172,11 @@ INSERT INTO ruta VALUES('3','5','6','2010-05-26 10:00','2010-05-26 13:00','623.4
 INSERT INTO ruta VALUES('4','2','1','2010-05-27 11:00','2010-05-27 16:00','524.11','1','WMX-0002', '40', '40');
 INSERT INTO ruta VALUES('5','7','6','2010-05-28 12:00','2010-05-28 15:00','524.23','1','WMX-0001', '45', '45');
 
-INSERT INTO reserva VALUES('1','0','1','1','cl0001','1');
-INSERT INTO reserva VALUES('2','0','30','2','cl0007','2');
-INSERT INTO reserva VALUES('3','1','25','3','cl0005','3');
-INSERT INTO reserva VALUES('4','1','3','3','cl0001','4');
-INSERT INTO reserva VALUES('5','1','18','5','cl0004','5');
+INSERT INTO reserva VALUES('1','0','1','1','44531258','1');
+INSERT INTO reserva VALUES('2','0','30','2','41522188','2');
+INSERT INTO reserva VALUES('3','1','25','3','10845812','3');
+INSERT INTO reserva VALUES('4','1','3','3','41352696','4');
+INSERT INTO reserva VALUES('5','1','18','5','10845812','5');
 
 
 

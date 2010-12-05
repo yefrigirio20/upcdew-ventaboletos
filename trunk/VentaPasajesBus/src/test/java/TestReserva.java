@@ -41,7 +41,7 @@ public class TestReserva {
                 (Empresatransporte) session.createQuery("from Empresatransporte where No_EmpresaTransporte=:No_EmpresaTransporte")
                     .setString("No_EmpresaTransporte", "Speedy S.A").uniqueResult();
 
-        Cliente cliente = (Cliente) session.get(Cliente.class, "cl0004");
+        Cliente cliente = (Cliente) session.get(Cliente.class, "42539687");
         Ruta ruta = (Ruta) session.get(Ruta.class, 3);
         
         Reserva reserva = new Reserva();

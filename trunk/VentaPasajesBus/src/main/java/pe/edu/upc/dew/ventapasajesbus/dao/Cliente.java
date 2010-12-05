@@ -23,16 +23,16 @@ public class Cliente  implements java.io.Serializable {
     }
 
 	
-    public Cliente(String coCliente, Empresatransporte empresatransporte, String noCliente, String noDireccion, String nuTelefono, String noEmail) {
-        this.coCliente = coCliente;
+    public Cliente(String coDNI, Empresatransporte empresatransporte, String noCliente, String noDireccion, String nuTelefono, String noEmail) {
+        this.coCliente = coDNI;
         this.empresatransporte = empresatransporte;
         this.noCliente = noCliente;
         this.noDireccion = noDireccion;
         this.nuTelefono = nuTelefono;
         this.noEmail = noEmail;
     }
-    public Cliente(String coCliente, Empresatransporte empresatransporte, String noCliente, String noDireccion, String nuTelefono, String noEmail, Set reservas) {
-       this.coCliente = coCliente;
+    public Cliente(String coDNI, Empresatransporte empresatransporte, String noCliente, String noDireccion, String nuTelefono, String noEmail, Set reservas) {
+       this.coCliente = coDNI;
        this.empresatransporte = empresatransporte;
        this.noCliente = noCliente;
        this.noDireccion = noDireccion;
@@ -45,8 +45,8 @@ public class Cliente  implements java.io.Serializable {
         return this.coCliente;
     }
     
-    public void setCoCliente(String coCliente) {
-        this.coCliente = coCliente;
+    public void setCoCliente(String coDNI) {
+        this.coCliente = coDNI;
     }
     public Empresatransporte getEmpresatransporte() {
         return this.empresatransporte;

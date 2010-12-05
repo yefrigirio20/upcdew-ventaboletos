@@ -4,8 +4,8 @@
 <!-- Generated 04/12/2010 10:54:13 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="pe.edu.upc.dew.ventapasajesbus.dao.Cliente" table="cliente" catalog="bus">
-        <id name="coCliente" type="string">
-            <column name="Co_Cliente" length="10" />
+        <id name="coDNI" type="string">
+            <column name="Co_DNI" length="8" />
             <generator class="assigned" />
         </id>
         <many-to-one name="empresatransporte" class="pe.edu.upc.dew.ventapasajesbus.dao.Empresatransporte" fetch="select">
@@ -25,7 +25,7 @@
         </property>
         <set name="reservas" inverse="true">
             <key>
-                <column name="Co_Cliente" length="10" not-null="true" />
+                <column name="Co_DNI" length="8" not-null="true" />
             </key>
             <one-to-many class="pe.edu.upc.dew.ventapasajesbus.dao.Reserva" />
         </set>
