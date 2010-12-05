@@ -1,9 +1,6 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,8 +14,7 @@ import pe.edu.upc.dew.ventapasajesbus.dao.Empresatransporte;
 import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
 import pe.edu.upc.dew.ventapasajesbus.utils.NewHibernateUtil;
 
-
-public class HibernateTests {
+public class TestRuta {
 
     private Session session;
 
@@ -31,18 +27,6 @@ public class HibernateTests {
     @After // Se ejecuta después de ejecutar el Test
     public void finalizarHibernate() {
         this.session.close();
-    }
-
-    @Test
-    public void testGetRuta() {
-        Ruta ruta = (Ruta) session.get(Ruta.class, 1);
-        Assert.assertEquals(524.23, ruta.getSsTarifa(),0);
-    }
-
-    @Test
-    public void testGetRutas() {
-        List<Ruta> rutas = session.createQuery("from Ruta").list();
-        Assert.assertEquals(5, rutas.size());
     }
 
     @Test
@@ -65,8 +49,6 @@ public class HibernateTests {
         Assert.assertNotNull(ciudadOrigen);
         Assert.assertNotNull(ciudadDestino);
         Assert.assertNotNull(bus);
-
-
 
         Ruta ruta = new Ruta();
         ruta.setCiudadByNoCiudadOrigen(ciudadOrigen);
@@ -98,47 +80,6 @@ public class HibernateTests {
         //session.delete(ruta);
         tx.commit();
 
-
-/*
-        Bus bus = new Bus("KX-3432", 2, 35);
-        Transaction tx = session.beginTransaction();
-        session.save(usuario);
-
-        Usuario select = (Usuario) session.get(Usuario.class, usuario.getUsername());
-        Assert.assertEquals(usuario.getUsername(), select.getUsername());
-
-        session.delete(usuario);
-        Usuario delete = (Usuario) session.get(Usuario.class, usuario.getUsername());
-        Assert.assertNull(delete);
-        tx.commit(); */
     }
-
-
-
-    /*@Test
-    public void testGetUsuariosConWhere() {
-        List<Usuario> usuarios =
-                session.createQuery("from Usuario where username=:nombre")
-                    .setString("nombre", "nico").list();
-        Assert.assertEquals(1, usuarios.size());
-    }
-
-    @Test
-    public void testSaveDeleteUsuario() {
-        Usuario usuario = new Usuario("nuevo", "xxx");
-        Transaction tx = session.beginTransaction();
-        session.save(usuario);
-
-        Usuario select = (Usuario) session.get(Usuario.class, usuario.getUsername());
-        Assert.assertEquals(usuario.getUsername(), select.getUsername());
-
-        session.delete(usuario);
-        Usuario delete = (Usuario) session.get(Usuario.class, usuario.getUsername());
-        Assert.assertNull(delete);
-        tx.commit();
-    }
-*/
-
-
 
 }
