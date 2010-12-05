@@ -32,6 +32,16 @@
     });
 
 </script>
+<script>
+	$(function() {
+		$( "#fechasalida" ).datepicker({
+			showOn: "button",
+			buttonImage: "images/calendar.gif",
+			buttonImageOnly: true
+		});
+	});
+	</script>
+
 
 <!-- ####################################################################################################### -->
 <div class="wrapper col5">

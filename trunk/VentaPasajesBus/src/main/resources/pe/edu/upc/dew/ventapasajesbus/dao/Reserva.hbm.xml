@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 04/12/2010 10:54:13 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 05/12/2010 12:44:54 AM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="pe.edu.upc.dew.ventapasajesbus.dao.Reserva" table="reserva" catalog="bus">
         <id name="coTicket" type="java.lang.Integer">
@@ -11,11 +11,11 @@
         <many-to-one name="ruta" class="pe.edu.upc.dew.ventapasajesbus.dao.Ruta" fetch="select">
             <column name="Co_Ruta" not-null="true" />
         </many-to-one>
-        <many-to-one name="empresatransporte" class="pe.edu.upc.dew.ventapasajesbus.dao.Empresatransporte" fetch="select">
-            <column name="Co_EmpresaTransporte" not-null="true" />
-        </many-to-one>
         <many-to-one name="cliente" class="pe.edu.upc.dew.ventapasajesbus.dao.Cliente" fetch="select">
             <column name="Co_DNI" length="8" not-null="true" />
+        </many-to-one>
+        <many-to-one name="empresatransporte" class="pe.edu.upc.dew.ventapasajesbus.dao.Empresatransporte" fetch="select">
+            <column name="Co_EmpresaTransporte" not-null="true" />
         </many-to-one>
         <property name="flPagado" type="boolean">
             <column name="Fl_Pagado" not-null="true" />
