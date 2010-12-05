@@ -19,11 +19,16 @@ import pe.edu.upc.dew.ventapasajesbus.utils.NewHibernateUtil;
 
 public class TransporteImpl implements Transporte{
 
-    List<Ruta> rutas;
-    String mensaje;
-    Ruta ruta;
+    private List<Ruta> rutas;
+    private String mensaje;
+    private Ruta ruta;
+    Session session;
 
     public List<Ruta> getRutas() {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+        rutas = session.createQuery("from Ruta").list();
         return rutas;
     }
 
@@ -34,7 +39,7 @@ public class TransporteImpl implements Transporte{
     public void setRuta(String empresa, String origen, String destino, String fechasalida, String horasalida, String fechallegada,
                 String horallegada, String tarifa, String placaBus) {
 
-        Session session;
+        
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
 
