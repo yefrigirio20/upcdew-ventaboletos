@@ -74,8 +74,26 @@
             <version>4.8.1</version>
             <scope>test</scope>
         </dependency>
-       
-    
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>3.2.5.ga</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>3.3.2.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.sql</groupId>
+            <artifactId>jdbc-stdext</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.0.1B</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -91,6 +109,14 @@
         </plugins>
         <finalName>VentaPasajesBus</finalName>
     </build>
+    <repositories>
+        <repository>
+            <url>http://download.java.net/maven/2/</url>
+            <id>hibernate-support</id>
+            <layout>default</layout>
+            <name>Repository for library Library[hibernate-support]</name>
+        </repository>
+    </repositories>
     <properties>
         <netbeans.hint.deploy.server>Tomcat60</netbeans.hint.deploy.server>
     </properties>
