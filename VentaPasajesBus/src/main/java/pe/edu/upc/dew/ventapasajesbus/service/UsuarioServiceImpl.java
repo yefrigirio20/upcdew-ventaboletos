@@ -30,13 +30,13 @@ public class UsuarioServiceImpl implements UsuarioService{
 
         // Añadimos empresas de transporte
         EmpresaTransporte empresaTransporte1 = new EmpresaTransporte();
-        empresaTransporte1.setNombre("Buses Unidos");
+        empresaTransporte1.setNombre("Turismo Barranca S.A.");
 
         EmpresaTransporte empresaTransporte2 = new EmpresaTransporte();
-        empresaTransporte2.setNombre("Mi Bus");
+        empresaTransporte2.setNombre("Sagal S.A.C");
 
         EmpresaTransporte empresaTransporte3 = new EmpresaTransporte();
-        empresaTransporte3.setNombre("Transporte Veloz");
+        empresaTransporte3.setNombre("Rapido y Furioso EIRL.");
 
         // Añadimos a la lista de Empresas de transporte cada empresa de transporte
         ArrayList<EmpresaTransporte> empresasTransporte = new ArrayList<EmpresaTransporte>();

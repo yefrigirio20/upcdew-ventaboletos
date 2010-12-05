@@ -7,11 +7,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import pe.edu.upc.dew.ventapasajesbus.controller.TransporteServlet;
-import pe.edu.upc.dew.ventapasajesbus.model.Bus;
-import pe.edu.upc.dew.ventapasajesbus.model.Ciudad;
-import pe.edu.upc.dew.ventapasajesbus.model.EmpresaTransporte;
-import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
+import pe.edu.upc.dew.ventapasajesbus.dao.Bus;
+import pe.edu.upc.dew.ventapasajesbus.dao.Ciudad;
+import pe.edu.upc.dew.ventapasajesbus.dao.Empresatransporte;
+import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
+import pe.edu.upc.dew.ventapasajesbus.utils.NewHibernateUtil;
 
 public class TransporteImpl implements Transporte{
 
@@ -28,7 +32,68 @@ public class TransporteImpl implements Transporte{
     }
 
     public void setRuta(String empresa, String origen, String destino, String fechasalida, String horasalida, String fechallegada,
-                String horallegada, String tarifa, String bus) {
+                String horallegada, String tarifa, String placaBus) {
+
+        Session session;
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+/*        Empresatransporte empresaTransporte =
+                (Empresatransporte) session.createQuery("from Empresatransporte").list().get(0);
+
+        Ciudad ciudadOrigen =
+                (Ciudad) session.createQuery("from Ciudad").list().get(0);
+
+        Ciudad ciudadDestino =
+                (Ciudad) session.createQuery("from Ciudad").list().get(0);
+*/
+
+        Empresatransporte empresaTransporte =
+                (Empresatransporte) session.createQuery("from Empresatransporte where No_EmpresaTransporte=:No_EmpresaTransporte")
+                    .setString("No_EmpresaTransporte", empresa).uniqueResult();
+
+        Ciudad ciudadOrigen =
+                (Ciudad) session.createQuery("from Ciudad where No_Ciudad=:No_Ciudad")
+                    .setString("No_Ciudad", origen).uniqueResult();
+
+        Ciudad ciudadDestino =
+                (Ciudad) session.createQuery("from Ciudad where No_Ciudad=:No_Ciudad")
+                    .setString("No_Ciudad", destino).uniqueResult();
+
+
+        Bus bus = (Bus) session.get(Bus.class, placaBus);
+
+        ruta = new Ruta();
+        ruta.setCiudadByNoCiudadOrigen(ciudadOrigen);
+        ruta.setCiudadByNoCiudadDestino(ciudadDestino);
+        ruta.setEmpresatransporte(empresaTransporte);
+
+        SimpleDateFormat df = new SimpleDateFormat ("dd/mm/yyyy hh:mm");
+        Date fecha;
+        try {
+            fecha = df.parse(fechasalida);
+            ruta.setFeHoraSalida(fecha);
+        } catch (ParseException ex) {
+        }
+
+        df = new SimpleDateFormat ("dd/mm/yyyy hh:mm");
+        try {
+            fecha = df.parse(fechallegada);
+            ruta.setFeHoraLlegada(fecha);
+        } catch (ParseException ex) {
+        }
+
+        ruta.setQtCapacidadTotal(bus.getQtCapacidad());
+        ruta.setQtCapacidadDisp(bus.getQtCapacidad());
+        ruta.setSsTarifa(Double.parseDouble(tarifa));
+        ruta.setBus(bus);
+
+        Transaction tx = session.beginTransaction();
+        session.save(ruta);
+        tx.commit();
+
+
+/*
         // Añadimos empresas de transporte
         EmpresaTransporte empresaTransporte1 = new EmpresaTransporte();
         empresaTransporte1.setNombre("Buses Unidos");
@@ -149,6 +214,8 @@ public class TransporteImpl implements Transporte{
         // Agregamos la capacidad
         ruta.setCapacidadTotal(40);
         ruta.setCapacidadDisp(40);
+*/
+
 
     }
 
