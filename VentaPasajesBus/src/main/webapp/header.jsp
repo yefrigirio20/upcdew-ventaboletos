@@ -8,6 +8,8 @@
         <meta http-equiv="imagetoolbar" content="no" />
         <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
         <link rel="stylesheet" href="/styles/validate/screen.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/jquery-ui-1.8.6.custom.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/base/jquery.ui.all.css" type="text/css" />
         <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
         <!-- <script type="text/javascript" src="/scripts/jquery.jcarousel.pack.js"></script>
         <script type="text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
