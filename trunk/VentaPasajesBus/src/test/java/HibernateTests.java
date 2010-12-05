@@ -1,10 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,10 +9,7 @@ import org.junit.Test;
 import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
 import pe.edu.upc.dew.ventapasajesbus.utils.NewHibernateUtil;
 
-/**
- *
- * @author u814830
- */
+
 public class HibernateTests {
 
     private Session session;
