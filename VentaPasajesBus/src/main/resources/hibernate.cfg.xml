@@ -7,5 +7,13 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bus</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">12345</property>
+    <mapping resource="pe/edu/upc/dew/ventapasajesbus/dao/Usuario.hbm.xml"/>
+    <mapping resource="pe/edu/upc/dew/ventapasajesbus/dao/Ruta.hbm.xml"/>
+    <mapping resource="pe/edu/upc/dew/ventapasajesbus/dao/Empresatransporte.hbm.xml"/>
+    <mapping resource="pe/edu/upc/dew/ventapasajesbus/dao/Bus.hbm.xml"/>
+    <mapping resource="pe/edu/upc/dew/ventapasajesbus/dao/Asiento.hbm.xml"/>
+    <mapping resource="pe/edu/upc/dew/ventapasajesbus/dao/Reserva.hbm.xml"/>
+    <mapping resource="pe/edu/upc/dew/ventapasajesbus/dao/Ciudad.hbm.xml"/>
+    <mapping resource="pe/edu/upc/dew/ventapasajesbus/dao/Cliente.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
