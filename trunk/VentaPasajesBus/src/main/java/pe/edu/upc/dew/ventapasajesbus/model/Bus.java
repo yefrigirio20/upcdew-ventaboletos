@@ -5,6 +5,15 @@ public class Bus {
     private EmpresaTransporte empresaTransporte;
     private Integer capacidad;
 
+    public Bus() {
+    }
+
+    public Bus(String placa, EmpresaTransporte empresaTransporte, Integer capacidad) {
+        this.placa = placa;
+        this.empresaTransporte = empresaTransporte;
+        this.capacidad = capacidad;
+    }
+
     public Integer getCapacidad() {
         return capacidad;
     }
