@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
-import pe.edu.upc.dew.ventapasajesbus.model.Reserva;
-import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
+import pe.edu.upc.dew.ventapasajesbus.dao.Reserva;
+import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
 import pe.edu.upc.dew.ventapasajesbus.service.ReservaImpl;
 import pe.edu.upc.dew.ventapasajesbus.service.ReservaService;
 
