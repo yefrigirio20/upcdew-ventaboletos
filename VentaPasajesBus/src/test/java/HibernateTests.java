@@ -27,8 +27,8 @@ public class HibernateTests {
 
     @Test
     public void testGetRuta() {
-        Ruta ruta = (Ruta) session.get(Ruta.class, "1");
-        Assert.assertEquals("1", ruta.getCoRuta());
+        Ruta ruta = (Ruta) session.get(Ruta.class, 1);
+        Assert.assertEquals(524.23, ruta.getSsTarifa(),0);
     }
 
     @Test
