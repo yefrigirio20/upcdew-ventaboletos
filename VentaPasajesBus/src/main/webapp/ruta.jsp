@@ -136,7 +136,7 @@ function fnSetDateFormat(oDateFormat)
                             <td><input type="text" name="tarifa" id="tarifa" value="" size="22" /></td>
                         </tr>
                         <tr>
-                            <td></td><td><input type="submit" value="Nuevo" name="Nuevo" />
+                            <td></td><td><!-- <input type="submit" value="Nuevo" name="Nuevo" /> -->
                                 <input type="submit" value="Grabar" name="Grabar" /></td>
                         </tr>
                     </table>
