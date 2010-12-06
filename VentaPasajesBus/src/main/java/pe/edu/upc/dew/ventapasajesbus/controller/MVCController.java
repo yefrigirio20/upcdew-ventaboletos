@@ -22,9 +22,7 @@ public class MVCController extends AbstractController{
         rutas = emp.getRutas();
 
         session.setAttribute("rutas", rutas);
-        session.setAttribute("rutas1", "rutas1");
-
-
+        
         return new ModelAndView("reserva");
     }
 

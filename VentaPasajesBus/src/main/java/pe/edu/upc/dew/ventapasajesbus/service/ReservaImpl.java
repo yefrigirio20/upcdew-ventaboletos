@@ -1,5 +1,6 @@
 package pe.edu.upc.dew.ventapasajesbus.service;
 
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import pe.edu.upc.dew.ventapasajesbus.dao.Cliente;
@@ -11,10 +12,11 @@ public class ReservaImpl implements ReservaService {
     private Cliente cliente;
     private Ruta ruta;
     private Reserva reserva;
+    private List<Reserva> reservas;
+    Session session;
 
     public void setReserva(Ruta ruta, String asiento, String nombre, String dni, String telefono, String direccion){
 
-        Session session;
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
 
@@ -70,6 +72,14 @@ public class ReservaImpl implements ReservaService {
     }
     public Reserva getReserva(){
         return reserva;
+    }
+
+    public List<Reserva> getReservas() {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+        reservas = session.createQuery("from Reserva").list();
+        return reservas;
     }
 
 
