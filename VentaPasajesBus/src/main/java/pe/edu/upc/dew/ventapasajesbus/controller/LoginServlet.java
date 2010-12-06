@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import pe.edu.upc.dew.ventapasajesbus.dao.Bus;
+import pe.edu.upc.dew.ventapasajesbus.dao.Ciudad;
 import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
 import pe.edu.upc.dew.ventapasajesbus.dao.Usuario;
 import pe.edu.upc.dew.ventapasajesbus.service.Transporte;
@@ -48,8 +50,12 @@ public class LoginServlet extends HttpServlet{
             Transporte transporte = new TransporteImpl();
             List<Ruta> rutas = transporte.
                     getRutasByEmpresaDeTransporte(usuario.getEmpresatransporte().getCoEmpresaTransporte());
-            System.out.println("numero de rutas" + rutas.size());
+            List<Ciudad> ciudades = transporte.getCiudad();
+            List<Bus> buses = transporte.getBus(usuario.getEmpresatransporte().getCoEmpresaTransporte());
+
             session.setAttribute("rutasPorEmpresa", rutas);
+            session.setAttribute("ciudadesPorEmpresa", ciudades);
+            session.setAttribute("busesPorEmpresa", buses);
             req.getRequestDispatcher("ruta.jsp").forward(req, resp);
         }else{
             req.getRequestDispatcher("login.jsp").forward(req, resp);
