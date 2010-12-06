@@ -67,7 +67,16 @@ public class TransporteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession();
+
+        //obtenemos la ruta
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        rutas = transporte.getRutasByEmpresaDeTransporte(usuario.getEmpresatransporte().getCoEmpresaTransporte());
+
+       //Almacena en sesion
+       session.setAttribute("rutasPorEmpresa", rutas);
+       request.getRequestDispatcher("ruta.jsp").forward(request, response);
+
     }
 
     /**
@@ -105,14 +114,13 @@ public class TransporteServlet extends HttpServlet {
         transporte.setRuta(empresa, origen, destino,
                 fechasalida, horasalida, fechallegada, horallegada, tarifa, bus);
         //obtenemos la ruta
-        ruta = new Ruta();
-        ruta = transporte.getRuta();
-        rutas.add(ruta);
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        rutas = transporte.getRutasByEmpresaDeTransporte(usuario.getEmpresatransporte().getCoEmpresaTransporte());
 
        //Almacena en sesion
-       session.setAttribute("rutas", rutas);
+       session.setAttribute("rutasPorEmpresa", rutas);
        session.setAttribute("mensaje", mensaje);
-       request.getRequestDispatcher("ruta.jsp").forward(request, response);
+       request.getRequestDispatcher("/TransporteServlet").forward(request, response);
    //     processRequest(request, response);
     }
 
