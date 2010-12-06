@@ -1,6 +1,8 @@
 package pe.edu.upc.dew.ventapasajesbus.service;
 
 import java.util.List;
+import pe.edu.upc.dew.ventapasajesbus.dao.Bus;
+import pe.edu.upc.dew.ventapasajesbus.dao.Ciudad;
 import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
 
 public interface Transporte {
@@ -11,6 +13,8 @@ public interface Transporte {
     public List<Ruta> getRutas();
     public List<Ruta> getRutasByEmpresaDeTransporte(Integer emp);
     public String getMensaje();
+    public List<Ciudad> getCiudad();
+    public List<Bus> getBus(Integer emp);
 
 
 }

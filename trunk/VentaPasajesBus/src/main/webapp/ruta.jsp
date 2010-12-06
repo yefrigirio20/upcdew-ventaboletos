@@ -35,38 +35,38 @@
 </script>
 <script type="text/javascript"  language="javascript">
 
-//***** Function formating the Date for inputbox *****
+    //***** Function formating the Date for inputbox *****
 
-function fnSetDateFormat(oDateFormat)
-{
-	oDateFormat['FullYear'];		//Example = 2007
-	oDateFormat['Year'];			//Example = 07
-	oDateFormat['FullMonthName'];	//Example = January
-	oDateFormat['MonthName'];		//Example = Jan
-	oDateFormat['Month'];			//Example = 01
-	oDateFormat['Date'];			//Example = 01
-	oDateFormat['FullDay'];			//Example = Sunday
-	oDateFormat['Day'];				//Example = Sun
-	oDateFormat['Hours'];			//Example = 01
-	oDateFormat['Minutes'];			//Example = 01
-	oDateFormat['Seconds'];			//Example = 01
+    function fnSetDateFormat(oDateFormat)
+    {
+        oDateFormat['FullYear'];		//Example = 2007
+        oDateFormat['Year'];			//Example = 07
+        oDateFormat['FullMonthName'];	//Example = January
+        oDateFormat['MonthName'];		//Example = Jan
+        oDateFormat['Month'];			//Example = 01
+        oDateFormat['Date'];			//Example = 01
+        oDateFormat['FullDay'];			//Example = Sunday
+        oDateFormat['Day'];				//Example = Sun
+        oDateFormat['Hours'];			//Example = 01
+        oDateFormat['Minutes'];			//Example = 01
+        oDateFormat['Seconds'];			//Example = 01
 
-	var sDateString;
+        var sDateString;
 
-	//Example = 01/01/00  dd/mm/yy
-	//sDateString = oDateFormat['Date'] +"/"+ oDateFormat['Month'] +"/"+ oDateFormat['Year'];
+        //Example = 01/01/00  dd/mm/yy
+        //sDateString = oDateFormat['Date'] +"/"+ oDateFormat['Month'] +"/"+ oDateFormat['Year'];
 
-	//Example = 01/01/0000  dd/mm/yyyy
-	sDateString = oDateFormat['Date'] +"/"+ oDateFormat['Month'] +"/"+ oDateFormat['FullYear'];
+        //Example = 01/01/0000  dd/mm/yyyy
+        sDateString = oDateFormat['Date'] +"/"+ oDateFormat['Month'] +"/"+ oDateFormat['FullYear'];
 
-	//Example = 0000-01-01 yyyy/mm/dd
-	//sDateString = oDateFormat['FullYear'] +"-"+ oDateFormat['Month'] +"-"+ oDateFormat['Date'];
+        //Example = 0000-01-01 yyyy/mm/dd
+        //sDateString = oDateFormat['FullYear'] +"-"+ oDateFormat['Month'] +"-"+ oDateFormat['Date'];
 
-	//Example = Jan-01-0000 Mmm/dd/yyyy
-	//sDateString = oDateFormat['MonthName'] +"-"+ oDateFormat['Date'] +"-"+ oDateFormat['FullYear'];
+        //Example = Jan-01-0000 Mmm/dd/yyyy
+        //sDateString = oDateFormat['MonthName'] +"-"+ oDateFormat['Date'] +"-"+ oDateFormat['FullYear'];
 
-	return sDateString;
-}
+        return sDateString;
+    }
 
 </script>
 
@@ -88,12 +88,9 @@ function fnSetDateFormat(oDateFormat)
                         <tr>
                             <td><label for="name"><small>Origen:</small></label></td>
                             <td><select name="origen">
-                                    <option>Lima</option>
-                                    <option>Cuzco</option>
-                                    <option>Arequipa</option>
-                                    <option>Trujillo</option>
-                                    <option>Ica</option>
-                                    <option>Tumbes</option>
+                                    <c:forEach var="ciudad" items="${ciudadesPorEmpresa}">
+                                        <option>${ciudad.noCiudad}</option>
+                                    </c:forEach>
                                 </select></td>
 
                         </tr>
@@ -101,11 +98,7 @@ function fnSetDateFormat(oDateFormat)
                             <td><label for="name"><small>Destino:</small></label></td>
                             <td><select name="destino">
                                     <option>Lima</option>
-                                    <option>Cuzco</option>
-                                    <option>Arequipa</option>
-                                    <option>Trujillo</option>
-                                    <option>Ica</option>
-                                    <option>Tumbes</option>
+                                    
                                 </select></td>
                         </tr>
                         <tr>
@@ -226,25 +219,25 @@ function fnSetDateFormat(oDateFormat)
                                 <th><strong>Bus Placa</strong></th>
                                 <!-- <th><strong></strong></th> -->
                             </tr>
-                    </thead>
+                        </thead>
                         <tbody>
 
-                                <c:forEach var="ruta" items="${rutasPorEmpresa}">
-                            <tr>
-                                <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
-                                <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
-                                <td>${ruta.ciudadByNoCiudadDestino.noCiudad}</td>
-                                <td>${ruta.feHoraSalida}</td>
-                                <td></td>
-                                <td>${ruta.feHoraLlegada}</td>
-                                <td></td>
-                                <td>${ruta.ssTarifa}</td>
-                                <td>${ruta.bus.coPlaca}</td>
-                                <!-- <td><input type="button" value="Quitar" /></td> -->
-                            </tr>
+                            <c:forEach var="ruta" items="${rutasPorEmpresa}">
+                                <tr>
+                                    <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
+                                    <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
+                                    <td>${ruta.ciudadByNoCiudadDestino.noCiudad}</td>
+                                    <td>${ruta.feHoraSalida}</td>
+                                    <td></td>
+                                    <td>${ruta.feHoraLlegada}</td>
+                                    <td></td>
+                                    <td>${ruta.ssTarifa}</td>
+                                    <td>${ruta.bus.coPlaca}</td>
+                                    <!-- <td><input type="button" value="Quitar" /></td> -->
+                                </tr>
                             </tbody>
                         </c:forEach>
-                        
+
 
                     </table>
 

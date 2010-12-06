@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import pe.edu.upc.dew.ventapasajesbus.dao.Bus;
+import pe.edu.upc.dew.ventapasajesbus.dao.Ciudad;
 import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
 import pe.edu.upc.dew.ventapasajesbus.dao.Usuario;
 import pe.edu.upc.dew.ventapasajesbus.service.Transporte;
@@ -68,6 +70,7 @@ public class TransporteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         HttpSession session = request.getSession();
+        transporte = new TransporteImpl();
 
         //obtenemos la ruta
         Usuario usuario = (Usuario) session.getAttribute("usuario");

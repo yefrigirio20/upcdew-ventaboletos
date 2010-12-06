@@ -238,4 +238,22 @@ public class TransporteImpl implements Transporte{
         return ruta;
     }
 
+    public List<Ciudad> getCiudad() {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+        List<Ciudad> ciudades = session.createQuery("from Ciudad").list();
+        return ciudades;
+    }
+
+    public List<Bus> getBus(Integer emp) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+        List<Bus> buses = session.createQuery("from Ruta where Co_EmpresaTransporte=:Co_EmpresaTransporte")
+                .setInteger("Co_EmpresaTransporte", emp).list();
+        
+        return buses;
+    }
+
 }
