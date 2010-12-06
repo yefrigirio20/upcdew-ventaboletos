@@ -158,7 +158,7 @@ function fnSetDateFormat(oDateFormat)
                     </thead>
                         <tbody>
 
-                                <c:forEach var="ruta" items="${rutas}">
+                                <c:forEach var="ruta" items="${rutasPorEmpresa}">
                             <tr>
                                 <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
                                 <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>

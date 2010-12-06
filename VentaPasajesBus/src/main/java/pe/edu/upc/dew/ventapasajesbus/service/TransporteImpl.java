@@ -31,12 +31,12 @@ public class TransporteImpl implements Transporte{
         rutas = session.createQuery("from Ruta").list();
         return rutas;
     }
-    public List<Ruta> getRutasByEmpresaDeTransporte(Empresatransporte emp) {
+    public List<Ruta> getRutasByEmpresaDeTransporte(Integer emp) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
 
         rutas = session.createQuery("from Ruta where Co_EmpresaTransporte=:Co_EmpresaTransporte")
-                .setInteger("Co_EmpresaTransporte", emp.getCoEmpresaTransporte()).list();
+                .setInteger("Co_EmpresaTransporte", emp).list();
         return rutas;
     }
 

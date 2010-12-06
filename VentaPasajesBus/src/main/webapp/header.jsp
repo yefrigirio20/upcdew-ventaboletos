@@ -30,6 +30,7 @@
                     <li><c:if test="${usuario != null}">
                             Usuario Logeado: ${usuario.noUsername}
                             ${usuario.empresatransporte.coEmpresaTransporte}
+                            ${rutasPorEmpresa.size}
                         </c:if>
                         <c:if test="${usuario == null}"><a href="login.jsp">Login</a></c:if>
                         </li>

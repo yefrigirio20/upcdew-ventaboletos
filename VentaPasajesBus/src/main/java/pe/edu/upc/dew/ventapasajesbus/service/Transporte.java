@@ -10,7 +10,7 @@ public interface Transporte {
                 String horallegada, String tarifa, String bus);
     public Ruta getRuta();
     public List<Ruta> getRutas();
-    public List<Ruta> getRutasByEmpresaDeTransporte(Empresatransporte emp);
+    public List<Ruta> getRutasByEmpresaDeTransporte(Integer emp);
     public String getMensaje();
 
 
