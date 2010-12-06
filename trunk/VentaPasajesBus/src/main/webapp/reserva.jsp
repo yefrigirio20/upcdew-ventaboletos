@@ -79,14 +79,14 @@
                             <c:forEach var="ruta" items="${rutas}">
                             <tr>
                                 <td><input type="checkbox" name="select"  /></td>
-                                <td>${ruta.empresaTransporte.nombre}</td>
-                                <td>${ruta.ciudadOrigen.nombre}</td>
-                                <td>${ruta.ciudadDestino.nombre}</td>
-                                <td>${ruta.tarifa}</td>
-                                <td>${ruta.fechaHoraSalida}</td>
-                                <td>${ruta.fechaHoraLlegada}</td>
-                                <td>${ruta.capacidadTotal}</td>
-                                <td>${ruta.capacidadDisp} <a href="#">Elegir</a></td>
+                                <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
+                                <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
+                                <td>${ruta.ciudadByNoCiudadDestino.noCiudad}</td>
+                                <td>${ruta.ssTarifa}</td>
+                                <td>${ruta.feHoraSalida}</td>
+                                <td>${ruta.feHoraLlegada}</td>
+                                <td>${ruta.qtCapacidadTotal}</td>
+                                <td>${ruta.qtCapacidadDisp} <a href="#">Elegir</a></td>
                             </tr>
                         </c:forEach>
                         </tr>

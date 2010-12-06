@@ -5,10 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 ">
     <!-- Controller -->
-    <bean id="mvcController" class="pe.edu.upc.dew.ventapasajesbus.controller.MVCController" />
-    <bean id="reservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.ReservaController" />
-    <bean id="modificaReservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.ModificarReservaController" />
-    <bean id="cancelaReservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.CancelarReservaController" />
+    <bean id="mvcController" class="pe.edu.upc.dew.ventapasajesbus.controller.MVCController" scope="session" />
+    <bean id="reservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.ReservaController" scope="session" />
+    <bean id="modificaReservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.ModificarReservaController" scope="session" />
+    <bean id="cancelaReservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.CancelarReservaController" scope="session" />
     <!-- End Controller -->
 
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
