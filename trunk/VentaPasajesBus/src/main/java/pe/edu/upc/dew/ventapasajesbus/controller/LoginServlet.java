@@ -31,7 +31,6 @@ public class LoginServlet extends HttpServlet{
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        System.out.println("logeando");
         // Llamar al model
         UsuarioService usuarioService = new UsuarioServiceImpl();
         Usuario usuario = usuarioService.login(username, password);
@@ -47,8 +46,10 @@ public class LoginServlet extends HttpServlet{
             req.getRequestDispatcher("reservar.reserva").forward(req, resp);
         }else if(usuario.getNoRol().equals("Administrador")){
             Transporte transporte = new TransporteImpl();
-            List<Ruta> rutas = transporte.getRutasByEmpresaDeTransporte(usuario.getEmpresatransporte());
-            session.setAttribute("rutas", rutas);
+            List<Ruta> rutas = transporte.
+                    getRutasByEmpresaDeTransporte(usuario.getEmpresatransporte().getCoEmpresaTransporte());
+            System.out.println("numero de rutas" + rutas.size());
+            session.setAttribute("rutasPorEmpresa", rutas);
             req.getRequestDispatcher("ruta.jsp").forward(req, resp);
         }else{
             req.getRequestDispatcher("login.jsp").forward(req, resp);
