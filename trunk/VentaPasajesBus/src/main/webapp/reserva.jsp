@@ -57,8 +57,9 @@
 <div class="wrapper col5">
     <div id="container">
 
-        <h2>RESERVAS</h2>
+        <h3>Realizar Reservas de Viaje</h3>
         <div id="respond">
+            <strong>Elegir la Ruta y el Asiento</strong><p />
             <form id="frmconfirmareserva" action="confirmar.reserva" method="post">
                 <table >
                     <thead>
@@ -72,13 +73,14 @@
                             <th><strong>Llegada</strong></th>
                             <th><strong>Capacidad</strong></th>
                             <th><strong>Disponibilidad</strong></th>
+                            <th><strong>Asiento</strong></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <c:forEach var="ruta" items="${rutas}">
                             <tr>
-                                <td><input type="checkbox" name="select"  /></td>
+                                <td><input type="radio" name="reservaSeleccion" value="${ruta.coRuta}"/></td>
                                 <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
                                 <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
                                 <td>${ruta.ciudadByNoCiudadDestino.noCiudad}</td>
@@ -86,7 +88,8 @@
                                 <td>${ruta.feHoraSalida}</td>
                                 <td>${ruta.feHoraLlegada}</td>
                                 <td>${ruta.qtCapacidadTotal}</td>
-                                <td>${ruta.qtCapacidadDisp} <a href="#">Elegir</a></td>
+                                <td>${ruta.qtCapacidadDisp}</td>
+                                <td><a href="#">Elegir</a></td>
                             </tr>
                         </c:forEach>
                         </tr>

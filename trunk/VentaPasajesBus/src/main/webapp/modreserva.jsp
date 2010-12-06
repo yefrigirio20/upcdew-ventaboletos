@@ -25,7 +25,7 @@
     <div id="container">
         <div id="content">
 
-            <h2>MODIFICACION RESERVA</h2>
+            <h2>CANCELAR RESERVA</h2>
             <div id="respond">
                 <form id="frmmodifica" name="frmmodifica" action="buscarreserva" method="post">
                     <table>
@@ -89,25 +89,28 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <c:forEach var="reserva" items="${reservas}">
                             <tr>
-                                <td><input type="checkbox" name="select" value="ON" /></td>
-                                <td>${reserva.ticket}</td>
-                                <td>${reserva.cliente.nombre}</td>
-                                <td>${reserva.cliente.idCliente}</td>
-                                <td>${reserva.empresaTransporte.nombre}</td>
-                                <td>${reserva.ruta.ciudadOrigen.nombre}</td>
-                                <td>${reserva.ruta.ciudadDestino.nombre}</td>
-                                <td>${reserva.ruta.tarifa}</td>
-                                <td></td>
-                                <td></td>
-                                <td>${reserva.asiento}</td>
+                                <td><input type="checkbox" name="select" value="${reserva.coTicket}" /></td>
+                                <td>${reserva.coTicket}</td>
+                                <td>${reserva.cliente.noCliente}</td>
+                                <td>${reserva.cliente.coDni}</td>
+                                <td>${reserva.empresatransporte.noEmpresaTransporte}</td>
+                                <td>${reserva.ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
+                                <td>${reserva.ruta.ciudadByNoCiudadDestino.noCiudad}</td>
+                                <td>${reserva.ruta.ssTarifa}</td>
+                                <td>${reserva.ruta.feHoraSalida}</td>
+                                <td>${reserva.ruta.feHoraLlegada}</td>
+                                <td>${reserva.nuAsiento}</td>
                             </tr>
+                            </c:forEach>
                         </tbody>
 
                     </table>
                     <input type="submit" value="Pagar e Imprimir Ticket" name="pagar" />
                     <input type="submit" value="Borrar Reserva" name="borrar" />
-                    <br />
+                    <p />
+                    
                 </form>
             </div>
         </div>
