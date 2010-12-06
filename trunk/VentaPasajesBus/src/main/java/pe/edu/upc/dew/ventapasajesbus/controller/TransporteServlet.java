@@ -101,7 +101,7 @@ public class TransporteServlet extends HttpServlet {
 
         // Creamos el transporte
         transporte = new TransporteImpl();
-        transporte.setRuta(empresa, origen, destino, 
+        transporte.setRuta(empresa, origen, destino,
                 fechasalida, horasalida, fechallegada, horallegada, tarifa, bus);
         //obtenemos la ruta
         ruta = new Ruta();

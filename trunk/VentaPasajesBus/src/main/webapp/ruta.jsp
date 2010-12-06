@@ -110,15 +110,15 @@ function fnSetDateFormat(oDateFormat)
                         </tr>
                         <tr>
                             <td><label for="name"><small>Fecha y Hora de Salida:</small></label></td>
-                            <td><input type="text" name="fechasalida" id="fechasalida" value="" size="22" />
-                            <img src='/calendar/cal.gif' align='absmiddle' onmouseover="fnInitCalendar(this, 'fechasalida', 'style=calendar_blue.css,instance=single')">
+                            <td><input type="text" name="fechasalida" id="fechasalida1" value="" size="22" />
+                            <img src='/calendar/cal.gif' align='absmiddle' onmouseover="fnInitCalendar(this, 'fechasalida1', 'style=calendar_blue.css,instance=single')">
                             </td>
 
                         </tr>
                         <tr>
                             <td><label for="name"><small>Fecha y Hora de Llegada:</small></label></td>
-                            <td><input type="text" name="fechallegada" id="fechallegada" value="" size="22" />
-                            <img src='/calendar/cal.gif' align='absmiddle' onmouseover="fnInitCalendar(this, 'fechallegada', 'style=calendar_blue.css,instance=single')">
+                            <td><input type="text" name="fechallegada" id="fechallegada1" value="" size="22" />
+                            <img src='/calendar/cal.gif' align='absmiddle' onmouseover="fnInitCalendar(this, 'fechallegada1', 'style=calendar_blue.css,instance=single')">
                             </td>
 
                         </tr>
