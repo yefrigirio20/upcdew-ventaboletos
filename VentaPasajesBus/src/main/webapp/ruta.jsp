@@ -160,15 +160,15 @@ function fnSetDateFormat(oDateFormat)
 
                                 <c:forEach var="ruta" items="${rutas}">
                             <tr>
-                                <td>${ruta.empresaTransporte.nombre}</td>
-                                <td>${ruta.ciudadOrigen.nombre}</td>
-                                <td>${ruta.ciudadDestino.nombre}</td>
-                                <td>${ruta.fechaHoraSalida}</td>
+                                <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
+                                <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
+                                <td>${ruta.ciudadByNoCiudadDestino.noCiudad}</td>
+                                <td>${ruta.feHoraSalida}</td>
                                 <td></td>
-                                <td>${ruta.fechaHoraLlegada}</td>
+                                <td>${ruta.feHoraLlegada}</td>
                                 <td></td>
-                                <td>${ruta.tarifa}</td>
-                                <td>${ruta.bus.placa}</td>
+                                <td>${ruta.ssTarifa}</td>
+                                <td>${ruta.bus.coPlaca}</td>
                                 <!-- <td><input type="button" value="Quitar" /></td> -->
                             </tr>
                             </tbody>

@@ -5,14 +5,16 @@
 
 package pe.edu.upc.dew.ventapasajesbus.controller;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import pe.edu.upc.dew.ventapasajesbus.model.EmpresaTransporte;
+import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
 import pe.edu.upc.dew.ventapasajesbus.dao.Usuario;
+import pe.edu.upc.dew.ventapasajesbus.service.Transporte;
+import pe.edu.upc.dew.ventapasajesbus.service.TransporteImpl;
 import pe.edu.upc.dew.ventapasajesbus.service.UsuarioService;
 import pe.edu.upc.dew.ventapasajesbus.service.UsuarioServiceImpl;
 
@@ -44,6 +46,9 @@ public class LoginServlet extends HttpServlet{
         if(usuario.getNoRol().equals("Vendedor")){
             req.getRequestDispatcher("reservar.reserva").forward(req, resp);
         }else if(usuario.getNoRol().equals("Administrador")){
+            Transporte transporte = new TransporteImpl();
+            List<Ruta> rutas = transporte.getRutasByEmpresaDeTransporte(usuario.getEmpresatransporte());
+            session.setAttribute("rutas", rutas);
             req.getRequestDispatcher("ruta.jsp").forward(req, resp);
         }else{
             req.getRequestDispatcher("login.jsp").forward(req, resp);

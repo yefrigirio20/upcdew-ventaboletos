@@ -31,6 +31,14 @@ public class TransporteImpl implements Transporte{
         rutas = session.createQuery("from Ruta").list();
         return rutas;
     }
+    public List<Ruta> getRutasByEmpresaDeTransporte(Empresatransporte emp) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+        rutas = session.createQuery("from Ruta where Co_EmpresaTransporte=:Co_EmpresaTransporte")
+                .setInteger("Co_EmpresaTransporte", emp.getCoEmpresaTransporte()).list();
+        return rutas;
+    }
 
     public String getMensaje() {
         throw new UnsupportedOperationException("Not supported yet.");
