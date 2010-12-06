@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
+import pe.edu.upc.dew.ventapasajesbus.dao.Usuario;
 import pe.edu.upc.dew.ventapasajesbus.service.Transporte;
 import pe.edu.upc.dew.ventapasajesbus.service.TransporteImpl;
 
@@ -28,7 +29,7 @@ public class TransporteServlet extends HttpServlet {
     Ruta ruta;
     Transporte transporte;
 
-    /** 
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
      * @param response servlet response
@@ -43,20 +44,20 @@ public class TransporteServlet extends HttpServlet {
             /* TODO output your page here
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet TransporteServlet</title>");  
+            out.println("<title>Servlet TransporteServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet TransporteServlet at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
             */
-        } finally { 
+        } finally {
             out.close();
         }
-    } 
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /** 
+    /**
      * Handles the HTTP <code>GET</code> method.
      * @param request servlet request
      * @param response servlet response
@@ -67,9 +68,9 @@ public class TransporteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         processRequest(request, response);
-    } 
+    }
 
-    /** 
+    /**
      * Handles the HTTP <code>POST</code> method.
      * @param request servlet request
      * @param response servlet response
@@ -115,7 +116,7 @@ public class TransporteServlet extends HttpServlet {
    //     processRequest(request, response);
     }
 
-    /** 
+    /**
      * Returns a short description of the servlet.
      * @return a String containing servlet description
      */
