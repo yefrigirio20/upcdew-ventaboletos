@@ -6,6 +6,8 @@
         <title>Buses del Perú</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <meta http-equiv="imagetoolbar" content="no" />
+        <meta HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+        <meta HTTP-EQUIV="Expires" CONTENT="-1" />
         <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
         <link rel="stylesheet" href="/styles/validate/screen.css" type="text/css" />
         <link rel="stylesheet" href="/styles/jquery-ui-1.8.6.custom.css" type="text/css" />
