@@ -67,7 +67,7 @@ ENGINE = InnoDB;
 
 
 CREATE TABLE `bus`.`usuario` (
-  `No_Username` CHAR(8) NOT NULL,
+  `No_Username` CHAR(20) NOT NULL,
   `No_Password` CHAR(20) NOT NULL,
   `No_Rol` CHAR(60) NOT NULL,
   `Co_EmpresaTransporte` INTEGER UNSIGNED NOT NULL,
@@ -158,6 +158,8 @@ INSERT INTO usuario VALUES('wbustos','12345','Vendedor','1');
 INSERT INTO usuario VALUES('lsabina','12345','Vendedor','2');
 INSERT INTO usuario VALUES('nsanche','12345','Administrador','3');
 INSERT INTO usuario VALUES('drodrig','12345','Vendedor','5');
+INSERT INTO usuario VALUES('transporte','12345','Administrador','1');
+INSERT INTO usuario VALUES('ejecutiva','12345','Vendedor','1');
 
 INSERT INTO cliente VALUES('44531258','Yessel Briceno','Jr.Aguarico 649','2354186','ybricen.b@gmail.com','1');
 INSERT INTO cliente VALUES('10858871','Nicolas Sanchez','Av. Ica 578','9865241','utnico@gmail.com','2');

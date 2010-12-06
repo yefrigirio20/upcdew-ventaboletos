@@ -82,7 +82,7 @@ function fnSetDateFormat(oDateFormat)
                     <table>
                         <tr>
                             <td><label for="name"><small>Empresa de Transporte:</small></label></td>
-                            <td><input type="text" name="empresa" id="name" value="${usuario.empresaTransporte.nombre}" size="22"/></td>
+                            <td><input type="text" name="empresa" id="name" value="${usuario.empresatransporte.noEmpresaTransporte}" size="22"/></td>
                         </tr>
 
                         <tr>

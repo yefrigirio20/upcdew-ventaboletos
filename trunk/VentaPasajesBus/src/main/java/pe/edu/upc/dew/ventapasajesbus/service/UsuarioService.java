@@ -6,7 +6,7 @@
 package pe.edu.upc.dew.ventapasajesbus.service;
 
 import java.util.List;
-import pe.edu.upc.dew.ventapasajesbus.model.Usuario;
+import pe.edu.upc.dew.ventapasajesbus.dao.Usuario;
 
 /**
  *

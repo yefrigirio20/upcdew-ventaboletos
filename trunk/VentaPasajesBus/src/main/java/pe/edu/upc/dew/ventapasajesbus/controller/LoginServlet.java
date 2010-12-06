@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import pe.edu.upc.dew.ventapasajesbus.model.EmpresaTransporte;
-import pe.edu.upc.dew.ventapasajesbus.model.Usuario;
+import pe.edu.upc.dew.ventapasajesbus.dao.Usuario;
 import pe.edu.upc.dew.ventapasajesbus.service.UsuarioService;
 import pe.edu.upc.dew.ventapasajesbus.service.UsuarioServiceImpl;
 
@@ -24,39 +24,26 @@ import pe.edu.upc.dew.ventapasajesbus.service.UsuarioServiceImpl;
 public class LoginServlet extends HttpServlet{
     @Override
     protected void  doPost(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
-        // Añadimos usuarios nuevos
-        /*Usuario user1 = new Usuario();
-        user1.setUsername("ejecutiva");
-        user1.setPassword("111");
-        user1.setRol("E");
         
-        Usuario user2 = new Usuario();
-        user2.setUsername("transporte");
-        user2.setPassword("111");
-        user2.setRol("T");
-        
-        // Agregamos a la lista de usuarios cada usuario creado
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
-        usuarios.add(user1);
-        usuarios.add(user2);*/
-
         // Obtenemos los parámetros enviados en la pantalla de login
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
+        System.out.println("logeando");
         // Llamar al model
         UsuarioService usuarioService = new UsuarioServiceImpl();
         Usuario usuario = usuarioService.login(username, password);
+        
         if (usuario == null) {
             req.getRequestDispatcher("login.jsp").forward(req, resp);
-        }
+        } else {
 
         HttpSession session = req.getSession();
         session.setAttribute("usuario", usuario);
 
-        if(usuario.getRol().equals("E")){
+        if(usuario.getNoRol().equals("Vendedor")){
             req.getRequestDispatcher("reservar.reserva").forward(req, resp);
-        }else if(usuario.getRol().equals("T")){
+        }else if(usuario.getNoRol().equals("Administrador")){
             req.getRequestDispatcher("ruta.jsp").forward(req, resp);
         }else{
             req.getRequestDispatcher("login.jsp").forward(req, resp);
@@ -74,6 +61,7 @@ public class LoginServlet extends HttpServlet{
                 }
             }
         }*/
+        }
 
     }
 }

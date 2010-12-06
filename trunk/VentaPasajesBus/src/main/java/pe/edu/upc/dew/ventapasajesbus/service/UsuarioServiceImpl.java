@@ -6,8 +6,11 @@
 package pe.edu.upc.dew.ventapasajesbus.service;
 
 import java.util.ArrayList;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import pe.edu.upc.dew.ventapasajesbus.model.EmpresaTransporte;
-import pe.edu.upc.dew.ventapasajesbus.model.Usuario;
+import pe.edu.upc.dew.ventapasajesbus.dao.Usuario;
+import pe.edu.upc.dew.ventapasajesbus.utils.NewHibernateUtil;
 
 /**
  *
@@ -17,8 +20,24 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     public Usuario login(String username, String password) {
 
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session = sessionFactory.openSession();
 
-        Usuario usuario = new Usuario();
+        Usuario usuario = (Usuario) session.get(Usuario.class, username);
+
+        System.out.println("creando usuario");
+        if(usuario == null){
+            System.out.println("usuario es nulo");
+            return null;
+        }
+
+        if(usuario.getNoPassword().equals(password)){
+            return usuario;
+        }else{
+            return null;
+        }
+
+        /*
         usuario.setUsername(username);
         usuario.setPassword(password);
 
@@ -60,8 +79,8 @@ public class UsuarioServiceImpl implements UsuarioService{
        /*
         usuario.getRoles().add(new Rol("admin","Rol administrador"));
         usuario.getRoles().add(new Rol("operador","Rol operador"));
-        usuario.getRoles().add(new Rol("supervisor", "Rol supervisor")); */
-        return usuario;
+        usuario.getRoles().add(new Rol("supervisor", "Rol supervisor")); 
+        return usuario;*/
     }
 
 }
