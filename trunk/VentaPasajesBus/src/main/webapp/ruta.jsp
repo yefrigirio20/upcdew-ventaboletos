@@ -104,7 +104,7 @@
                         </tr>
                         <tr>
                             <td><label for="name"><small>Fecha y Hora de Salida:</small></label></td>
-                            <td>Día: <input type="text" name="fechasalida" id="fechasalida" size="22"  />
+                            <td>Día: <input type="text" name="fechasalida" id="fechasalida" size="22" readonly="readonly" />
                                 <img alt="Calendario"  src='/calendar/cal.gif' align='absmiddle' onmouseover="fnInitCalendar(this, 'fechasalida', 'style=calendar_blue.css,instance=single')">  
                                 Hora:
                                 <select name="horasalida">
@@ -146,7 +146,7 @@
                         </tr>
                         <tr>
                             <td><label for="name"><small>Fecha y Hora de Llegada:</small></label></td>
-                            <td>Día: <input type="text" name="fechallegada" id="fechallegada" size="22"  />
+                            <td>Día: <input type="text" name="fechallegada" id="fechallegada" size="22" readonly="readonly" />
                                 <img alt="calendario"  src='/calendar/cal.gif' align='absmiddle' onmouseover="fnInitCalendar(this, 'fechallegada', 'style=calendar_blue.css,instance=single')">
                                 Hora:
                                 <select name="horallegada">
@@ -208,13 +208,13 @@
 
                         <thead>
                             <tr>
-                                <th><strong>Empresa de Transporte</strong></th>
+                                <!--<th><strong>Empresa de Transporte</strong></th>-->
                                 <th><strong>Origen</strong></th>
                                 <th><strong>Destino</strong></th>
-                                <th><strong>Salida</strong></th>
-                                <th><strong>HoraSalida</strong></th>
-                                <th><strong>Llegada</strong></th>
-                                <th><strong>HoraLlegada</strong></th>
+                                <th><strong>Fecha y Hora de Salida</strong></th>
+                                <!-- <th><strong>HoraSalida</strong></th> -->
+                                <th><strong>Fecha y Hora de Llegada</strong></th>
+                                <!-- <th><strong>HoraLlegada</strong></th>-->
                                 <th><strong>Tarifa</strong></th>
                                 <th><strong>Bus Placa</strong></th>
                                 <!-- <th><strong></strong></th> -->
@@ -224,13 +224,13 @@
 
                             <c:forEach var="ruta" items="${rutasPorEmpresa}">
                                 <tr>
-                                    <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
+                                    <!--<td>${ruta.empresatransporte.noEmpresaTransporte}</td>-->
                                     <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
                                     <td>${ruta.ciudadByNoCiudadDestino.noCiudad}</td>
                                     <td>${ruta.feHoraSalida}</td>
-                                    <td></td>
+                                    <!-- <td></td> -->
                                     <td>${ruta.feHoraLlegada}</td>
-                                    <td></td>
+                                    <!-- <td></td> -->
                                     <td>${ruta.ssTarifa}</td>
                                     <td>${ruta.bus.coPlaca}</td>
                                     <!-- <td><input type="button" value="Quitar" /></td> -->
