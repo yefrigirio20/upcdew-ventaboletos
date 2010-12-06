@@ -44,7 +44,8 @@ public class TransporteImpl implements Transporte{
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public void setRuta(String empresa, String origen, String destino, String fechasalida, String horasalida, String fechallegada,
+    public void setRuta(String empresa, String origen, String destino,
+            String fechasalida, String horasalida, String fechallegada,
                 String horallegada, String tarifa, String placaBus) {
 
         
@@ -81,7 +82,7 @@ public class TransporteImpl implements Transporte{
         ruta.setCiudadByNoCiudadDestino(ciudadDestino);
         ruta.setEmpresatransporte(empresaTransporte);
 
-        SimpleDateFormat df = new SimpleDateFormat ("dd/mm/yyyy hh:mm");
+        SimpleDateFormat df = new SimpleDateFormat ("dd/MM/yyyy HH:mm");
         Date fecha;
         try {
             fecha = df.parse(fechasalida);
@@ -90,7 +91,7 @@ public class TransporteImpl implements Transporte{
         } catch (ParseException ex) {
         }
 
-        df = new SimpleDateFormat ("dd/mm/yyyy hh:mm");
+        df = new SimpleDateFormat ("dd/MM/yyyy HH:mm");
         try {
             //fecha = df.parse("01/12/2010 13:00");
             fecha = df.parse(fechallegada);
