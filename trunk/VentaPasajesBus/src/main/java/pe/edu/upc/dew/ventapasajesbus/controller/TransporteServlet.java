@@ -69,17 +69,7 @@ public class TransporteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        transporte = new TransporteImpl();
-
-        //obtenemos la ruta
-        Usuario usuario = (Usuario) session.getAttribute("usuario");
-        rutas = transporte.getRutasByEmpresaDeTransporte(usuario.getEmpresatransporte().getCoEmpresaTransporte());
-
-       //Almacena en sesion
-       session.setAttribute("rutasPorEmpresa", rutas);
-       request.getRequestDispatcher("ruta.jsp").forward(request, response);
-
+        
     }
 
     /**
@@ -92,18 +82,22 @@ public class TransporteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        
         // Obtenemos los parámetros enviados en la pantalla de ruta
         String empresa = request.getParameter("empresa");
         String origen = request.getParameter("origen");
         String destino = request.getParameter("destino");
         String fechasalida = request.getParameter("fechasalida");
         String horasalida = request.getParameter("horasalida");
+        String minutosalida = request.getParameter("minutosalida");
         String fechallegada = request.getParameter("fechallegada");
         String horallegada = request.getParameter("horallegada");
+        String minutollegada = request.getParameter("minutosalida");
         String tarifa = request.getParameter("tarifa");
         String bus = request.getParameter("bus");
 
-        HttpSession session = request.getSession();
         if(request.getSession().getAttribute("rutas") == null){
             rutas = new ArrayList<Ruta>();
             mensaje = "nulo";
@@ -112,10 +106,14 @@ public class TransporteServlet extends HttpServlet {
             mensaje = "con datos "+rutas.size();
         }
 
+        String fsalida = fechasalida + " " + horasalida + ":" + minutosalida;
+        String fllegada = fechallegada + " " + horallegada + ":" + minutollegada;
         // Creamos el transporte
         transporte = new TransporteImpl();
+        System.out.println("primera hora");
+        System.out.println(horasalida);
         transporte.setRuta(empresa, origen, destino,
-                fechasalida, horasalida, fechallegada, horallegada, tarifa, bus);
+                fsalida, horasalida, fllegada, horallegada, tarifa, bus);
         //obtenemos la ruta
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         rutas = transporte.getRutasByEmpresaDeTransporte(usuario.getEmpresatransporte().getCoEmpresaTransporte());
@@ -123,7 +121,7 @@ public class TransporteServlet extends HttpServlet {
        //Almacena en sesion
        session.setAttribute("rutasPorEmpresa", rutas);
        session.setAttribute("mensaje", mensaje);
-       request.getRequestDispatcher("/TransporteServlet").forward(request, response);
+       request.getRequestDispatcher("/ruta.jsp").forward(request, response);
    //     processRequest(request, response);
     }
 

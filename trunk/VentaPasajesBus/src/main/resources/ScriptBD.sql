@@ -137,10 +137,10 @@ INSERT INTO empresatransporte VALUES('4','Speedy S.A');
 INSERT INTO empresatransporte VALUES('5','Rapido y Furioso EIRL.');
 
 INSERT INTO bus VALUES ('WMX-0001','44', '1');
-INSERT INTO bus VALUES ('WMX-0002','40', '2');
-INSERT INTO bus VALUES ('WMX-0003','35', '3');
-INSERT INTO bus VALUES ('WMX-0004','41', '4');
-INSERT INTO bus VALUES ('WMX-0005','40', '5');
+INSERT INTO bus VALUES ('WMX-0002','40', '1');
+INSERT INTO bus VALUES ('WMX-0003','35', '1');
+INSERT INTO bus VALUES ('WMX-0004','41', '2');
+INSERT INTO bus VALUES ('WMX-0005','40', '3');
 
 
 INSERT INTO ciudad VALUES ('1','Barranca');
