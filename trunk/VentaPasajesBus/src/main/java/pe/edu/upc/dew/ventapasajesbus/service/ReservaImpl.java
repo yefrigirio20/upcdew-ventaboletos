@@ -3,6 +3,7 @@ package pe.edu.upc.dew.ventapasajesbus.service;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import pe.edu.upc.dew.ventapasajesbus.dao.Cliente;
 import pe.edu.upc.dew.ventapasajesbus.dao.Reserva;
 import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
@@ -10,7 +11,6 @@ import pe.edu.upc.dew.ventapasajesbus.utils.NewHibernateUtil;
 
 public class ReservaImpl implements ReservaService {
     private Cliente cliente;
-    private Ruta ruta;
     private Reserva reserva;
     private List<Reserva> reservas;
     Session session;
@@ -19,15 +19,20 @@ public class ReservaImpl implements ReservaService {
 
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
+        Transaction tx;
 
         cliente = (Cliente) session.get(Cliente.class, dni);
         if (cliente == null) {
+            cliente = new Cliente();
             cliente.setCoDni(dni);
+            cliente.setEmpresatransporte(ruta.getEmpresatransporte());
             cliente.setNoCliente(nombre);
             cliente.setNoDireccion(direccion);
             cliente.setNoEmail(nombre);
             cliente.setNuTelefono(telefono);
+            tx = session.beginTransaction();
             session.save(cliente);
+            tx.commit();
         }
 
         reserva = new Reserva();
@@ -38,12 +43,16 @@ public class ReservaImpl implements ReservaService {
         reserva.setNuAsiento(Integer.parseInt(asiento));
 
         // Reduce la capacidad del bus asociado a la ruta elegida
-        int c = reserva.getRuta().getQtCapacidadDisp();
+/*      int c = reserva.getRuta().getQtCapacidadDisp();
         if (c > 0) {
             c = c - 1;
         }
-        reserva.getRuta().setQtCapacidadDisp(c);
+
+        //reserva.getRuta().setQtCapacidadDisp(c); */
+        tx = session.beginTransaction();
         session.save(reserva);
+        tx.commit();
+
         session.close();
 
 

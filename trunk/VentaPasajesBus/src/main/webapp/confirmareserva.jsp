@@ -8,45 +8,45 @@
             <table>
           <tr>
               <td><label for="name"><small>Nro. de Ticket:</small></label>
-            <td>${reserva.ticket}
+            <td>${reserva.coTicket}
           </tr>
           <tr>
 	    <td><label for="name"><small>Ciudad origen:</small></label>
-            <td>${reserva.ruta.ciudadOrigen.nombre}
+            <td>${reserva.ruta.ciudadByNoCiudadOrigen.noCiudad}
           </tr>
           <tr>
 	    <td><label for="name"><small>Ciudad destino:</small></label>
-            <td>${reserva.ruta.ciudadDestino.nombre}
+            <td>${reserva.ruta.ciudadByNoCiudadDestino.noCiudad}
           </tr>
           <tr>
 	    <td><label for="name"><small>Empresa de Transporte:</small></label>
-            <td>${reserva.empresaTransporte.nombre}
+            <td>${reserva.empresatransporte.noEmpresaTransporte}
           </tr>
           <tr>
 	    <td><label for="name"><small>Asiento:</small></label>
-            <td>${reserva.asiento}
+            <td>${reserva.nuAsiento}
           </tr>
           <tr>
 	    <td><label for="name"><small>Tarifa a pagar:</small></label>
-            <td>${reserva.ruta.tarifa}
+            <td>${reserva.ruta.ssTarifa}
           </tr>
           
           <tr> </tr>
           <tr>
 	    <td><label for="name"><small>Nombre del pasajero:</small></label>
-            <td>${reserva.cliente.nombre}
+            <td>${reserva.cliente.noCliente}
           </tr>
           <tr>
 	    <td><label for="name"><small>DNI:</small></label>
-            <td>${reserva.cliente.idCliente}
+            <td>${reserva.cliente.coDni}
           </tr>
           <tr>
 	    <td><label for="name"><small>Teléfono:</small></label>
-            <td>${reserva.cliente.telefono}
+            <td>${reserva.cliente.nuTelefono}
           </tr>
           <tr>
 	    <td><label for="name"><small>Dirección:</small></label>
-            <td>${reserva.cliente.direccion}
+            <td>${reserva.cliente.noDireccion}
           </tr>
           <tr> </tr>
           <tr>
