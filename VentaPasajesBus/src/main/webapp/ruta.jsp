@@ -231,7 +231,7 @@
                                     <!-- <td></td> -->
                                     <td>${ruta.feHoraLlegada}</td>
                                     <!-- <td></td> -->
-                                    <td>${ruta.ssTarifa}</td>
+                                    <td align="right">${ruta.ssTarifa}</td>
                                     <td>${ruta.bus.coPlaca}</td>
                                     <!-- <td><input type="button" value="Quitar" /></td> -->
                                 </tr>
