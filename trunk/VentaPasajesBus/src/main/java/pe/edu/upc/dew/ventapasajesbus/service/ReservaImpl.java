@@ -91,5 +91,18 @@ public class ReservaImpl implements ReservaService {
         return reservas;
     }
 
+    public void cancelarReserva(Integer coTicket) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+        Transaction tx;
+
+        reserva =
+                (Reserva) session.createQuery("from Reserva where coTicket=:coTicket")
+                    .setInteger("coTicket", coTicket).uniqueResult();
+        tx = session.beginTransaction();
+        reserva.setFlPagado(true);
+        tx.commit();
+        session.close();
+    }
 
 }

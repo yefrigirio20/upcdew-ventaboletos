@@ -21,12 +21,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import pe.edu.upc.dew.ventapasajesbus.dao.Reserva;
 import pe.edu.upc.dew.ventapasajesbus.model.Bus;
 import pe.edu.upc.dew.ventapasajesbus.model.Ciudad;
 import pe.edu.upc.dew.ventapasajesbus.model.Cliente;
 import pe.edu.upc.dew.ventapasajesbus.model.EmpresaTransporte;
-import pe.edu.upc.dew.ventapasajesbus.model.Reserva;
 import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
+import pe.edu.upc.dew.ventapasajesbus.service.ReservaImpl;
+import pe.edu.upc.dew.ventapasajesbus.service.ReservaService;
 
 /**
  *
@@ -77,6 +79,25 @@ public class ConfirmaReservaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        //Ruta ruta = ((List<Ruta>)session.getAttribute("rutas")).get(100);
+
+        Reserva reserva = (Reserva) session.getAttribute("reserva");
+
+/*        String asiento = req.getParameter("asiento");
+        String nombre = req.getParameter("nombre");
+        String dni = req.getParameter("dni");
+        String telefono = req.getParameter("telefono");
+        String direccion = req.getParameter("direccion");*/
+
+        ReservaService rs = new ReservaImpl();
+        rs.cancelarReserva(reserva);
+        //reserva=rs.getReserva();
+        session.setAttribute("reserva", reserva);
+
+
+
+
 
         request.getRequestDispatcher("reserva.jsp").forward(request, response);
 
