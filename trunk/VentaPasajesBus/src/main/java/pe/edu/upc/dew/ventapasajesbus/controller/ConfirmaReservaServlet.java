@@ -91,7 +91,7 @@ public class ConfirmaReservaServlet extends HttpServlet {
         String direccion = req.getParameter("direccion");*/
 
         ReservaService rs = new ReservaImpl();
-        rs.cancelarReserva(reserva);
+        rs.cancelarReserva(reserva.getCoTicket());
         //reserva=rs.getReserva();
         session.setAttribute("reserva", reserva);
 
