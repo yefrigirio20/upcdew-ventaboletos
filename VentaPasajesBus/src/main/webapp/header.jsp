@@ -33,7 +33,7 @@
                             Usuario Logeado: ${usuario.noUsername}
                         </c:if>
                         <c:if test="${usuario == null}"><a href="login.jsp">Login</a></c:if>
-                        </li>
+                    </li>
                     <li><a href="/logout">Logout</a></li>
                     <li><a href="#">Nuestros Destinos</a></li>
                     <li class="last"><a href="#">Escribanos</a></li>
@@ -59,12 +59,36 @@
             <div id="topnav">
                 <ul>
                     <li class="active"><a href="index.jsp">INICIO</a><span>página principal</span></li>
-                    <li><c:if test="${usuario != null}"><a href="/ruta.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>RUTAS</a><span>Ingreso rutas </span></li>
-                    <li><c:if test="${usuario != null}"><a href="reservar.reserva"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>RESERVAS</a><span>Reservas en línea</span></li>
-                    <li><c:if test="${usuario != null}"><a href="modificar.reserva"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>MODIFICAR RESERVA</a><span>Modificar reservas</span></li>
-                    <!-- <li>CONSULTA VENTAS</a><span>Consultar ventas</span></li> -->
-                    <li><c:if test="${usuario != null}"><a href="conreserva.jsp"></c:if><c:if test="${usuario == null}"><a href="login.jsp"></c:if>CONSULTAR RESERVAS</a><span>consultar reservas</span></li>
+                    <c:if test="${usuario != null}">
+                        <li>
+                            <c:if test="${usuario.noRol == 'Administrador'}">
+                            <a href="/ruta.jsp">RUTAS</a><span>Ingreso rutas </span>
+                            </c:if>
+                            <c:if test="${usuario.noRol == 'Vendedor'}">
+                            <a href="reservar.reserva">RESERVAS</a><span>Reservas en línea </span>
+                            </c:if>
+                        </li>
+                    </c:if>
+                    <c:if test="${usuario == null}">
+                        <li>
 
+                            <a href="/login.jsp">LOGIN</a><span>Inicio de Sesion </span>
+
+                        </li>
+                    </c:if>
+                    <c:if test="${usuario != null}">
+                        <li>
+                            <c:if test="${usuario.noRol == 'Vendedor'}">
+                            <a href="modificar.reserva">MODIFICAR RESERVA</a><span>Modificar reservas </span>
+                            </c:if>
+                        </li>
+                    </c:if>
+                    <c:if test="${usuario != null}">
+                        <li>
+                            <a href="conreserva.jsp">CONSULTAR RESERVAS</a><span>consultar reservas</span>
+                        </li>
+                    </c:if>
+                    <!-- <li>CONSULTA VENTAS</a><span>Consultar ventas</span></li> -->
                 </ul>
                 <br class="clear" />
             </div>
