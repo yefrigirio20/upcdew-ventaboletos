@@ -25,7 +25,7 @@
     <div id="container">
         <div id="content">
 
-            <h2>PAGAR O CANCELAR RESERVA</h2>
+            <h2>PAGAR O ELIMINAR RESERVA</h2>
             <div id="respond">
                 <!-- <form id="frmmodifica" name="frmmodifica" action="buscarreserva" method="post">
                     <table>
@@ -69,7 +69,7 @@
                         <input type="submit" value="Limpiar Campos" name="limpiar" />
                     </p><br />
                 </form>-->
-                <form name="frmmodreserva" action="cancelar.reserva" method="post">
+                <form name="frmmodreserva" action="cancelar.mod.reserva" method="post">
 
                     <table border="1" style="width: 100%">
 
@@ -91,7 +91,7 @@
                         <tbody>
                             <c:forEach var="reserva" items="${reservasPorCancelar}">
                             <tr>
-                                <td><input type="checkbox" name="select" value="${reserva.coTicket}" /></td>
+                                <td><input type="radio" name="reservaSeleccion" value="${reserva.coTicket}" /></td>
                                 <td>${reserva.coTicket}</td>
                                 <td>${reserva.cliente.noCliente}</td>
                                 <td>${reserva.cliente.coDni}</td>
@@ -107,7 +107,7 @@
                         </tbody>
 
                     </table>
-                    <input type="submit" value="Pagar e Imprimir Ticket" name="pagar" />
+                    <input type="submit" value="Pagar Ticket" name="pagar" />
                     <input type="submit" value="Borrar Reserva" name="borrar" />
                     <p />
                     
