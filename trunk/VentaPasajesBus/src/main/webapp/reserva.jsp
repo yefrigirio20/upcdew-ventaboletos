@@ -78,7 +78,7 @@
                                 <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
                                 <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
                                 <td>${ruta.ciudadByNoCiudadDestino.noCiudad}</td>
-                                <td>${ruta.ssTarifa}</td>
+                                <td align="right">${ruta.ssTarifa}</td>
                                 <td>${ruta.feHoraSalida}</td>
                                 <td>${ruta.feHoraLlegada}</td>
                                 <td>${ruta.qtCapacidadTotal}</td>

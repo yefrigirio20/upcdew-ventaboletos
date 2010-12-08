@@ -34,30 +34,28 @@
                         
                         <thead>
                             <tr>
-                                <th><strong>Item</strong></th>
-                                <th><strong>Empresa de Transporte</strong></th>
+                                <th><strong>Ticket</strong></th>
                                 <th><strong>Origen</strong></th>
                                 <th><strong>Destino</strong></th>
+                                <th><strong>Nombre Cliente</strong></th>
                                 <th><strong>Tarifa</strong></th>
-                                <th><strong>Salida</strong></th>
-                                <th><strong>Llegada</strong></th>
-                                <th><strong>Capacidad</strong></th>
-                                <th><strong>Disponibilidad</strong></th>
+                                <th><strong>Asiento</strong></th>
+                                <th><strong>Fecha y hora de salida</strong></th>
+                                <th><strong>Fecha y hora de llegada</strong></th>
                             </tr>
                         </thead>
                         <tbody>
                             
-                                <c:forEach var="ruta" items="${rutasFiltro}">
+                                <c:forEach var="reserva" items="${filtroReservas}">
                                 <tr>
-                                    <td></td>
-                                    <td>${ruta.empresaTransporte.nombre}</td>
-                                    <td>${ruta.ciudadOrigen.nombre}</td>
-                                    <td>${ruta.ciudadDestino.nombre}</td>
-                                    <td>${ruta.tarifa}</td>
-                                    <td>${ruta.fechaHoraSalida}</td>
-                                    <td>${ruta.fechaHoraLlegada}</td>
-                                    <td>40</td>
-                                    <td></td>
+                                    <td align="center">${reserva.coTicket}</td>
+                                    <td>${reserva.ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
+                                    <td>${reserva.ruta.ciudadByNoCiudadDestino.noCiudad}</td>
+                                    <td>${reserva.cliente.noCliente}</td>
+                                    <td align="right">${reserva.ruta.ssTarifa}</td>
+                                    <td align="center">${reserva.nuAsiento}</td>
+                                    <td>${reserva.ruta.feHoraSalida}</td>
+                                    <td>${reserva.ruta.feHoraLlegada}</td>
                                 </tr>
                             </c:forEach>
                             
