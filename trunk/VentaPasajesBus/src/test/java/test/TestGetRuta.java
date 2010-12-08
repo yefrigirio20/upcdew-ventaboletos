@@ -54,7 +54,7 @@ public class TestGetRuta {
 
     @Test
     public void seleccionarRutaPorIdDeRuta() {
-        Ruta ruta = (Ruta) session.get(Ruta.class, 6);
+        Ruta ruta = (Ruta) session.get(Ruta.class, 1);
        
         //Assert.assertEquals("Turismo Barranca S.A.", ruta.getEmpresatransporte().getNoEmpresaTransporte());
         Assert.assertNotNull(ruta);

@@ -166,7 +166,7 @@ INSERT INTO usuario VALUES('ejecutiva','12345','Vendedor','1');
 INSERT INTO cliente VALUES('44531258','Yessel Briceno','Jr.Aguarico 649','2354186','ybricen.b@gmail.com','1');
 INSERT INTO cliente VALUES('10858871','Nicolas Sanchez','Av. Ica 578','9865241','utnico@gmail.com','2');
 INSERT INTO cliente VALUES('41522188','Lesly Briceno','Calle Larco 111','1245253','lbricen.b@gmail.com','3');
-INSERT INTO cliente VALUES('42558685','Juan Carlos Damian','Jr. Iquitos 235','4425361','jdamian@gmail.com','1');
+INSERT INTO cliente VALUES('40765301','Juan Carlos Damian','Jr. Iquitos 235','4425361','jdamian@gmail.com','1');
 INSERT INTO cliente VALUES('10845812','Jesus Maita','Av. Los portales 754','987456','jmaita@gmail.com','4');
 INSERT INTO cliente VALUES('42539687','Martin Ramirez','Jr.Aguarico 555','2352143','mramirez@gmail.com','5');
 INSERT INTO cliente VALUES('41352696','Carlos Morales','Jr.Aguarico 875','2351256','cmorales@gmail.com','4');
