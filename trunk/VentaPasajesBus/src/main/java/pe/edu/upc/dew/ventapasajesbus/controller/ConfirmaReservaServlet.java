@@ -79,21 +79,6 @@ public class ConfirmaReservaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        //Ruta ruta = ((List<Ruta>)session.getAttribute("rutas")).get(100);
-
-        Reserva reserva = (Reserva) session.getAttribute("reserva");
-
-/*        String asiento = req.getParameter("asiento");
-        String nombre = req.getParameter("nombre");
-        String dni = req.getParameter("dni");
-        String telefono = req.getParameter("telefono");
-        String direccion = req.getParameter("direccion");*/
-
-        ReservaService rs = new ReservaImpl();
-        rs.cancelarReserva(reserva.getCoTicket());
-        //reserva=rs.getReserva();
-        session.setAttribute("reserva", reserva);
 
         request.getRequestDispatcher("reserva.jsp").forward(request, response);
 
