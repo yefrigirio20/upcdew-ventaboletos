@@ -83,19 +83,22 @@ public class ConsultaReservaServlet extends HttpServlet {
             filtroReservas = (List<Reserva>) session.getAttribute("filtroReservas");
         }
 
-        SimpleDateFormat df = new SimpleDateFormat ("yyyy-mm-dd");
-        Date fecha1;
+/*      SimpleDateFormat df = new SimpleDateFormat ("yyyy-mm-dd");
+        Date fecha1 = new java.util.Date();
         try {
             fecha1 = df.parse(session.getAttribute("fechasalida").toString());
         } catch (ParseException ex) {
         }
 
         df = new SimpleDateFormat ("yyyy-mm-dd");
-        Date fecha2;
+        Date fecha2 = new java.util.Date();
         try {
             fecha2 = df.parse(session.getAttribute("fechallegada").toString());
         } catch (ParseException ex) {
-        }
+        } */
+
+        Date fecha1 = new java.util.Date();
+        Date fecha2 = new java.util.Date();
 
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         rs = new ReservaImpl();
