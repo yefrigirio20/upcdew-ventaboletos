@@ -3,12 +3,6 @@
     $(document).ready(function(){
         $("#frmconfirmareserva").validate({
             rules: {
-                asiento: {
-                    required: true,
-                    number: true,
-                    range: [1,44]
-                    
-                },
                 nombre: {
                     required: true
                 },
@@ -80,7 +74,7 @@
                         <tr>
                             <c:forEach var="ruta" items="${rutas}">
                             <tr>
-                                <td><input type="radio" name="reservaSeleccion" value="${ruta.coRuta}"/></td>
+                                <td><input type="radio" name="rutaSeleccion" value="${ruta.coRuta}"/></td>
                                 <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
                                 <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
                                 <td>${ruta.ciudadByNoCiudadDestino.noCiudad}</td>
@@ -90,7 +84,7 @@
                                 <td>${ruta.qtCapacidadTotal}</td>
                                 <td>${ruta.qtCapacidadDisp - fn:length(ruta.reservas)}</td>
                                 <td>
-                                    <select name="asientos" id="asientos">
+                                    <select name="${ruta.coRuta}" id="${ruta.coRuta}">
                                         <c:set var="j" value="0" />
                                         <c:forEach var="i" begin="1" end="${ruta.qtCapacidadTotal}" step="1" >
                                             <c:forEach var="reserva" items="${ruta.reservas}">
@@ -114,10 +108,6 @@
                 </table>
                 <table>
                     <tbody>
-                        <tr>
-                            <td><label for="name"><small>Asiento:</small></label></td>
-                            <td><input type="text" name="asiento" id="asiento" value="" size="10" /></td>
-                        </tr>
                         <tr>
                             <td><label for="name"><small>Nombre Pasajero:</small></label></td>
                             <td><input type="text" name="nombre" id="nombre" value="" size="22" /></td>

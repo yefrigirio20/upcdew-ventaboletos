@@ -257,4 +257,13 @@ public class TransporteImpl implements Transporte{
         return buses;
     }
 
+    public Ruta getRutaPorId(Integer idruta) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+        Ruta r = (Ruta) session.get(Ruta.class, idruta);
+
+        return r;
+    }
+
 }
