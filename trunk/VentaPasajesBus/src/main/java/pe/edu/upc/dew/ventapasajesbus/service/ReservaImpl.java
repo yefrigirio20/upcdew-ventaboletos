@@ -1,5 +1,6 @@
 package pe.edu.upc.dew.ventapasajesbus.service;
 
+import java.util.Date;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -114,7 +115,7 @@ public class ReservaImpl implements ReservaService {
         session.close();
     }
 
-    public List<Reserva> getReservasByEmpresaDeTransporte(Integer emp) {
+    public List<Reserva> getReservasByEmpresaDeTransporte(Integer emp, Date fechaSalida, Date fechaLlegada) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
 

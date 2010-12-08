@@ -9,21 +9,14 @@
                 <form action="conreserva" method="post">
                     <table>
                         <tr>
-                            <td><label for="name"><small>Empresa de Transporte:</small></label>
-                            <td><select name="empresaTransporte">
-                                    <option>Todos</option>
-                                    <option>Buses Unidos</option>
-                                    <option>Mi Bus</option>
-                                    <option>Transporte Veloz</option>
-                                </select>
-                        </tr>
-
-                        <tr>
                             <td><label for="name"><small>Rango de Fechas</small></label></td>
                             <td><label for="name"><small>Del</small></label>
-                                <input type="text" name="desde" id="name" value="" size="22" />
+                                <input type="text" name="fechasalida" id="fechasalida" size="22" readonly="readonly" />
+                                    <img alt="Calendario"  src='/calendar/cal.gif' align='absmiddle' onmouseover="fnInitCalendar(this, 'fechasalida', 'style=calendar_blue.css,instance=single')">
                                 <label for="name"><small>Al</small></label>
-                                <input type="text" name="hasta" id="name" value="" size="22" /></td>
+                                <input type="text" name="fechallegada" id="fechallegada" size="22" readonly="readonly" />
+                                    <img alt="calendario"  src='/calendar/cal.gif' align='absmiddle' onmouseover="fnInitCalendar(this, 'fechallegada', 'style=calendar_blue.css,instance=single')">
+                            </td>
                         </tr>
                     </table>
                     <p>
