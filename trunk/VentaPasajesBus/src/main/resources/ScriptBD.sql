@@ -141,6 +141,8 @@ INSERT INTO bus VALUES ('WMX-0002','40', '1');
 INSERT INTO bus VALUES ('WMX-0003','35', '1');
 INSERT INTO bus VALUES ('WMX-0004','41', '2');
 INSERT INTO bus VALUES ('WMX-0005','40', '3');
+INSERT INTO bus VALUES ('WMX-0006','40', '4');
+INSERT INTO bus VALUES ('WMX-0007','40', '5');
 
 
 INSERT INTO ciudad VALUES ('1','Barranca');
@@ -170,17 +172,17 @@ INSERT INTO cliente VALUES('42539687','Martin Ramirez','Jr.Aguarico 555','235214
 INSERT INTO cliente VALUES('41352696','Carlos Morales','Jr.Aguarico 875','2351256','cmorales@gmail.com','4');
 
 
-INSERT INTO ruta VALUES('1','7','1','2010-05-24 08:00','2010-05-25 15:00','524.23','2','WMX-0005', '40', '40');
+INSERT INTO ruta VALUES('1','7','1','2010-05-24 08:00','2010-05-25 15:00','524.23','1','WMX-0005', '40', '40');
 INSERT INTO ruta VALUES('2','2','3','2010-05-25 09:00','2010-05-25 14:00','225.31','2','WMX-0004', '30', '30');
-INSERT INTO ruta VALUES('3','5','6','2010-05-26 10:00','2010-05-26 13:00','623.45','3','WMX-0003', '20', '20');
+INSERT INTO ruta VALUES('3','5','6','2010-05-26 10:00','2010-05-26 13:00','623.45','3','WMX-0003', '30', '30');
 INSERT INTO ruta VALUES('4','2','1','2010-05-27 11:00','2010-05-27 16:00','524.11','1','WMX-0002', '40', '40');
 INSERT INTO ruta VALUES('5','7','6','2010-05-28 12:00','2010-05-28 15:00','524.23','1','WMX-0001', '45', '45');
 
 INSERT INTO reserva VALUES('1','0','1','1','44531258','1');
 INSERT INTO reserva VALUES('2','0','30','2','41522188','2');
-INSERT INTO reserva VALUES('3','1','25','3','10845812','3');
-INSERT INTO reserva VALUES('4','1','3','3','41352696','4');
-INSERT INTO reserva VALUES('5','1','18','5','10845812','5');
+INSERT INTO reserva VALUES('3','0','25','3','10845812','3');
+INSERT INTO reserva VALUES('4','0','3','3','41352696','4');
+INSERT INTO reserva VALUES('5','0','18','1','10845812','1');
 
 
 

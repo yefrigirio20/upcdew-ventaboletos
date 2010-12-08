@@ -95,10 +95,6 @@ public class ConfirmaReservaServlet extends HttpServlet {
         //reserva=rs.getReserva();
         session.setAttribute("reserva", reserva);
 
-
-
-
-
         request.getRequestDispatcher("reserva.jsp").forward(request, response);
 
 /*      HttpSession session = request.getSession();

@@ -1,6 +1,7 @@
 package test;
 
 import java.util.List;
+import java.util.Set;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.After;
@@ -28,8 +29,27 @@ public class TestGetRuta {
     public void seleccionarRutaPorEmpresa() {
         List<Ruta> rutas = session.createQuery("from Ruta where Co_EmpresaTransporte=:Co_EmpresaTransporte")
                 .setInteger("Co_EmpresaTransporte", 1).list();
-        //Assert.assertEquals(1, rutas.size());
-        Assert.assertNotNull(rutas);
+        int numrutas = rutas.size();
+        Assert.assertEquals(2, numrutas);
+        //Assert.assertNotNull(reservas);
+    }
+    @Test
+    public void seleccionarReservasPorRutaPorEmpresa() {
+        List<Ruta> rutas = session.createQuery("from Ruta where Co_EmpresaTransporte=:Co_EmpresaTransporte")
+                .setInteger("Co_EmpresaTransporte", 1).list();
+        Set reservas = rutas.get(0).getReservas();
+        int numreservas = reservas.size();
+        Assert.assertEquals(1, numreservas);
+        //Assert.assertNull(reservas);
+    }
+    @Test
+    public void seleccionarAsientosDisponiblesPorReservasPorRutaPorEmpresa() {
+        List<Ruta> rutas = session.createQuery("from Ruta where Co_EmpresaTransporte=:Co_EmpresaTransporte")
+                .setInteger("Co_EmpresaTransporte", 1).list();
+        Set reservas = rutas.get(0).getReservas();
+        int numreservas = reservas.size();
+        Assert.assertEquals(1, numreservas);
+        //Assert.assertNull(reservas);
     }
 
 }
