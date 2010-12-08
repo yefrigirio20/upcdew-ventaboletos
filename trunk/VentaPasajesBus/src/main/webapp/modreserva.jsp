@@ -20,6 +20,24 @@
     });
 
 </script>
+<script type="text/javascript" language="javascript" >
+    function valida(){
+        opciones = document.getElementsByName("reservaSeleccion");
+
+        var seleccionado = false;
+        for(var i=0; i<opciones.length; i++) {
+            if(opciones[i].checked) {
+                seleccionado = true;
+                break;
+            }
+        }
+
+        if(!seleccionado) {
+            alert("Debe seleccionar una ruta");
+            return false;
+        }
+    }
+</script>
 <!-- ####################################################################################################### -->
 <div class="wrapper col5">
     <div id="container">
@@ -55,20 +73,20 @@
                             <td><label for="name"><small>Destino:</small></label></td>
                             <td><input type="text" name="name" id="name" value="" size="22" /></td>
                         </tr>
-                        <!-- <tr>
-                            <td><label for="name"><small>Salida:</small></label></td>
-                            <td><input type="text" name="name" id="name" value="" size="22" /></td>
-                        </tr>
-                        <tr>
-                            <td><label for="name"><small>Llegada:</small></label></td>
-                            <td><input type="text" name="name" id="name" value="" size="22" /></td>
-                        </tr>-->
-                    <!-- </table>
-                    <p>
-                        <input type="submit" value="Buscar" name="buscar" />
-                        <input type="submit" value="Limpiar Campos" name="limpiar" />
-                    </p><br />
-                </form>-->
+                <!-- <tr>
+                    <td><label for="name"><small>Salida:</small></label></td>
+                    <td><input type="text" name="name" id="name" value="" size="22" /></td>
+                </tr>
+                <tr>
+                    <td><label for="name"><small>Llegada:</small></label></td>
+                    <td><input type="text" name="name" id="name" value="" size="22" /></td>
+                </tr>-->
+                <!-- </table>
+                <p>
+                    <input type="submit" value="Buscar" name="buscar" />
+                    <input type="submit" value="Limpiar Campos" name="limpiar" />
+                </p><br />
+            </form>-->
                 <form name="frmmodreserva" action="cancelar.mod.reserva" method="post">
 
                     <table border="1" style="width: 100%">
@@ -90,27 +108,27 @@
                         </thead>
                         <tbody>
                             <c:forEach var="reserva" items="${reservasPorCancelar}">
-                            <tr>
-                                <td><input type="radio" name="reservaSeleccion" value="${reserva.coTicket}" /></td>
-                                <td>${reserva.coTicket}</td>
-                                <td>${reserva.cliente.noCliente}</td>
-                                <td>${reserva.cliente.coDni}</td>
-                                <td>${reserva.empresatransporte.noEmpresaTransporte}</td>
-                                <td>${reserva.ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
-                                <td>${reserva.ruta.ciudadByNoCiudadDestino.noCiudad}</td>
-                                <td>${reserva.ruta.ssTarifa}</td>
-                                <td>${reserva.ruta.feHoraSalida}</td>
-                                <td>${reserva.ruta.feHoraLlegada}</td>
-                                <td>${reserva.nuAsiento}</td>
-                            </tr>
+                                <tr>
+                                    <td><input type="radio" name="reservaSeleccion" id="reservaSeleccion" value="${reserva.coTicket}" /></td>
+                                    <td>${reserva.coTicket}</td>
+                                    <td>${reserva.cliente.noCliente}</td>
+                                    <td>${reserva.cliente.coDni}</td>
+                                    <td>${reserva.empresatransporte.noEmpresaTransporte}</td>
+                                    <td>${reserva.ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
+                                    <td>${reserva.ruta.ciudadByNoCiudadDestino.noCiudad}</td>
+                                    <td>${reserva.ruta.ssTarifa}</td>
+                                    <td>${reserva.ruta.feHoraSalida}</td>
+                                    <td>${reserva.ruta.feHoraLlegada}</td>
+                                    <td>${reserva.nuAsiento}</td>
+                                </tr>
                             </c:forEach>
                         </tbody>
 
                     </table>
-                    <input type="submit" value="Pagar Ticket" name="pagar" />
-                    <input type="submit" value="Borrar Reserva" name="borrar" />
+                    <input type="submit" value="Pagar Ticket" name="pagar" onClick="return valida()"/>
+                    <input type="submit" value="Borrar Reserva" name="borrar" onClick="return valida()"/>
                     <p />
-                    
+
                 </form>
             </div>
         </div>

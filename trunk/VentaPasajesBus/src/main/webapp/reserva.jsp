@@ -47,6 +47,25 @@
     });
 
 </script>
+<script type="text/javascript" language="javascript" >
+    function valida(){
+        opciones = document.getElementsByName("rutaSeleccion");
+
+        var seleccionado = false;
+        for(var i=0; i<opciones.length; i++) {
+            if(opciones[i].checked) {
+                seleccionado = true;
+                break;
+            }
+        }
+
+        if(!seleccionado) {
+            alert("Debe seleccionar una Reserva");
+            return false;
+        }
+    }
+</script>
+
 <!-- ####################################################################################################### -->
 <div class="wrapper col5">
     <div id="container">
@@ -74,7 +93,7 @@
                         <tr>
                             <c:forEach var="ruta" items="${rutas}">
                             <tr>
-                                <td><input type="radio" name="rutaSeleccion" value="${ruta.coRuta}"/></td>
+                                <td><input type="radio" name="rutaSeleccion" id="rutaSeleccion" value="${ruta.coRuta}"/></td>
                                 <td>${ruta.empresatransporte.noEmpresaTransporte}</td>
                                 <td>${ruta.ciudadByNoCiudadOrigen.noCiudad}</td>
                                 <td>${ruta.ciudadByNoCiudadDestino.noCiudad}</td>
@@ -126,7 +145,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="Crear reserva" name="reservar" /></td>
+                            <td><input type="submit" value="Crear reserva" name="reservar" onClick="return valida()"/></td>
                         </tr>
                     </tbody>
                 </table>

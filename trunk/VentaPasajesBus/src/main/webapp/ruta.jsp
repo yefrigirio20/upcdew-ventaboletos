@@ -30,6 +30,15 @@
                 }
             }
         });
+        var f= new Date();
+        dia = (f.getDate()) + "/" + (f.getMonth()+1) + "/" + f.getFullYear();
+        $("#fechasalida").val(dia);
+
+        var f2= new Date();
+        dia2 = (f2.getDate()+1) + "/" + (f2.getMonth()+1) + "/" + f2.getFullYear();
+        $("#fechallegada").val(dia2);
+
+        
     });
 
 </script>
@@ -69,7 +78,42 @@
     }
 
 </script>
+<script type="text/javascript"  language="javascript">
+    function validafecha(){
+        var f=$("#fechasalida").val();
+        var f2=$("#fechallegada").val();
+        hoy = new Date();
+array_fecha = f.split("/")
+var dia=(array_fecha[0]);
+var mes=(array_fecha[1]-1);
+var ano=(array_fecha[2]);
+var fechaDate = new Date(ano,mes,dia);
 
+array_fecha2 = f2.split("/")
+var dia2=(array_fecha2[0]);
+var mes2=(array_fecha2[1]-1);
+var ano2=(array_fecha2[2]);
+var fechaDate2 = new Date(ano2,mes2,dia2);
+
+
+if(fechaDate<hoy){
+    alert('fecha de salida anterior a hoy');
+    return false;
+}
+if(fechaDate2<hoy){
+    alert('fecha de llegada anterior a hoy');
+    return false;
+}
+
+if(fechaDate>fechaDate2)
+    {
+    alert('fecha salida mayor a fecha de llegada');
+    return false;
+}
+return true;
+
+}
+</script>
 
 <!-- ####################################################################################################### -->
 <div class="wrapper col5">
@@ -201,7 +245,7 @@
                         </tr>
                         <tr>
                             <td></td><td><!-- <input type="submit" value="Nuevo" name="Nuevo" /> -->
-                                <input type="submit" value="Grabar" name="Grabar" /></td>
+                                <input type="submit" value="Grabar" name="Grabar" onclick="return validafecha()"/></td>
                         </tr>
                     </table>
                     <table id="trutas" class="ligth"  cellspacing=1 >
