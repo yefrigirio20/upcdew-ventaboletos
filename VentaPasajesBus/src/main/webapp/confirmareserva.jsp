@@ -51,7 +51,7 @@
           <tr> </tr>
           <tr>
             <td></td>
-            <td><input type="submit" value="Pagar e Imprimir Ticket" name="Imprimir" /><input type="submit" value="Aceptar" name="aceptar" /></td>
+            <td><input type="submit" value="Pagar Ticket" name="pagar" /><input type="submit" value="Aceptar" name="aceptar" /></td>
           </tr>
             </table>
             <!--<br>
