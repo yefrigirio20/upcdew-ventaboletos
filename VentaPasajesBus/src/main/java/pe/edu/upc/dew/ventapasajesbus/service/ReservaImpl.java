@@ -1,6 +1,7 @@
 package pe.edu.upc.dew.ventapasajesbus.service;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -87,8 +88,13 @@ public class ReservaImpl implements ReservaService {
     public List<Reserva> getReservas() {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
+        GregorianCalendar fecha = new GregorianCalendar();
+        Date date = fecha.getTime();
+        
 
         reservas = session.createQuery("from Reserva").list();
+        /*reservas = session.createQuery("from Reserva where Ruta.feHoraSalida >=:feHoraSalida")
+                .setDate("feHoraSalida", date).list();*/
         return reservas;
     }
 

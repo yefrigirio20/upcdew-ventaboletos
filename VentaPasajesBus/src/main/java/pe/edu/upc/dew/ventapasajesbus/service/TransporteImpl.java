@@ -2,15 +2,12 @@ package pe.edu.upc.dew.ventapasajesbus.service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import pe.edu.upc.dew.ventapasajesbus.controller.TransporteServlet;
 import pe.edu.upc.dew.ventapasajesbus.dao.Bus;
 import pe.edu.upc.dew.ventapasajesbus.dao.Ciudad;
 import pe.edu.upc.dew.ventapasajesbus.dao.Empresatransporte;
@@ -27,8 +24,11 @@ public class TransporteImpl implements Transporte{
     public List<Ruta> getRutas() {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
+        GregorianCalendar fecha = new GregorianCalendar();
+        Date date = fecha.getTime();
 
-        rutas = session.createQuery("from Ruta").list();
+        rutas = session.createQuery("from Ruta where feHoraSalida>= :feHoraSalida")
+                .setDate("feHoraSalida", date).list();
         return rutas;
     }
     public List<Ruta> getRutasByEmpresaDeTransporte(Integer emp) {
