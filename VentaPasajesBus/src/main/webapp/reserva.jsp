@@ -88,8 +88,25 @@
                                 <td>${ruta.feHoraSalida}</td>
                                 <td>${ruta.feHoraLlegada}</td>
                                 <td>${ruta.qtCapacidadTotal}</td>
-                                <td>${ruta.qtCapacidadDisp}</td>
-                                <td><a href="#">Elegir</a></td>
+                                <td>${ruta.qtCapacidadDisp - fn:length(ruta.reservas)}</td>
+                                <td>
+                                    <select name="asientos" id="asientos">
+                                        <c:set var="j" value="0" />
+                                        <c:forEach var="i" begin="1" end="${ruta.qtCapacidadTotal}" step="1" >
+                                            <c:forEach var="reserva" items="${ruta.reservas}">
+                                                <c:if test="${reserva.nuAsiento == i}" >
+                                                    <c:set var="j" value="1" />
+                                                </c:if>
+                                            </c:forEach>
+                                            <c:if test="${j == 0}">
+                                                <option value="${i}" >${i}</option>
+                                            </c:if>
+                                            <c:if test="${j == 1}">
+                                                <c:set var="j" value="0" />
+                                            </c:if>
+                                        </c:forEach>
+                                    </select>
+                                </td>
                             </tr>
                         </c:forEach>
                         </tr>
@@ -97,30 +114,30 @@
                 </table>
                 <table>
                     <tbody>
-                    <tr>
-                        <td><label for="name"><small>Asiento:</small></label></td>
-                        <td><input type="text" name="asiento" id="asiento" value="" size="10" /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="name"><small>Nombre Pasajero:</small></label></td>
-                        <td><input type="text" name="nombre" id="nombre" value="" size="22" /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="name"><small>DNI:</small></label></td>
-                        <td><input type="text" name="dni" id="dni" value="" size="22" /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="name"><small>Teléfono:</small></label></td>
-                        <td><input type="text" name="telefono" id="telefono" value="" size="22" /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="name"><small>Dirección:</small></label></td>
-                        <td><input type="text" name="direccion" id="direccion" value="" size="22" /></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" value="Crear reserva" name="reservar" /></td>
-                    </tr>
+                        <tr>
+                            <td><label for="name"><small>Asiento:</small></label></td>
+                            <td><input type="text" name="asiento" id="asiento" value="" size="10" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name"><small>Nombre Pasajero:</small></label></td>
+                            <td><input type="text" name="nombre" id="nombre" value="" size="22" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name"><small>DNI:</small></label></td>
+                            <td><input type="text" name="dni" id="dni" value="" size="22" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name"><small>Teléfono:</small></label></td>
+                            <td><input type="text" name="telefono" id="telefono" value="" size="22" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name"><small>Dirección:</small></label></td>
+                            <td><input type="text" name="direccion" id="direccion" value="" size="22" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Crear reserva" name="reservar" /></td>
+                        </tr>
                     </tbody>
                 </table>
                 <!-- <p>
