@@ -91,6 +91,15 @@ public class ReservaImpl implements ReservaService {
         return reservas;
     }
 
+    public List<Reserva> getReservasPorCancelar() {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+        reservas = session.createQuery("from Reserva where flPagado=:pagado")
+                .setBoolean("pagado", false).list();
+        return reservas;
+    }
+
     public void cancelarReserva(Integer coTicket) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
