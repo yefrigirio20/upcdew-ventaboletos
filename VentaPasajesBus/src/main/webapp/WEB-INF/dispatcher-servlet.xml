@@ -9,6 +9,7 @@
     <bean id="reservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.ReservaController" scope="session" />
     <bean id="modificaReservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.ModificarReservaController" scope="session" />
     <bean id="cancelaReservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.CancelarReservaController" scope="session" />
+    <bean id="cancelaModReservaController" class="pe.edu.upc.dew.ventapasajesbus.controller.CancelarModReservaController" scope="session" />
     <!-- End Controller -->
 
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
@@ -18,6 +19,7 @@
                 <prop key="confirmar.reserva">reservaController</prop>
                 <prop key="modificar.reserva">modificaReservaController</prop>
                 <prop key="cancelar.reserva">cancelaReservaController</prop>
+                <prop key="cancelar.mod.reserva">cancelaModReservaController</prop>
             </props>
         </property>
     </bean>

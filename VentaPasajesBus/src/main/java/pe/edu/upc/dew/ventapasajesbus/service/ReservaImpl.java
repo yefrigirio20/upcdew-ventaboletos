@@ -54,7 +54,7 @@ public class ReservaImpl implements ReservaService {
         session.save(reserva);
         tx.commit();
 
-        session.close();
+        //session.close();
 
 
 /*        cliente = new Cliente();
@@ -101,7 +101,7 @@ public class ReservaImpl implements ReservaService {
         return reservas;
     }
 
-    public void cancelarReserva(Integer coTicket) {
+    public Reserva cancelarReserva(Integer coTicket) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
         Transaction tx;
@@ -112,7 +112,8 @@ public class ReservaImpl implements ReservaService {
         tx = session.beginTransaction();
         reserva.setFlPagado(true);
         tx.commit();
-        session.close();
+        //session.close();
+        return reserva;
     }
 
     public List<Reserva> getReservasByEmpresaDeTransporte(Integer emp, Date fechaSalida, Date fechaLlegada) {
@@ -122,6 +123,29 @@ public class ReservaImpl implements ReservaService {
         reservas = session.createQuery("from Reserva where Co_EmpresaTransporte=:Co_EmpresaTransporte")
                 .setInteger("Co_EmpresaTransporte", emp).list();
         return reservas;
+    }
+
+    public Reserva getReservasPorIdReserva(Integer id) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+        Reserva r = (Reserva) session.get(Reserva.class, id);
+        return r;
+    }
+
+    public Reserva eliminarReserva(Integer coTicket) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+        Transaction tx;
+
+        reserva =
+                (Reserva) session.createQuery("from Reserva where coTicket=:coTicket")
+                    .setInteger("coTicket", coTicket).uniqueResult();
+        tx = session.beginTransaction();
+        session.delete(reserva);
+        tx.commit();
+        //session.close();
+        return reserva;
     }
 
 }

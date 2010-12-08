@@ -5,7 +5,7 @@
 
 <h2>CONFIRMACION DE ELIMINACION DE LAS RESERVAS DE PASAJES</h2>
       <div id="respond">
-        <form action="modreserva.jsp" method="post">
+        <form action="/modificar.reserva" method="post">
           <!-- <p>
 	    <label for="name"><small>Empresa de Transporte</small></label>
             <select name="empresa">
@@ -125,13 +125,8 @@
             <input type="text" name="name" id="name" value="" size="22" />
           </p>-->
             <p>
-          <input type="submit" value="Borrar Reservas" name="borrar" />
-          <input type="submit" value="Cancelar" name="cancelar" />
-          
+          <input type="submit" value="Aceptar" name="aceptar" />
           </p>
-
-
-
         </form>
       </div>
     </div>
