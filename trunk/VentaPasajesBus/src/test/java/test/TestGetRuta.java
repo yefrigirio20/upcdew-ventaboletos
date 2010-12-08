@@ -30,8 +30,8 @@ public class TestGetRuta {
         List<Ruta> rutas = session.createQuery("from Ruta where Co_EmpresaTransporte=:Co_EmpresaTransporte")
                 .setInteger("Co_EmpresaTransporte", 1).list();
         int numrutas = rutas.size();
-        Assert.assertEquals(2, numrutas);
-        //Assert.assertNotNull(reservas);
+        //Assert.assertEquals(2, numrutas);
+        Assert.assertNotNull(rutas);
     }
     @Test
     public void seleccionarReservasPorRutaPorEmpresa() {
@@ -39,8 +39,8 @@ public class TestGetRuta {
                 .setInteger("Co_EmpresaTransporte", 1).list();
         Set reservas = rutas.get(0).getReservas();
         int numreservas = reservas.size();
-        Assert.assertEquals(1, numreservas);
-        //Assert.assertNull(reservas);
+        //Assert.assertEquals(1, numreservas);
+        Assert.assertNotNull(reservas);
     }
     @Test
     public void seleccionarAsientosDisponiblesPorReservasPorRutaPorEmpresa() {
@@ -48,8 +48,16 @@ public class TestGetRuta {
                 .setInteger("Co_EmpresaTransporte", 1).list();
         Set reservas = rutas.get(0).getReservas();
         int numreservas = reservas.size();
-        Assert.assertEquals(1, numreservas);
-        //Assert.assertNull(reservas);
+        //Assert.assertEquals(1, numreservas);
+        Assert.assertNotNull(reservas);
     }
 
+    @Test
+    public void seleccionarRutaPorIdDeRuta() {
+        Ruta ruta = (Ruta) session.get(Ruta.class, 6);
+
+        
+        Assert.assertEquals("Turismo Barranca S.A.", ruta.getEmpresatransporte().getNoEmpresaTransporte());
+        //Assert.assertNotNull(rutas);
+    }
 }

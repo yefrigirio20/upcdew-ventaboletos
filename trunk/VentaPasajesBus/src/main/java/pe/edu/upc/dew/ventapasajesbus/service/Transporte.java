@@ -15,6 +15,7 @@ public interface Transporte {
     public String getMensaje();
     public List<Ciudad> getCiudad();
     public List<Bus> getBus(Integer emp);
+    public Ruta getRutaPorId(Integer idruta);
 
 
 }
