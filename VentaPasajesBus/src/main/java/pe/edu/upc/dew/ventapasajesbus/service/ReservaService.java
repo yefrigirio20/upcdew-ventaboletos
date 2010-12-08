@@ -15,5 +15,6 @@ public interface ReservaService {
 
     public void cancelarReserva(Integer coTicket);
 
+    public List<Reserva> getReservasByEmpresaDeTransporte(Integer emp);
 
 }

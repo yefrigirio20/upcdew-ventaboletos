@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -18,16 +19,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import pe.edu.upc.dew.ventapasajesbus.model.Bus;
-import pe.edu.upc.dew.ventapasajesbus.model.Ciudad;
-import pe.edu.upc.dew.ventapasajesbus.model.EmpresaTransporte;
-import pe.edu.upc.dew.ventapasajesbus.model.Ruta;
+import pe.edu.upc.dew.ventapasajesbus.dao.Reserva;
+import pe.edu.upc.dew.ventapasajesbus.dao.Usuario;
+import pe.edu.upc.dew.ventapasajesbus.service.ReservaImpl;
+import pe.edu.upc.dew.ventapasajesbus.service.ReservaService;
 
 /**
  *
  * @author jdamian
  */
 public class ConsultaReservaServlet extends HttpServlet {
+    List<Reserva> filtroReservas;
+    ReservaService rs;
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -71,7 +74,23 @@ public class ConsultaReservaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        // Obtiene sesión
+        HttpSession session = request.getSession();
 
+        if (request.getSession().getAttribute("filtroReservas") == null) {
+            filtroReservas = new ArrayList<Reserva>();
+        } else {
+            filtroReservas = (List<Reserva>) session.getAttribute("filtroReservas");
+        }
+
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        rs = new ReservaImpl();
+        filtroReservas = rs.getReservasByEmpresaDeTransporte(usuario.getEmpresatransporte().getCoEmpresaTransporte());
+
+        //Almacena en sesión
+        session.setAttribute("filtroReservas", filtroReservas);
+
+/*
         // Añadimos empresas de transporte
         EmpresaTransporte empresaTransporte1 = new EmpresaTransporte();
         empresaTransporte1.setNombre("Buses Unidos");
@@ -240,21 +259,18 @@ public class ConsultaReservaServlet extends HttpServlet {
             }
         }
 
-/*        for (int i=0; i<rutasExistentes.size(); i++) {
-            if (fecha1.before(fecha2)) {
-                rutasFiltro.add(rutasExistentes.get(i));
-            }
-        } */
-
        // Enviamos el atributo a la sesión
        HttpSession session = request.getSession();
        session.setAttribute("rutasFiltro", rutasFiltro);
        session.setAttribute("desde_", desde);
+*/
+
+
+
 
        // request.getRequestDispatcher("ruta.jsp").forward(request, response);
        request.getRequestDispatcher("conreserva.jsp").forward(request, response);
 
-//        processRequest(request, response);
     }
 
     /** 

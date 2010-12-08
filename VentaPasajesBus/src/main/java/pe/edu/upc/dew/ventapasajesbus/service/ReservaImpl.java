@@ -113,4 +113,14 @@ public class ReservaImpl implements ReservaService {
         tx.commit();
         session.close();
     }
+
+    public List<Reserva> getReservasByEmpresaDeTransporte(Integer emp) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        session = sessionFactory.openSession();
+
+        reservas = session.createQuery("from Reserva where Co_EmpresaTransporte=:Co_EmpresaTransporte")
+                .setInteger("Co_EmpresaTransporte", emp).list();
+        return reservas;
+    }
+
 }
