@@ -19,9 +19,9 @@ public class ModificarReservaController extends AbstractController{
         List<Reserva> reservas;
         ReservaService reservaService = new ReservaImpl();
 
-        reservas = reservaService.getReservas();
+        reservas = reservaService.getReservasPorCancelar();
 
-        session.setAttribute("reservas", reservas);
+        session.setAttribute("reservasPorCancelar", reservas);
         
         //return new ModelAndView("reserva");
 
