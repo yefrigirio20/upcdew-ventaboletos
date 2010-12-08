@@ -10,6 +10,8 @@ import pe.edu.upc.dew.ventapasajesbus.dao.Reserva;
 import pe.edu.upc.dew.ventapasajesbus.dao.Ruta;
 import pe.edu.upc.dew.ventapasajesbus.service.ReservaImpl;
 import pe.edu.upc.dew.ventapasajesbus.service.ReservaService;
+import pe.edu.upc.dew.ventapasajesbus.service.Transporte;
+import pe.edu.upc.dew.ventapasajesbus.service.TransporteImpl;
 
 public class CancelarReservaController extends AbstractController{
 
@@ -18,6 +20,8 @@ public class CancelarReservaController extends AbstractController{
         HttpSession session = req.getSession();
 
         Reserva reserva = (Reserva) session.getAttribute("reserva");
+        String pagar = req.getParameter("pagar");
+        String aceptar = req.getParameter("aceptar");
 //        if (reserva == null) {
 //            Ruta ruta = ((List<Ruta>)session.getAttribute("rutas")).get(100);
 //        }
@@ -27,13 +31,23 @@ public class CancelarReservaController extends AbstractController{
         String dni = req.getParameter("dni");
         String telefono = req.getParameter("telefono");
         String direccion = req.getParameter("direccion");*/
+        List<Ruta> rutas;
+        Transporte emp = new TransporteImpl();
 
-        ReservaService rs = new ReservaImpl();
-        rs.cancelarReserva(reserva.getCoTicket());
-        reserva=rs.getReserva();
-        //session.setAttribute("reserva", reserva);
+        rutas = emp.getRutas();
 
-        return new ModelAndView("cancelareserva");
+        session.setAttribute("rutas", rutas);
+
+        if(aceptar != null){
+            return new ModelAndView("reserva");
+        }else{
+            ReservaService rs = new ReservaImpl();
+            rs.cancelarReserva(reserva.getCoTicket());
+            reserva=rs.getReserva();
+            //session.setAttribute("reserva", reserva);
+
+            return new ModelAndView("cancelareserva");
+        }
+        
     }
-
 }
